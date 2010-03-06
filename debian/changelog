@@ -1,3 +1,21 @@
+euca2ools (1.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Package maintained in the pkg-eucalyptus Alioth project:
+    - pkg-eucalyptus-maintainers@lists.alioth.debian.org is maintainer.
+    - Moved Chris and added Dustin as uploaders.
+    - Added pointers to the Subversion repository of pkg-eucalyptus.
+  * Added a debian/watch file.
+  * Manpages:
+    - Produce fresh manpages with help2man, but in a temporary place. This
+      avoids to increase the diff with the original sources (debian/rules).
+    - Build-depend on help2man, python-boto and python-m2crypto.
+    - Deleted README.source, which is not needed anymore.
+  * Incremented Standards-Version to reflect conformance with Poliyc 3.8.4
+    (debian/control, no changes needed).
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 06 Mar 2010 15:07:05 +0900
+
 euca2ools (1.1-1) unstable; urgency=low
 
   * New upstream release (Closes: #543001).
