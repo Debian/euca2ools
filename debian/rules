@@ -2,9 +2,6 @@
 
 DEB_PYTHON_SYSTEM = pycentral
 
-binary/euca2ools::
-	$(MAKE) man MANDIR=$(CURDIR)/debian/manpages-help2man
-
 DEB_SRCDIR = euca2ools
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/python-distutils.mk
