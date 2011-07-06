@@ -2,7 +2,7 @@ euca2ools (1.3.1-1) UNRELEASED; urgency=low
 
   * New upstream release:
     - depend on python-m2crypto (>= 0.20.2) and python-boto (>= 1.9b).
-  * Incremented Standards-Version to reflect conformance with Policy 3.9.1
+  * Incremented Standards-Version to reflect conformance with Policy 3.9.2
     (debian/control, no changes needed).
   * Corrected debian/watch to not download the ‘-src-deps’ package.
   * Using upstream's manpages (debian/rules, debian/manpages, debian/control). 

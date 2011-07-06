@@ -10,7 +10,7 @@ Uploaders:
  Dustin Kirkland <kirkland@ubuntu.com>
 DM-Upload-Allowed: yes
 Build-Depends: cdbs (>= 0.4.90~), debhelper (>= 7), help2man, python-all (>= 2.6.6-3~), python-boto, python-m2crypto
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 X-Python-Version: >= 2.5
 Homepage: http://open.eucalyptus.com/
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-eucalyptus/euca2ools/trunk/
