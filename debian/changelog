@@ -6,7 +6,7 @@ euca2ools (1.3.1-1) UNRELEASED; urgency=low
     (debian/control, no changes needed).
   * Corrected debian/watch to not download the ‘-src-deps’ package.
   * Using upstream's manpages (debian/rules, debian/manpages, debian/control). 
-  * Build-depend on python-all-dev instead of python-all (debian/control). 
+  * Use dh_python2 (Closes #616802 thanks to Colin Watson).
 
  -- Charles Plessy <plessy@debian.org>  Sun, 10 Oct 2010 22:53:13 +0900
 
