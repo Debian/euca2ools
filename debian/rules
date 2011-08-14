@@ -10,6 +10,8 @@ DEB_PYTHON_SETUP_CMD = setup.py
 
 DEB_INDEP_PACKAGES=euca2ools
 
+DEB_DH_BUILDDEB_ARGS = -- -Z xz
+
 clean::
 	$(MAKE) clean
 	$(RM) euca2ools/euca2ools/__init__.pyc
