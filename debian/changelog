@@ -5,6 +5,7 @@ euca2ools (2.0.0~bzr466-1) UNRELEASED; urgency=low
   * Switch to source format 3.0 (quilt).
   * Add get-orig-source target to debian/rules.
   * Build man pages from source.
+  * Add small patch from Ubuntu to correct issue with clean target in Makefile.
 
  -- Miguel Landaeta <miguel@miguel.cc>  Wed, 24 Aug 2011 21:34:48 -0430
 
