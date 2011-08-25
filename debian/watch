@@ -4,3 +4,5 @@ http://eucalyptussoftware.com/downloads/releases/euca2ools-([\d.]*).tar.gz
 
 # Nightly builds
 #http://eucalyptussoftware.com/downloads/releases/nightly/euca2ools-(.*)-src.tar.gz
+
+debian debian/orig-tar.sh
