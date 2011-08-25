@@ -1,6 +1,7 @@
 euca2ools (2.0.0~bzr466-1) UNRELEASED; urgency=low
 
   * New upstream release. (Closes: #638900).
+  * Add myself to Uploaders list.
   * Update versioned dependencies on python-boto to (>= 2.0~).
   * Switch to source format 3.0 (quilt).
   * Add get-orig-source target to debian/rules.
