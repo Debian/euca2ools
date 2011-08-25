@@ -12,11 +12,14 @@ DEB_INDEP_PACKAGES=euca2ools
 
 DEB_DH_BUILDDEB_ARGS = -- -Z xz
 
+build/euca2ools::
+	$(MAKE) man
+
 clean::
 	$(MAKE) clean
 	$(RM) euca2ools/euca2ools/__init__.pyc
 	$(RM) --recursive euca2ools/euca2ools.egg-info
-	$(RM) --recursive $(CURDIR)/debian/manpages-help2man
+	$(RM) $(CURDIR)/man/*
 
 get-orig-source:
 	#uscan --download-current-version --force-download --rename
