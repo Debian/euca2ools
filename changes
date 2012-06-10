@@ -1,0 +1,67 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 10 Jun 2012 14:07:09 +0900
+Source: euca2ools
+Binary: euca2ools
+Architecture: source all
+Version: 2.0.2-1
+Distribution: unstable
+Urgency: low
+Maintainer: Debian Eucalyptus Maintainers <pkg-eucalyptus-maintainers@lists.alioth.debian.org>
+Changed-By: Charles Plessy <plessy@debian.org>
+Description: 
+ euca2ools  - managing cloud instances for Eucalyptus
+Closes: 638900
+Changes: 
+ euca2ools (2.0.2-1) unstable; urgency=low
+ .
+   [ Miguel Landaeta ]
+   * New upstream release. (Closes: #638900).
+   * Add myself to Uploaders list.
+   * Update versioned dependencies on python-boto to (>= 2.0~).
+   * Switch to source format 3.0 (quilt).
+   * Add get-orig-source target to debian/rules.
+   * Build man pages from source.
+   * Add small patch from Ubuntu to correct issue with clean target in Makefile.
+ .
+   [ Charles Plessy ]
+   * Converted source package repository from Subversion to Git.
+   * Removed patches applied upstream.
+   * Updated Homepage.
+   * Normalised debian/copyright with 'cme fix dpkg-copyright'.
+   * Conforms to Policy 3.9.3.
+Checksums-Sha1: 
+ 1895eee7722a0065818ce354a78d5db6cb1d9942 2257 euca2ools_2.0.2-1.dsc
+ 55e8c633c7b93cd543e87d75eac5ee7e6b2985de 87964 euca2ools_2.0.2.orig.tar.gz
+ 7a80470b73e9271a64812e03c532f57866047fb5 5150 euca2ools_2.0.2-1.debian.tar.gz
+ 1838e54211f86f684a603573e1d79032931f2bce 152002 euca2ools_2.0.2-1_all.deb
+Checksums-Sha256: 
+ afb3bcb898ebc0b0a5a360b1630ce206dd3c96f428d2aeb4262583035b44440b 2257 euca2ools_2.0.2-1.dsc
+ 942d189a3f266e38d3c4a340c04058639f45f8517b8ec35a291fe01e8c89c77f 87964 euca2ools_2.0.2.orig.tar.gz
+ 8a1748db19c881414a4adf12878bd2e44ae1f39887ed0d221071a5c74cda0bcd 5150 euca2ools_2.0.2-1.debian.tar.gz
+ 223b4f273d6c800802be3eaca981ba68073547a40c76497683336bf18754578a 152002 euca2ools_2.0.2-1_all.deb
+Files: 
+ a86edcd738a3b69ea2cfcaa68a468660 2257 utils optional euca2ools_2.0.2-1.dsc
+ 280106f9125b3f0c8456baaf5df3840a 87964 utils optional euca2ools_2.0.2.orig.tar.gz
+ 8060d299ff585bb68159ff12c045d624 5150 utils optional euca2ools_2.0.2-1.debian.tar.gz
+ 3c6a1f32a5ec4aa4bf0478ed0043eb50 152002 utils optional euca2ools_2.0.2-1_all.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+iQIcBAEBCAAGBQJP1C/+AAoJEMW9bI8ildUCqHAP/1TDOOTl8J3oNLX2chB78NCr
+aRmNu1x5VpA9QPO4QgNO+oMdE6G1CjBtdJSwJCe4wz/KZV6eOjXc2XIzRsCy9VOt
+RpByijTfcPYRfnuGbYNbLZ9/EoaMqYllB1VnDeFbCKZx7/tkQUaRL2PSIi8yr9Wi
+hCfVsHp8k1Cp7etjC7SjDwl33d9UmYMLVCu5E6O5SpzaYNwtMuQADcq9n/Mqx03I
+YEHZa/Y1of7zW2pRtEixv9IJKAaOs4RiD1j2g25J5/bMCV/RJdLQNgT0WQ1G5eFi
+zimJzE8Q+94rM5XR7A8I5k/YvQ7YabOuFGdSf/0eOlf7Ja1Tl64pWYJHuRpR+DXn
+fw4CTmzp00+216WzwzxhqF4KxIG5NvfBkJthz4Te+RSk7r0p5nP6mbuh3mq3Cqcd
+GgS0RJi/k/l/VZo9Hs2APeWARQf0mwV5zK804s2GTYjbQQlR9IxBPM+tiwmipoE+
+MYI9uUG41bBJSOxPREa6ghcuuH5T10aez3pUXQQye6z8hwk2EVm34f5MO6FDyMfk
+EDo9hwLzggB7Eh4odWcPP5ZswRlIGTWuTPh4+jeMmV/xEMeiMTmbRexRA4+e3J14
+gpC5+O4YwM/ccmp+DToUbeT+zAxMbsTZM+QKaPvFJDJSWJy7aGp47kE0pvhhK57H
+Bu32xl85rxrxyzWvG+o+
+=y8U2
+-----END PGP SIGNATURE-----
