@@ -14,8 +14,8 @@ Build-Depends: cdbs (>= 0.4.90~), debhelper (>= 8), help2man, python-all (>= 2.6
 Standards-Version: 3.9.2
 X-Python-Version: >= 2.5
 Homepage: http://www.eucalyptus.com/download/euca2ools
-Vcs-Browser: http://svn.debian.org/viewsvn/pkg-eucalyptus/euca2ools/trunk/
-Vcs-Svn: svn://svn.debian.org/pkg-eucalyptus/euca2ools/trunk/
+Vcs-Browser: http://git.debian.org/?p=pkg-eucalyptus/euca2ools.git
+Vcs-Git: git://git.debian.org/pkg-eucalyptus/euca2ools.git
 
 Package: euca2ools
 Architecture: all
