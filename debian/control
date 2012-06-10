@@ -11,7 +11,7 @@ Uploaders:
  Miguel Landaeta <miguel@miguel.cc>
 DM-Upload-Allowed: yes
 Build-Depends: cdbs (>= 0.4.90~), debhelper (>= 8), help2man, python-all (>= 2.6.6-3~), python-boto (>= 2.0~), python-m2crypto
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 X-Python-Version: >= 2.5
 Homepage: http://www.eucalyptus.com/download/euca2ools
 Vcs-Browser: http://git.debian.org/?p=pkg-eucalyptus/euca2ools.git
