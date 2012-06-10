@@ -13,7 +13,7 @@ DM-Upload-Allowed: yes
 Build-Depends: cdbs (>= 0.4.90~), debhelper (>= 8), help2man, python-all (>= 2.6.6-3~), python-boto (>= 2.0~), python-m2crypto
 Standards-Version: 3.9.2
 X-Python-Version: >= 2.5
-Homepage: http://open.eucalyptus.com/
+Homepage: http://www.eucalyptus.com/download/euca2ools
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-eucalyptus/euca2ools/trunk/
 Vcs-Svn: svn://svn.debian.org/pkg-eucalyptus/euca2ools/trunk/
 
