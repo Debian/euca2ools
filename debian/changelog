@@ -1,3 +1,10 @@
+euca2ools (2.1.0-1~experimental1) experimental; urgency=low
+
+  d0fb70f Merge with upstream tag 2.1.0.
+  0510d6b debian/rules: removed obsolete commands from the clean target.
+
+ -- Charles Plessy <plessy@debian.org>  Sun, 12 Aug 2012 11:36:22 +0900
+
 euca2ools (2.0.2-1) unstable; urgency=low
 
   [ Miguel Landaeta ]
