@@ -28,8 +28,7 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 #
-# Author: Neil Soman neil@eucalyptus.com
-#       : Mitch Garnaat mgarnaat@eucalyptus.com
+# Author: David Kavanagh david.kavanagh@eucalyptus.com
 
 
 import sys
@@ -46,7 +45,10 @@ class Eustore(AWSQueryService):
     Provider = 'aws'
     EnvURL = 'EC2_URL'
 
-    StoreBaseURL = "http://emis.eucalyptus.com/"
+    StoreBaseURL = 'http://emis.eucalyptus.com/'
+    EuStoreVersion = 'eustore-catalog-2011-12-29'
+    RequestHeaders = {'User-Agent': 'euca2ools/eustore',
+                      'eustore-version': EuStoreVersion}
 
 class progressBar:
     def __init__(self, maxVal):

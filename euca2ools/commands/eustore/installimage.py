@@ -1,4 +1,3 @@
-#!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 
 # Software License Agreement (BSD License)
@@ -35,9 +34,15 @@
 
 import os
 import sys
+import tarfile
+import hashlib
+import zlib
+import tempfile
 import urllib2
+import boto
 from boto.roboto.param import Param
 from boto.roboto.awsqueryrequest import AWSQueryRequest
+from boto.roboto.awsqueryservice import AWSQueryService
 from boto.s3.connection import Location
 import euca2ools.bundler
 import euca2ools.commands.eustore
@@ -60,6 +65,16 @@ class LocalRegister(Register):
     def process_cli_args(self):
         pass
 
+class EuareService(AWSQueryService):
+    Name = 'euare'
+    Description = 'Eucalyptus IAM Service'
+    APIVersion = '2010-05-08'
+    Authentication = 'sign-v2'
+    Path = '/'
+    Port = 443
+    Provider = 'aws'
+    EnvURL = 'EUARE_URL'
+
 class InstallImage(AWSQueryRequest):
 
     ServiceClass = euca2ools.commands.eustore.Eustore
@@ -69,9 +84,33 @@ class InstallImage(AWSQueryRequest):
         Param(name='image_name',
               short_name='i',
               long_name='image_name',
-              optional=False,
+              optional=True,
               ptype='string',
               doc="""name of image to install"""),
+        Param(name='tarball',
+              short_name='t',
+              long_name='tarball',
+              optional=True,
+              ptype='string',
+              doc="""name local image tarball to install from"""),
+        Param(name='description',
+              short_name='s',
+              long_name='description',
+              optional=True,
+              ptype='string',
+              doc="""description of image, mostly used with -t option"""),
+        Param(name='architecture',
+              short_name='a',
+              long_name='architecture',
+              optional=True,
+              ptype='string',
+              doc="""i386 or x86_64, mostly used with -t option"""),
+        Param(name='prefix',
+              short_name='p',
+              long_name='prefix',
+              optional=True,
+              ptype='string',
+              doc="""prefix to use when naming the image, mostly used with -t option"""),
         Param(name='bucket',
               short_name='b',
               long_name='bucket',
@@ -100,9 +139,15 @@ class InstallImage(AWSQueryRequest):
               long_name='ramdisk',
               optional=True,
               ptype='string',
-              doc="""Override bundled ramdisk with one already installed""")
+              doc="""Override bundled ramdisk with one already installed"""),
+        Param(name='yes',
+              short_name='y',
+              long_name='yes',
+              optional=True,
+              ptype='boolean',
+              doc="""Answer \"yes\" to questions during install""")
         ]
-
+    ImageList = None
 
     def get_relative_filename(self, filename):
         return os.path.split(filename)[-1]
@@ -114,9 +159,43 @@ class InstallImage(AWSQueryRequest):
             file_path = '.'
         return file_path
 
-    def bundleFile(self, path, name, image, kernel_id=None, ramdisk_id=None):
+    def promptReplace(self, type, name):
+        if self.cli_options.yes:
+            print type+": "+name+" is already installed on the cloud, skipping installation of another one."
+            return True
+        else:
+            answer = raw_input(type+": "+name+" is already installed on ths cloud. Would you like to use it intead?(y/N)")
+            if (answer=='y' or answer=='Y'):
+                return True
+            return False
+
+    def bundleFile(self, path, name, description, arch, kernel_id=None, ramdisk_id=None):
         bundler = euca2ools.bundler.Bundler(self)
         path = self.destination + path
+
+        # before we do anything substantial, check to see if this "image" was already installed
+        ret_id=None
+        for img in self.ImageList:
+            name_match=False
+            if img.location.endswith(name+'.manifest.xml'):
+                name_match=True
+            # always replace skip if found
+            if name_match:
+                if kernel_id=='true' and img.type=='kernel':
+                    if self.promptReplace("Kernel", img.name):
+                        ret_id=img.name
+                    break
+                elif ramdisk_id=='true' and img.type=='ramdisk':
+                    if self.promptReplace("Ramdisk", img.name):
+                        ret_id=img.name
+                    break
+                elif kernel_id!='true' and ramdisk_id!='true' and img.type=='machine':
+                    if self.promptReplace("Image", img.name):
+                        ret_id=img.name
+                    break
+
+        if ret_id:
+            return ret_id
 
         image_size = bundler.check_image(path, self.destination)
         try:
@@ -132,7 +211,7 @@ class InstallImage(AWSQueryRequest):
                                   path, key, iv,
                                   self.cert_path, self.ec2cert_path,
                                   self.private_key_path,
-                                  image['architecture'], image_size,
+                                  arch, image_size,
                                   bundled_size, sha_tar_digest,
                                   self.user, kernel_id, ramdisk_id,
                                   None, None)
@@ -152,7 +231,7 @@ class InstallImage(AWSQueryRequest):
         obj = LocalRegister()
         obj.image_location=to_register
         obj.name=name
-        obj.description=image['description']
+        obj.description=description
         obj.snapshot=None
         obj.architecture=None
         obj.block_device_mapping=None
@@ -161,37 +240,67 @@ class InstallImage(AWSQueryRequest):
         obj.ramdisk=ramdisk_id
         return obj.main()
 
-    def bundleAll(self, file, image):
-        print "Unwrapping tarball"
+    def bundleAll(self, file, prefix, description, arch):
+        print "Unbundling image"
         bundler = euca2ools.bundler.Bundler(self)
-        names = bundler.untarzip_image(self.destination, file)
+        try:
+            names = bundler.untarzip_image(self.destination, file)
+        except OSError:
+            print "Error: cannot unbundle image, possibly corrupted file"
+            sys.exit(-1)
+        except IOError:
+            print "Error: cannot unbundle image, possibly corrupted file"
+            sys.exit(-1)
         kernel_dir=None
         if not(self.cli_options.kernel_type==None):
             kernel_dir = self.cli_options.kernel_type+'-kernel'
+            print "going to look for kernel dir : "+kernel_dir
         #iterate, and install kernel/ramdisk first, store the ids
         kernel_id=self.cli_options.kernel
         ramdisk_id=self.cli_options.ramdisk
+        kernel_found = False
         if kernel_id==None:
-            for path in names:
-                if (kernel_dir==None or path.find(kernel_dir) > -1):
-                    name = os.path.basename(path)
-                    if not name.startswith('.'):
-                        if name.startswith('vmlin'):
-                            print "Bundling/uploading kernel"
-                            kernel_id = self.bundleFile(path, name, image, 'true', None)
-                            print kernel_id
-                        elif name.startswith('initrd'):
-                            print "Bundling/uploading ramdisk"
-                            ramdisk_id = self.bundleFile(path, name, image, None, 'true')
-                            print ramdisk_id
+            for i in [0, 1]:
+                tar_root = os.path.commonprefix(names)
+                for path in names:
+                    if (kernel_dir==None or path.find(kernel_dir) > -1):
+                        name = os.path.basename(path)
+                        if not(kernel_dir) and (os.path.dirname(path) != tar_root):
+                            continue;
+                        if not name.startswith('.'):
+                            if name.startswith('vmlin'):
+                                print "Bundling/uploading kernel"
+                                if prefix:
+                                    name = prefix+name
+                                kernel_id = self.bundleFile(path, name, description, arch, 'true', None)
+                                kernel_found = True
+                                print kernel_id
+                            elif name.startswith('initrd'):
+                                print "Bundling/uploading ramdisk"
+                                if prefix:
+                                    name = prefix+name
+                                ramdisk_id = self.bundleFile(path, name, description, arch, None, 'true')
+                                print ramdisk_id
+                if not(kernel_found):
+                    if not(kernel_dir):
+                        print "Error: couldn't find kernel. Check your parameters or specify an existing kernel/ramdisk"
+                        sys.exit(-1);
+                    elif i==0:
+                        print "Error: couldn't find kernel. Check your parameters or specify an existing kernel/ramdisk"
+                        sys.exit(-1);
+                else:
+                    break
         #now, install the image, referencing the kernel/ramdisk
         for path in names:
             name = os.path.basename(path)
             if not name.startswith('.'):
                 if name.endswith('.img'):
                     print "Bundling/uploading image"
-                    name = name[:-len('.img')]
-                    id = self.bundleFile(path, name, image, kernel_id, ramdisk_id)
+                    if prefix:
+                        name = prefix
+                    else:
+                        name = name[:-len('.img')]
+                    id = self.bundleFile(path, name, description, arch, kernel_id, ramdisk_id)
                     return id
 
     def main(self, **args):
@@ -201,12 +310,52 @@ class InstallImage(AWSQueryRequest):
         self.user = os.environ['EC2_USER_ID']
         self.ec2cert_path = os.environ['EUCALYPTUS_CERT']
 
-        if (self.cli_options.kernel and not(self.cli_options.ramdisk)) or \
-           (not(self.cli_options.kernel) and self.cli_options.ramdisk):
-            print "Error: kernel and ramdisk must both be overrided"
+        # tarball and image option are mutually exclusive
+        if (not(self.cli_options.image_name) and not(self.cli_options.tarball)):
+            print "Error: one of -i or -t must be specified"
             sys.exit(-1)
 
+        if (self.cli_options.image_name and self.cli_options.tarball):
+            print "Error: -i and -t cannot be specified together"
+            sys.exit(-1)
+
+        if (self.cli_options.tarball and \
+            (not(self.cli_options.description) or not(self.cli_options.architecture))):
+            print "Error: when -t is specified, -s and -a are required"
+            sys.exit(-1)
+
+        if (self.cli_options.architecture and \
+            not(self.cli_options.architecture == 'i386' or self.cli_options.architecture == 'x86_64')):
+            print "Error: architecture must be either 'i386' or 'x86_64'"
+            sys.exit(-1)
+
+        if (self.cli_options.kernel and not(self.cli_options.ramdisk)) or \
+           (not(self.cli_options.kernel) and self.cli_options.ramdisk):
+            print "Error: kernel and ramdisk must both be overridden"
+            sys.exit(-1)
+
+        if (self.cli_options.architecture and self.cli_options.image_name):
+            print "Warning: you may be overriding the default architecture of this image!"
+
+
+        euare_svc = EuareService()
+        conn = boto.connect_iam(host=euare_svc.args['host'], \
+                    aws_access_key_id=euare_svc.args['aws_access_key_id'],\
+                    aws_secret_access_key=euare_svc.args['aws_secret_access_key'],\
+                    port=euare_svc.args['port'], path=euare_svc.args['path'],\
+                    is_secure=euare_svc.args['is_secure'])
+        userinfo  = conn.get_user().arn.split(':')
+        if not(userinfo[4]=='eucalyptus') and not(self.cli_options.kernel):
+            print "Error: must be cloud admin to upload kernel/ramdisk. try specifying existing ones with --kernel and --ramdisk"
+            sys.exit(-1)
         self.eustore_url = self.ServiceClass.StoreBaseURL
+
+        # would be good of this were async, i.e. when the tarball is downloading
+        ec2_conn = boto.connect_euca(host=euare_svc.args['host'], \
+                        aws_access_key_id=euare_svc.args['aws_access_key_id'],\
+                        aws_secret_access_key=euare_svc.args['aws_secret_access_key'])
+        self.ImageList = ec2_conn.get_all_images()
+
         if os.environ.has_key('EUSTORE_URL'):
             self.eustore_url = os.environ['EUSTORE_URL']
 
@@ -215,37 +364,63 @@ class InstallImage(AWSQueryRequest):
             self.destination = self.cli_options.dir
         if not(self.destination.endswith('/')):
             self.destination += '/'
+        # for security, add random directory within to work in
+        self.destination = tempfile.mkdtemp(prefix=self.destination)+'/'
 
-        catURL = self.eustore_url + "catalog.json"
-        response = urllib2.urlopen(catURL).read()
-        parsed_cat = json.loads(response)
-        if len(parsed_cat) > 0:
-            image_list = parsed_cat['images']
-            image_found = False
-            for image in image_list:
-                if image['name'].find(self.cli_options.image_name) > -1:
-                   image_found = True
-                   break
-            if image_found:
-                print "Downloading Image : ",image['description']
-                imageURL = self.eustore_url+image['url']
-                req = urllib2.urlopen(imageURL)
-                file_size = int(req.info()['Content-Length'])/1000
-                size_count = 0;
-                prog_bar = euca2ools.commands.eustore.progressBar(file_size)
-                BUF_SIZE = 128*1024
-                with open(self.destination+'eucaimage.tar.gz', 'wb') as fp:
-                    while True:
-                        buf = req.read(BUF_SIZE)
-                        size_count += len(buf)
-                        prog_bar.update(size_count/1000)
-                        if not buf: break
-                        fp.write(buf)
-                fp.close()
-                print "Installed image: "+self.bundleAll(fp.name, image)
-                os.remove(fp.name)
-            else:
-                print "Image name not found, please run eustore-describe-images"
+        if self.cli_options.tarball:
+            # local tarball path instead
+            print "Installed image: "+self.bundleAll(self.cli_options.tarball, self.cli_options.prefix, self.cli_options.description, self.cli_options.architecture)
+        else:
+            catURL = self.eustore_url + "catalog"
+            req = urllib2.Request(catURL, headers=self.ServiceClass.RequestHeaders)
+            response = urllib2.urlopen(req).read()
+            parsed_cat = json.loads(response)
+            if len(parsed_cat) > 0:
+                image_list = parsed_cat['images']
+                image_found = False
+                for image in image_list:
+                    if image['name'].find(self.cli_options.image_name) > -1:
+                        image_found = True
+                        break
+                if image_found:
+                    # more param checking now
+                    if image['single-kernel']=='True':
+                        if self.cli_options.kernel_type:
+                            print "The -k option will be ignored because the image is single-kernel"
+                    else:
+                        if not(self.cli_options.kernel_type):
+                            print "Error: The -k option must be specified because this image has separate kernels"
+                            sys.exit(-1)
+                    print "Downloading Image : ",image['description']
+                    imageURL = self.eustore_url+image['url']
+                    req = urllib2.Request(imageURL, headers=self.ServiceClass.RequestHeaders)
+                    req = urllib2.urlopen(req)
+                    file_size = int(req.info()['Content-Length'])/1000
+                    size_count = 0;
+                    prog_bar = euca2ools.commands.eustore.progressBar(file_size)
+                    BUF_SIZE = 128*1024
+                    with open(self.destination+'eucaimage.tar.gz', 'wb') as fp:
+                        while True:
+                            buf = req.read(BUF_SIZE)
+                            size_count += len(buf)
+                            prog_bar.update(size_count/1000)
+                            if not buf: break
+                            fp.write(buf)
+                    fp.close()
+                    # validate download by re-computing serial # (name)
+                    print "Checking image bundle"
+                    file = open(fp.name, 'r')
+                    m = hashlib.md5()
+                    m.update(file.read())
+                    hash = m.hexdigest()
+                    crc = str(zlib.crc32(hash)& 0xffffffffL)
+                    if image['name'] == crc.rjust(10,"0"):
+                        print "Installed image: "+self.bundleAll(fp.name, None, image['description'], image['architecture'])
+                    else:
+                        print "Error: Downloaded image was incomplete or corrupt, please try again"
+                    os.remove(fp.name)
+                else:
+                    print "Image name not found, please run eustore-describe-images"
 
     def main_cli(self):
         euca2ools.utils.print_version_if_necessary()

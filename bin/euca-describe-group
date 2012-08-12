@@ -1,7 +1,9 @@
-#!/usr/bin/make -f
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 # Software License Agreement (BSD License)
 #
-# Copyright (c) 2009, Eucalyptus Systems, Inc.
+# Copyright (c) 2009-2011, Eucalyptus Systems, Inc.
 # All rights reserved.
 #
 # Redistribution and use of this software in source and binary forms, with or
@@ -30,35 +32,11 @@
 # POSSIBILITY OF SUCH DAMAGE.
 #
 # Author: Neil Soman neil@eucalyptus.com
+#         Mitch Garnaat mgarnaat@eucalyptus.com
 
-SUBDIRS                 =       euca2ools
-BINDIR			=	bin
-BINLIST			=	$(wildcard $(BINDIR)/*)
-MANDIR			=	man
-MANPAGES		=	$(shell echo $(BINLIST) | sed -e 's%$(BINDIR)/%$(MANDIR)/%g' -e 's/  */.1 /g').1
-PREFIX			=	/usr/local
-BASH_COMPLETION		=	/etc/bash_completion.d
-UTILDIR			=	util
+import euca2ools.commands.euca.describegroups
 
-.PHONY: man all install clean distclean
+if __name__ == '__main__':
+    cmd = euca2ools.commands.euca.describegroups.DescribeGroups()
+    cmd.main_cli()
 
-all: install
-
-man: $(BINLIST)
-	@which help2man > /dev/null || { echo "You'll need to install help2man to re-generate the manpages"; exit 1; }
-	@sh -x $(CURDIR)/generate-manpages.sh
-
-install:
-	python setup.py install
-	@install -o root -m 755 -d $(PREFIX)/man/man1
-	@if [ -d $(MANDIR) ]; then install -o root -m 644  $(MANDIR)/* $(PREFIX)/man/man1; fi
-	@if [ -d $(BASH_COMPLETION) ]; then install -o root -m 644  $(UTILDIR)/* $(BASH_COMPLETION); fi
-
-distclean clean:
-	echo "Nothing to do for clean"
-
-uninstall:
-	@for x in $(BINLIST); do \
-		rm -f $(PREFIX)/bin/$$x ; \
-		rm -f $(PREFIX)/man/man1/`basename $$x`.1; done
-	@if [ -d $(BASH_COMPLETION) ]; then rm $(BASH_COMPLETION)/euca2ools; fi 
