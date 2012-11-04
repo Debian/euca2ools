@@ -1,3 +1,10 @@
+euca2ools (2.1.1-1~experimental1) experimental; urgency=low
+
+  f30ca2e Merged with upstream tag 2.1.1.
+  3ce83ab Removed DM-Upload-Allowed field.
+
+ -- Charles Plessy <plessy@debian.org>  Sun, 04 Nov 2012 20:54:00 +0900
+
 euca2ools (2.1.0-1~experimental1) experimental; urgency=low
 
   d0fb70f Merge with upstream tag 2.1.0.
