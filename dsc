@@ -5,7 +5,7 @@ Format: 3.0 (quilt)
 Source: euca2ools
 Binary: euca2ools
 Architecture: all
-Version: 2.1.1-1~experimental1
+Version: 2.1.2-1~experimental1
 Maintainer: Debian Eucalyptus Maintainers <pkg-eucalyptus-maintainers@lists.alioth.debian.org>
 Uploaders:  Chris Grzegorczyk <grze@eucalyptus.com>, Charles Plessy <plessy@debian.org>, Graziano Obertelli <graziano@eucalyptus.com>, Kyo Lee <kyo.lee@eucalyptus.com>, Dustin Kirkland <kirkland@ubuntu.com>, Miguel Landaeta <miguel@miguel.cc>
 Homepage: http://www.eucalyptus.com/download/euca2ools
@@ -16,29 +16,29 @@ Build-Depends: cdbs (>= 0.4.90~), debhelper (>= 8), help2man, python-all (>= 2.6
 Package-List: 
  euca2ools deb utils optional
 Checksums-Sha1: 
- ef5095465e23f5100754905afe08983144e1dea1 93516 euca2ools_2.1.1.orig.tar.gz
- 38759a24a4c467c3be78bfaea38d328f9fa6f4d2 5426 euca2ools_2.1.1-1~experimental1.debian.tar.gz
+ d416dd04b42c2c3a4c70f79f3434514d20040e0f 95133 euca2ools_2.1.2.orig.tar.gz
+ 045ccd551009d33b9ff1d1f50759db8818569ed5 5689 euca2ools_2.1.2-1~experimental1.debian.tar.gz
 Checksums-Sha256: 
- a08b3d9e2f31aeb95e45445979a9d2cb9b892f9713d7425e48a614af2d8d483d 93516 euca2ools_2.1.1.orig.tar.gz
- 1fa1b436eaf155bbe63025daae44e44c24004112d5d3a37f7c26f115dbb4fba4 5426 euca2ools_2.1.1-1~experimental1.debian.tar.gz
+ 49a1d44be475dac0da7b0a542e39e9500cecdc83160fc17f7474a569b090197a 95133 euca2ools_2.1.2.orig.tar.gz
+ 3aef2cc77258d642d4e1a10aa1a68281545d8304b977b751cc155604fec474df 5689 euca2ools_2.1.2-1~experimental1.debian.tar.gz
 Files: 
- 55f8175f0f7358e4c2951629a11298ba 93516 euca2ools_2.1.1.orig.tar.gz
- 00ef164c3e5acf2f83d3adc07b3e169e 5426 euca2ools_2.1.1-1~experimental1.debian.tar.gz
+ 9a517e7bed703652a2264048e5a98588 95133 euca2ools_2.1.2.orig.tar.gz
+ d12036649fbf6228e3ce30cf81b48bc3 5689 euca2ools_2.1.2-1~experimental1.debian.tar.gz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.12 (GNU/Linux)
 
-iQIcBAEBCAAGBQJQlljkAAoJEMW9bI8ildUCj9UP/3d0OG0HjIeB8X86xx3ssO5h
-4mWmtPOyMxcJjjEnRN7LE7Wnv+8vnTOZTwDsDPbtVZLYz4HRUwK29+MyXpOzpr9p
-U3hIZ8HgvM9pU6r0tkremF3SClu0QSdqcNbAbp0VjC5haUPgKzWY/pQVUvuxQ5+R
-4vxmyduWXFDJNHxLXV9t7Bsw8tk/3jOBC5gku5K4Ay/waRgpVpO9YlGN0HqS5Wz1
-0VYKzNVs0k/1/zZq6Mrt+llzA8YA6iOpUPbl9wSzbTQPw+vSviJgikdzKifMwkY0
-W2uF+RkUOiSKK9rpD4wVYklWvQrmmFndRgGuzY0ey4GRPghkiz1cRFYc9sFb19gl
-3gZFODYczf1OBeY5iaLwYh4a3VZsBYGVAfxgNZcUVhnZgpkNMuIkvDVJ5FmT2GE0
-JSPd021Ywx8SCs3hI9aWhDgCbxhX/i3s7dGXdlQc7gVNGMcHS3nFI6krtUj63EnB
-0ACiy9+JQkLpAWQtbLbislUDmiANIgO5vapkZXtcghbKfGqiX+FDBAaU9sFrgolx
-YMe1SA4HjDwjIx1EPfnk7EgRcHkLyy4bPiWVkRXxjQ30kVwa3ybGx8clr3pTFkhY
-svDVYzZXO+wO2X0LQY/z/a4J3R2HLcV32xcp2nXFugx7jJcwL+RuSg92jwPszzlu
-FHdX3YF8k0G/gMfiZK9t
-=qdXg
+iQIcBAEBCAAGBQJQ5WSTAAoJEMW9bI8ildUCQ/4P/0taSqXD8Mqi08Emb+Xalj+c
+BK+48nj7tYwAb5Mwe4Ye9gwDMY42XEngOLdkqpq2Ju+sBUfFppT6mB2AHBWuIrMz
+nVEDaglIKVWRgojsXe85MW5FOAiQTPLwLRxO4zKtx7fE0pXezsxE4+hT3SDICwb+
+DjnGLabCMXFFtsiO3aQs9svB1XJC6qCm3fzwd/bHh3sa5xk5g6bRZ1JrpBie6w9B
+mGnq0+uPnuY8VRUclaX4CttoWc10ITXbNctxpPFX147Tyu/Qy0W1r/SzMWuAB2c3
+iviidkWIeuVKvl4wtVdpP1jpiWAAcbPM+7RtAzaHDJyqDAvmXHW0Fqibf4ljtb1H
+uGH0YbC+Y/1gms3b060QIGgFvRYFSlx+YPrPiG1Gf9I7nGtyYACE/IhfgSgFj3Oc
+8XQ1pzgJ/02BGTXNL6kCsD9y7stpjrqQFsQBfr87jIJ0+8mH7SJn+J/03yga1M0h
+42kyXd6fpkxK6iHUbiNiHKY9pFjgfEbdZV1O/qpnM66yhDdyO1sDYUPeHhoFVqh+
+R7hWhbeQ0CgIIgA+9OJq/MjnFek616fBL6LwXvWVipFzgjypsnPlOe8nqY71w+UC
+VD9nmEz2zdZDTt5YQhXD6MdBqiumYjsQOX9SkMP3KWhJQouPsRONJcP2f5Cgatw2
+zZgHRJ0cxefwqr57F2qb
+=FHgB
 -----END PGP SIGNATURE-----

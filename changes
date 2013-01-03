@@ -2,11 +2,11 @@
 Hash: SHA256
 
 Format: 1.8
-Date: Sun, 04 Nov 2012 20:54:00 +0900
+Date: Thu, 03 Jan 2013 19:52:10 +0900
 Source: euca2ools
 Binary: euca2ools
 Architecture: source all
-Version: 2.1.1-1~experimental1
+Version: 2.1.2-1~experimental1
 Distribution: experimental
 Urgency: low
 Maintainer: Debian Eucalyptus Maintainers <pkg-eucalyptus-maintainers@lists.alioth.debian.org>
@@ -14,40 +14,41 @@ Changed-By: Charles Plessy <plessy@debian.org>
 Description: 
  euca2ools  - managing cloud instances for Eucalyptus
 Changes: 
- euca2ools (2.1.1-1~experimental1) experimental; urgency=low
+ euca2ools (2.1.2-1~experimental1) experimental; urgency=low
  .
-   f30ca2e Merged with upstream tag 2.1.1.
-   3ce83ab Removed DM-Upload-Allowed field.
+   55eebb1 Merge with upstream tag '2.1.2'.
+   0b53205 Added metadata about the upstream project.
+   f62c1f9 Watch tag numbers on GitHub.
 Checksums-Sha1: 
- fa3dac358a8a353f49c0750dd25658925bd50ea4 2290 euca2ools_2.1.1-1~experimental1.dsc
- ef5095465e23f5100754905afe08983144e1dea1 93516 euca2ools_2.1.1.orig.tar.gz
- 38759a24a4c467c3be78bfaea38d328f9fa6f4d2 5426 euca2ools_2.1.1-1~experimental1.debian.tar.gz
- caf0f3ab929631b9e20f481eb65c3e0464784f87 158300 euca2ools_2.1.1-1~experimental1_all.deb
+ 82fd08d5e8204e514d324121231b2c182ff95646 2290 euca2ools_2.1.2-1~experimental1.dsc
+ d416dd04b42c2c3a4c70f79f3434514d20040e0f 95133 euca2ools_2.1.2.orig.tar.gz
+ 045ccd551009d33b9ff1d1f50759db8818569ed5 5689 euca2ools_2.1.2-1~experimental1.debian.tar.gz
+ 0607badecff01a7283e36a2f138e61b612dc78d3 159704 euca2ools_2.1.2-1~experimental1_all.deb
 Checksums-Sha256: 
- 7cc9fa6af2172c6ec2d556e2967d3c748f61ebfdeffe248de64e77936c26b9ef 2290 euca2ools_2.1.1-1~experimental1.dsc
- a08b3d9e2f31aeb95e45445979a9d2cb9b892f9713d7425e48a614af2d8d483d 93516 euca2ools_2.1.1.orig.tar.gz
- 1fa1b436eaf155bbe63025daae44e44c24004112d5d3a37f7c26f115dbb4fba4 5426 euca2ools_2.1.1-1~experimental1.debian.tar.gz
- c0e6f7d017089255b4417fd70fe2607dcd6cb4574d13aac7bd8833ab606f27c3 158300 euca2ools_2.1.1-1~experimental1_all.deb
+ 3050a228528d2b70535d5d51dcdb283805fd58a6262bddb865f066a796687804 2290 euca2ools_2.1.2-1~experimental1.dsc
+ 49a1d44be475dac0da7b0a542e39e9500cecdc83160fc17f7474a569b090197a 95133 euca2ools_2.1.2.orig.tar.gz
+ 3aef2cc77258d642d4e1a10aa1a68281545d8304b977b751cc155604fec474df 5689 euca2ools_2.1.2-1~experimental1.debian.tar.gz
+ 864fe3edff158b7c9d0b394a667abd87344053f1265e8746a4578d37ffb7b077 159704 euca2ools_2.1.2-1~experimental1_all.deb
 Files: 
- 7be5c4e8d2f32bb7ac3e594e0fb9e6de 2290 utils optional euca2ools_2.1.1-1~experimental1.dsc
- 55f8175f0f7358e4c2951629a11298ba 93516 utils optional euca2ools_2.1.1.orig.tar.gz
- 00ef164c3e5acf2f83d3adc07b3e169e 5426 utils optional euca2ools_2.1.1-1~experimental1.debian.tar.gz
- e676603724606d5a11b2973d685fdb17 158300 utils optional euca2ools_2.1.1-1~experimental1_all.deb
+ 9bc31a20912a217203ca06b1c5253982 2290 utils optional euca2ools_2.1.2-1~experimental1.dsc
+ 9a517e7bed703652a2264048e5a98588 95133 utils optional euca2ools_2.1.2.orig.tar.gz
+ d12036649fbf6228e3ce30cf81b48bc3 5689 utils optional euca2ools_2.1.2-1~experimental1.debian.tar.gz
+ 324438359ee433e0075965b501224304 159704 utils optional euca2ools_2.1.2-1~experimental1_all.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.12 (GNU/Linux)
 
-iQIcBAEBCAAGBQJQlljlAAoJEMW9bI8ildUCxQEQAId+CpZ0CptfGqB+HQRc9uGi
-vUfhViBPHTprOAJLwcIwufOd6zaQHgLl5mKJS1uEsb7IWBttXOX4DgYE0raxWOTt
-Da/IJ3m4pBLgb6W2rncMc6BmGHb9U30e/PJepz59FLQHyzDyZBIyemT9lLj3e+zR
-j5PLuBFwJAtE7nuuJVwq301cZXVgYwMQZF91fLYLgGEXsKKOI4XHXjWkmrHfGkjQ
-t5WD8EkUs/ddFRpfT8Lnmu1mIzMKFEg3uuj6Ph5OGPmdUO/HRWWWIi22NdM7tjxP
-WuZW4RPMJ0M7CNlBFIaCZ+TzcB9CCAk/Ca3Ioa1QOdJ2mP6USp2O+NUWfHRIgu6J
-qEmoN45mtGi2F+uhzeYzN6nKNm9CxnvEdsEAHjI9DN/lsXw3wEEaP7kvNo1y6TAi
-2U5BHAagmG51vC4SMmqMlPiGzZSTuQjwDBvuBMSvkazCtQuML5+GxObjkVbeVouy
-RhMBnMji1BVWOv9vpwsa4b5hDlCCqqGbQQEmapW+g0IV3uPIAg+UnIR7GoVyMiR+
-y5lRr6Q6SGpKKbV84ptCN7htPOezrIq11QKu0xa4Msb3/y9t85aoW/x+ZWP/sz2a
-VuzUP3o+0bm5YVXQ1NREAqo+xhY+9C7uc+KcYej3YOBH1IWz2G/m2b3Eeq5tERdW
-tgshH6b7hi4MoJpWntES
-=GP9V
+iQIcBAEBCAAGBQJQ5WSWAAoJEMW9bI8ildUCcvYP+gPp5E539RdySbAeVsELNeO4
+G990e+SB/OurNw/YckMMUWss7j8YGeLa8ltZCvJn5UUbxaZeKMbpkpa6FJmhPR0F
+3dbjxSE0w+fSelJfE93LLh97Sx1L7MF3sBFWKJ9V3Q/Otgd5PUXgFzThChusc4Oe
+gEglXInzBwAj2/Q/NMmW7Tq3i33pfXIZsdG9ssXCWE5OcOkQnQRCWw+pzR3aDLmC
+O2PtAKCT8ZmafQ2IoFItNOX7zTfQYPHqVoPDEIsNRVn9XBrY5xmCERx2kIfBD5g0
+FnO2eGAnqzZ0hLw24bJnOfTGPY7ZqORQzVcIzh+DbKkPVIq1eTpg6RSAyoPET5fc
+HqvGBN0q2QHmo0LpIQFTiNkfSKraAr2qB9hw7jXWjfw9unNqMRP4hy2STbVJhDBX
+LlB7dULv/5rXZzclcfTIrz1X82DyyMXPp93tOnCtmuqQ2Hol6OnlnbDlc0Bj/CQ+
+lEb0KT1RkOVLxVMrNu7e01cTRmQyXAb5gBqkFvD/w8VdVrXCckdGhR6IpyqJFN2c
+LiQIye2/cRIC2KXc2VL5GKEWN8sTXCiqQk3BWeNf9xt0FCErc51LFlz/3LfexoY5
+Cm8iWwU6Z0h373Vdl6jEKQ0QwRL/f3+1zMfLiFUSUnjzILHQVTgQU2l2n6JRO4ie
+o+/Io91ax01WyINDKtX0
+=QRhl
 -----END PGP SIGNATURE-----
