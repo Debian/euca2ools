@@ -1,3 +1,11 @@
+euca2ools (2.1.2-1~experimental1) experimental; urgency=low
+
+  55eebb1 Merge with upstream tag '2.1.2'.
+  0b53205 Added metadata about the upstream project.
+  f62c1f9 Watch tag numbers on GitHub.
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 03 Jan 2013 19:52:10 +0900
+
 euca2ools (2.1.1-1~experimental1) experimental; urgency=low
 
   f30ca2e Merged with upstream tag 2.1.1.
