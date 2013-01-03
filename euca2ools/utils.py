@@ -31,6 +31,7 @@
 # Author: Neil Soman neil@eucalyptus.com
 #         Mitch Garnaat mgarnaat@eucalyptus.com
 
+import os.path
 import subprocess
 import sys
 from euca2ools import exceptions, __version__, __codename__
@@ -43,7 +44,7 @@ def check_prerequisite_command(command):
     except OSError, e:
         error_string = '%s' % e
         if 'No such' in error_string:
-            print 'Command %s not found. Is it installed?' % command
+            print >> sys.stderr, 'Command %s not found. Is it installed?' % command
             raise exceptions.NotFoundError
         else:
             raise OSError(e)
@@ -112,6 +113,10 @@ def print_instances(instances, nil=""):
                 val = ','.join(val)
             items.append(val)
         print "INSTANCE\t%s" % '\t'.join(items)
+        if hasattr(instance, 'tags') and isinstance(instance.tags, dict):
+            for tag in instance.tags:
+                print '\t'.join(('TAG', 'instance', instance.id, tag,
+                                 instance.tags[tag]))
 
 def print_version_if_necessary():
     """
@@ -122,4 +127,7 @@ def print_version_if_necessary():
     """
     if '--version' in sys.argv:
         print 'euca2ools %s (%s)' % (__version__, __codename__)
+        if os.path.isfile('/etc/eucalyptus/eucalyptus-version'):
+            with open('/etc/eucalyptus/eucalyptus-version') as version_file:
+                print 'eucalyptus %s' % version_file.readline().strip()
         sys.exit()

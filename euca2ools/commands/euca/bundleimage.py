@@ -34,6 +34,7 @@ import euca2ools.commands.eucacommand
 from boto.roboto.param import Param
 import euca2ools.bundler
 from euca2ools.exceptions import NotFoundError, CommandFailed
+import sys
 
 class BundleImage(euca2ools.commands.eucacommand.EucaCommand):
 
@@ -81,7 +82,7 @@ class BundleImage(euca2ools.commands.eucacommand.EucaCommand):
                Param(name='target_arch',
                      short_name='r', long_name='arch',
                      optional=True, ptype='string', default='x86_64',
-                     choices=['i386', 'x86_64'],
+                     choices=['i386', 'x86_64', 'armhf'],
                      doc='Target architecture for the image.'),
                Param(name='batch', long_name='batch',
                      optional=True, ptype='boolean',

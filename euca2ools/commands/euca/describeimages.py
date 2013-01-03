@@ -54,7 +54,7 @@ class DescribeImages(euca2ools.commands.eucacommand.EucaCommand):
     Args = [Param(name='image', ptype='string',
                   cardinality='+', optional=True)]
     Filters = [Param(name='architecture', ptype='string',
-                     doc='Image architecture.  Valid values are i386 | x86_64'),
+                     doc='Image architecture.  Valid values are i386 | x86_64 | armhf'),
                Param(name='block-device-mapping.delete-on-termination',
                      ptype='boolean',
                      doc="""Whether the Amazon EBS volume is deleted on
@@ -146,6 +146,10 @@ class DescribeImages(euca2ools.commands.eucacommand.EucaCommand):
                            block_dev_mapping.current_value.snapshot_id,
                            block_dev_mapping.current_value.size)
                     print 'BLOCKDEVICEMAPPING\t%s' % block_dev_string
+            if hasattr(image, 'tags') and isinstance(image.tags, dict):
+                for tag in image.tags:
+                    print '\t'.join(('TAG', 'image', image.id, tag,
+                                     image.tags[tag]))
 
     def main(self):
         if self.all and (self.owner or self.executable_by or self.image):

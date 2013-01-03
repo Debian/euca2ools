@@ -57,8 +57,16 @@ VERSION = '2007-10-10'
 RELEASE = '31337'
 AES = 'AES-128-CBC'
 
+# Number of bytes to read per I/O operation while bundling
 IMAGE_IO_CHUNK = 10 * 1024
+# Number of bytes per part of a bundle
 IMAGE_SPLIT_CHUNK = IMAGE_IO_CHUNK * 1024
+# Recommended maximum number of bytes in an instance-store image (10G)
+# Don't make this an error, though -- 10G might be the limit in EC2, but in
+# Eucalyptus the sky's the limit; people can make images as large as their
+# patience allows.
+IMAGE_MAX_SIZE = 10 * 1024 * 1024 * 1024
+
 MAX_LOOP_DEVS = 256
 
 class Bundler(object):
@@ -110,6 +118,9 @@ class Bundler(object):
         image_size = os.path.getsize(image_file)
         if self.euca.debug:
             print 'Image Size:', image_size, 'bytes'
+        if image_size > IMAGE_MAX_SIZE:
+            print >> sys.stderr, ('warning: this image is larger than 10 GB.  '
+                                  'It will not work in EC2.')
         return image_size
 
     def get_fs_info(self, path):
@@ -222,14 +233,14 @@ class Bundler(object):
             k = EVP.Cipher(alg='aes_128_cbc', key=unhexlify(key),
                            iv=unhexlify(iv), op=1)
         except TypeError:
-            print
-            print 'WARNING: retrying encryption to work around a rare RNG bug'
-            print 'Please report the following values to Eucalyptus Systems at'
-            print 'https://eucalyptus.atlassian.net/browse/TOOLS-103 to help'
-            print 'diagnose this issue.'
-            print 'k: ', key
-            print 'iv:', iv
-            print
+            print >> sys.stderr
+            print >> sys.stderr, 'WARNING: retrying encryption to work around a rare RNG bug'
+            print >> sys.stderr, 'Please report the following values to Eucalyptus Systems at'
+            print >> sys.stderr, 'https://eucalyptus.atlassian.net/browse/TOOLS-103 to help'
+            print >> sys.stderr, 'diagnose this issue.'
+            print >> sys.stderr, 'k: ', key
+            print >> sys.stderr, 'iv:', iv
+            print >> sys.stderr
             return self.encrypt_image(file)
 
         in_file = open(file, 'rb')
@@ -417,7 +428,7 @@ class Bundler(object):
         if mapping:
             block_dev_mapping_elem = \
                 doc.createElement('block_device_mapping')
-            for vname,dname in mapping.items():
+            for vname, dname in mapping.items():
                 mapping_elem = doc.createElement('mapping')
                 virtual_elem = doc.createElement('virtual')
                 virtual_value = doc.createTextNode(vname)
@@ -612,7 +623,7 @@ class Bundler(object):
         if not os.path.exists(destination_path):
             os.makedirs(destination_path)
         if self.img == 'Unsupported':
-            print 'Platform not fully supported.'
+            print >> sys.stderr, 'Platform not fully supported.'
             raise UnsupportedException
         self.img.create_image(size_in_MB, image_path)
         self.img.make_fs(image_path, fs_type=fs_type, uuid=uuid, label=label)
@@ -631,7 +642,7 @@ class Bundler(object):
                 if not output[1]:
                     return loop_dev
             else:
-                print 'Could not create loopback device. Aborting'
+                print >> sys.stderr, 'Could not create loopback device. Aborting'
                 raise CommandFailed
             tries += 1
 
@@ -698,10 +709,10 @@ class Bundler(object):
             # rsync return code 24: Partial transfer due to vanished source files
 
             if pipe.returncode in (23, 24):
-                print 'Warning: rsync reports files partially copied:'
-                print output
+                print >> sys.stderr, 'Warning: rsync reports files partially copied:'
+                print >> sys.stderr, output
             else:
-                print 'Error: rsync failed with return code %d' \
+                print >> sys.stderr, 'Error: rsync failed with return code %d' \
                     % pipe.returncode
                 raise CopyError
 
@@ -720,7 +731,7 @@ class Bundler(object):
             output = self.copy_to_image(mount_point, volume_path,
                     excludes)
             if self.img == 'Unsupported':
-                print 'Platform not fully supported.'
+                print >> sys.stderr, 'Platform not fully supported.'
                 raise UnsupportedException
             self.img.add_fstab(mount_point, generate_fstab, fstab_path)
         except CopyError:
@@ -733,7 +744,7 @@ class Bundler(object):
         message = None
         index = msg.find('<')
         if index < 0:
-            print msg
+            print >> sys.stderr, msg
             sys.exit(1)
         msg = msg[index - 1:]
         msg = msg.replace('\n', '')
@@ -752,8 +763,8 @@ class Bundler(object):
                 if node.nodeType == node.TEXT_NODE:
                     message = node.data
 
-            print '%s:' % code, message
+            print >> sys.stderr, '%s:' % code, message
         except Exception:
-            print msg
+            print >> sys.stderr, msg
         sys.exit(1)
 
