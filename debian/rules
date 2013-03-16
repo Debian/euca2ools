@@ -16,5 +16,4 @@ build/euca2ools::
 	$(MAKE) man
 
 get-orig-source:
-	#uscan --download-current-version --force-download --rename
-	./debian/orig-tar.sh
+	uscan --download-current-version --force-download --rename
