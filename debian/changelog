@@ -1,3 +1,9 @@
+euca2ools (2.1.3-1~experimental1) UNRELEASED; urgency=low
+
+  6abfc5e Merge tag 'tags/2.1.3' into experimental 
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 16 Mar 2013 10:42:49 +0900
+
 euca2ools (2.1.2-1~experimental1) experimental; urgency=low
 
   55eebb1 Merge with upstream tag '2.1.2'.
