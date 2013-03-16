@@ -15,8 +15,8 @@ Build-Depends: cdbs (>= 0.4.90~),
                python-boto (>= 2.0~),
                python-m2crypto
 Standards-Version: 3.9.4
-Vcs-Browser: http://git.debian.org/?p=pkg-eucalyptus/euca2ools.git
-Vcs-Git: git://git.debian.org/pkg-eucalyptus/euca2ools.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-eucalyptus/euca2ools.git
+Vcs-Git: git://anonscm.debian.org/pkg-eucalyptus/euca2ools.git
 Homepage: http://www.eucalyptus.com/download/euca2ools
 X-Python-Version: >= 2.5
 
