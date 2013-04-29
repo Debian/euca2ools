@@ -1,3 +1,9 @@
+euca2ools (2.1.3-1~experimental2) UNRELEASED; urgency=low
+
+  e542d80 Shorten description, blending text from upstream pages.
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 29 Apr 2013 16:40:32 +0900
+
 euca2ools (2.1.3-1~experimental1) experimental; urgency=low
 
   6abfc5e Merge with upstream tag '/2.1.3'.
