@@ -1,31 +1,30 @@
 sbuild (Debian sbuild) 0.63.2 (18 Aug 2012) on aqwa.igloo
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║ euca2ools 2.1.3-1~experimental1 (amd64)                   16 mars 2013 11:59 ║
+║ euca2ools 2.1.3-1 (amd64)                                  05 mai 2013 19:44 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 Package: euca2ools
-Version: 2.1.3-1~experimental1
-Source Version: 2.1.3-1~experimental1
+Version: 2.1.3-1
+Source Version: 2.1.3-1
 Distribution: unstable
 Machine Architecture: amd64
 Host Architecture: amd64
 Build Architecture: amd64
 
-I: NOTICE: Log filtering will replace 'build/euca2ools-a_7u45/euca2ools-2.1.3' with '«PKGBUILDDIR»'
-I: NOTICE: Log filtering will replace 'build/euca2ools-a_7u45' with '«BUILDDIR»'
-I: NOTICE: Log filtering will replace 'var/lib/schroot/mount/sid-amd64-sbuild-c7045600-1a2b-4d5f-8957-e3ebc93768a8' with '«CHROOT»'
+I: NOTICE: Log filtering will replace 'build/euca2ools-72qRxm/euca2ools-2.1.3' with '«PKGBUILDDIR»'
+I: NOTICE: Log filtering will replace 'build/euca2ools-72qRxm' with '«BUILDDIR»'
+I: NOTICE: Log filtering will replace 'var/lib/schroot/mount/sid-amd64-sbuild-3e6bd04a-f200-43f6-94af-cb88096d3a39' with '«CHROOT»'
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Update chroot                                                                │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Get:1 ftp://ftp.jp.debian.org sid Release.gpg [836 B]
-Get:2 ftp://ftp.jp.debian.org sid Release [235 kB]
+Hit ftp://ftp.jp.debian.org sid Release.gpg
+Hit ftp://ftp.jp.debian.org sid Release
 Hit ftp://ftp.jp.debian.org sid/main Sources/DiffIndex
 Hit ftp://ftp.jp.debian.org sid/main amd64 Packages/DiffIndex
 Hit ftp://ftp.jp.debian.org sid/main Translation-en/DiffIndex
-Fetched 236 kB in 3s (71.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -40,14 +39,14 @@ Reading state information...
 Local sources
 ─────────────
 
-euca2ools_2.1.3-1~experimental1.dsc exists in .; copying to chroot
+euca2ools_2.1.3-1.dsc exists in .; copying to chroot
 
 Check arch
 ──────────
 
 Merged Build-Depends: build-essential, fakeroot
 Filtered Build-Depends: build-essential, fakeroot
-dpkg-deb: building package `sbuild-build-depends-core-dummy' in `/«BUILDDIR»/resolver-tOsK8m/apt_archive/sbuild-build-depends-core-dummy.deb'.
+dpkg-deb: building package `sbuild-build-depends-core-dummy' in `/«BUILDDIR»/resolver-hbGXCy/apt_archive/sbuild-build-depends-core-dummy.deb'.
 OK
 Reading package lists...
 
@@ -66,12 +65,12 @@ debconf: delaying package configuration, since apt-utils is not installed
 Need to get 0 B/714 B of archives.
 After this operation, 0 B of additional disk space will be used.
 Selecting previously unselected package sbuild-build-depends-core-dummy.
-(Reading database ... 10954 files and directories currently installed.)
+(Reading database ... 10956 files and directories currently installed.)
 Unpacking sbuild-build-depends-core-dummy (from .../sbuild-build-depends-core-dummy.deb) ...
 Setting up sbuild-build-depends-core-dummy (0.invalid.0) ...
 Merged Build-Depends: base-files, base-passwd, bash, bsdutils, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, libc-bin, login, mount, ncurses-base, ncurses-bin, perl-base, sed, sysvinit, sysvinit-utils, tar, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.4.3), g++ (>= 4:4.4.3), make, dpkg-dev (>= 1.13.5), cdbs (>= 0.4.90~), debhelper (>= 8), help2man, python-all, python-boto (>= 2.0~), python-m2crypto
 Filtered Build-Depends: base-files, base-passwd, bash, bsdutils, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, libc-bin, login, mount, ncurses-base, ncurses-bin, perl-base, sed, sysvinit, sysvinit-utils, tar, util-linux, libc6-dev, gcc (>= 4:4.4.3), g++ (>= 4:4.4.3), make, dpkg-dev (>= 1.13.5), cdbs (>= 0.4.90~), debhelper (>= 8), help2man, python-all, python-boto (>= 2.0~), python-m2crypto
-dpkg-deb: building package `sbuild-build-depends-euca2ools-dummy' in `/«BUILDDIR»/resolver-a6F32K/apt_archive/sbuild-build-depends-euca2ools-dummy.deb'.
+dpkg-deb: building package `sbuild-build-depends-euca2ools-dummy' in `/«BUILDDIR»/resolver-gRGupf/apt_archive/sbuild-build-depends-euca2ools-dummy.deb'.
 OK
 Reading package lists...
 
@@ -106,23 +105,23 @@ The following NEW packages will be installed:
   python-minimal python2.6 python2.6-minimal python2.7 python2.7-minimal
   sbuild-build-depends-euca2ools-dummy
 0 upgraded, 39 newly installed, 0 to remove and 0 not upgraded.
-Need to get 19.8 MB/20.8 MB of archives.
-After this operation, 64.5 MB of additional disk space will be used.
-Get:1 ftp://ftp.jp.debian.org/debian/ sid/main libpipeline1 amd64 1.2.2-1 [39.9 kB]
-Get:2 ftp://ftp.jp.debian.org/debian/ sid/main libssl1.0.0 amd64 1.0.1e-1 [1219 kB]
-Get:3 ftp://ftp.jp.debian.org/debian/ sid/main groff-base amd64 1.22.2-1 [743 kB]
+Need to get 19.8 MB/20.7 MB of archives.
+After this operation, 64.4 MB of additional disk space will be used.
+Get:1 ftp://ftp.jp.debian.org/debian/ sid/main libpipeline1 amd64 1.2.3-1 [40.5 kB]
+Get:2 ftp://ftp.jp.debian.org/debian/ sid/main libssl1.0.0 amd64 1.0.1e-2 [1219 kB]
+Get:3 ftp://ftp.jp.debian.org/debian/ sid/main groff-base amd64 1.22.2-2 [743 kB]
 Get:4 ftp://ftp.jp.debian.org/debian/ sid/main bsdmainutils amd64 9.0.4 [210 kB]
 Get:5 ftp://ftp.jp.debian.org/debian/ sid/main man-db amd64 2.6.3-3 [898 kB]
 Get:6 ftp://ftp.jp.debian.org/debian/ sid/main libasprintf0c2 amd64 0.18.1.1-10 [27.2 kB]
-Get:7 ftp://ftp.jp.debian.org/debian/ sid/main libmagic1 amd64 5.12-2 [209 kB]
+Get:7 ftp://ftp.jp.debian.org/debian/ sid/main libmagic1 amd64 1:5.11-3 [202 kB]
 Get:8 ftp://ftp.jp.debian.org/debian/ sid/main libpcre3 amd64 1:8.31-2 [247 kB]
-Get:9 ftp://ftp.jp.debian.org/debian/ sid/main libsqlite3-0 amd64 3.7.15.2-1 [463 kB]
+Get:9 ftp://ftp.jp.debian.org/debian/ sid/main libsqlite3-0 amd64 3.7.16.2-1 [469 kB]
 Get:10 ftp://ftp.jp.debian.org/debian/ sid/main libxml2 amd64 2.8.0+dfsg1-7+nmu1 [904 kB]
 Get:11 ftp://ftp.jp.debian.org/debian/ sid/main libglib2.0-0 amd64 2.33.12+really2.32.4-5 [1838 kB]
 Get:12 ftp://ftp.jp.debian.org/debian/ sid/main libcroco3 amd64 0.6.6-2 [134 kB]
 Get:13 ftp://ftp.jp.debian.org/debian/ sid/main libexpat1 amd64 2.1.0-1 [141 kB]
 Get:14 ftp://ftp.jp.debian.org/debian/ sid/main libgettextpo0 amd64 0.18.1.1-10 [145 kB]
-Get:15 ftp://ftp.jp.debian.org/debian/ sid/main file amd64 5.12-2 [52.8 kB]
+Get:15 ftp://ftp.jp.debian.org/debian/ sid/main file amd64 1:5.11-3 [52.0 kB]
 Get:16 ftp://ftp.jp.debian.org/debian/ sid/main gettext-base amd64 0.18.1.1-10 [154 kB]
 Get:17 ftp://ftp.jp.debian.org/debian/ sid/main mime-support all 3.52-2 [35.2 kB]
 Get:18 ftp://ftp.jp.debian.org/debian/ sid/main python2.7-minimal amd64 2.7.3-8 [1783 kB]
@@ -130,27 +129,27 @@ Get:19 ftp://ftp.jp.debian.org/debian/ sid/main python2.7 amd64 2.7.3-8 [2751 kB
 Get:20 ftp://ftp.jp.debian.org/debian/ sid/main python-minimal all 2.7.3-4 [42.6 kB]
 Get:21 ftp://ftp.jp.debian.org/debian/ sid/main python all 2.7.3-4 [180 kB]
 Get:22 ftp://ftp.jp.debian.org/debian/ sid/main python2.6-minimal amd64 2.6.8-1.1 [1547 kB]
-Get:23 ftp://ftp.jp.debian.org/debian/ sid/main cdbs all 0.4.120 [80.4 kB]
+Get:23 ftp://ftp.jp.debian.org/debian/ sid/main cdbs all 0.4.121 [80.5 kB]
 Get:24 ftp://ftp.jp.debian.org/debian/ sid/main libasprintf-dev amd64 0.18.1.1-10 [26.8 kB]
 Get:25 ftp://ftp.jp.debian.org/debian/ sid/main libgettextpo-dev amd64 0.18.1.1-10 [184 kB]
 Get:26 ftp://ftp.jp.debian.org/debian/ sid/main gettext amd64 0.18.1.1-10 [1815 kB]
-Get:27 ftp://ftp.jp.debian.org/debian/ sid/main debhelper all 9.20120909 [705 kB]
-Get:28 ftp://ftp.jp.debian.org/debian/ sid/main help2man amd64 1.41.1 [101 kB]
+Get:27 ftp://ftp.jp.debian.org/debian/ sid/main debhelper all 9.20130504 [706 kB]
+Get:28 ftp://ftp.jp.debian.org/debian/ sid/main help2man amd64 1.41.2 [98.9 kB]
 Get:29 ftp://ftp.jp.debian.org/debian/ sid/main python2.6 amd64 2.6.8-1.1 [2509 kB]
 Get:30 ftp://ftp.jp.debian.org/debian/ sid/main python-all all 2.7.3-4 [878 B]
 Get:31 ftp://ftp.jp.debian.org/debian/ sid/main python-boto all 2.3.0-1 [404 kB]
 Get:32 ftp://ftp.jp.debian.org/debian/ sid/main python-m2crypto amd64 0.21.1-3 [200 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 19.8 MB in 23s (837 kB/s)
+Fetched 19.8 MB in 27s (730 kB/s)
 Selecting previously unselected package libncursesw5:amd64.
-(Reading database ... 10954 files and directories currently installed.)
+(Reading database ... 10956 files and directories currently installed.)
 Unpacking libncursesw5:amd64 (from .../libncursesw5_5.9-10_amd64.deb) ...
 Selecting previously unselected package libpipeline1:amd64.
-Unpacking libpipeline1:amd64 (from .../libpipeline1_1.2.2-1_amd64.deb) ...
+Unpacking libpipeline1:amd64 (from .../libpipeline1_1.2.3-1_amd64.deb) ...
 Selecting previously unselected package libssl1.0.0:amd64.
-Unpacking libssl1.0.0:amd64 (from .../libssl1.0.0_1.0.1e-1_amd64.deb) ...
+Unpacking libssl1.0.0:amd64 (from .../libssl1.0.0_1.0.1e-2_amd64.deb) ...
 Selecting previously unselected package groff-base.
-Unpacking groff-base (from .../groff-base_1.22.2-1_amd64.deb) ...
+Unpacking groff-base (from .../groff-base_1.22.2-2_amd64.deb) ...
 Selecting previously unselected package bsdmainutils.
 Unpacking bsdmainutils (from .../bsdmainutils_9.0.4_amd64.deb) ...
 Selecting previously unselected package man-db.
@@ -158,11 +157,11 @@ Unpacking man-db (from .../man-db_2.6.3-3_amd64.deb) ...
 Selecting previously unselected package libasprintf0c2:amd64.
 Unpacking libasprintf0c2:amd64 (from .../libasprintf0c2_0.18.1.1-10_amd64.deb) ...
 Selecting previously unselected package libmagic1:amd64.
-Unpacking libmagic1:amd64 (from .../libmagic1_5.12-2_amd64.deb) ...
+Unpacking libmagic1:amd64 (from .../libmagic1_1%3a5.11-3_amd64.deb) ...
 Selecting previously unselected package libpcre3:amd64.
 Unpacking libpcre3:amd64 (from .../libpcre3_1%3a8.31-2_amd64.deb) ...
 Selecting previously unselected package libsqlite3-0:amd64.
-Unpacking libsqlite3-0:amd64 (from .../libsqlite3-0_3.7.15.2-1_amd64.deb) ...
+Unpacking libsqlite3-0:amd64 (from .../libsqlite3-0_3.7.16.2-1_amd64.deb) ...
 Selecting previously unselected package libxml2:amd64.
 Unpacking libxml2:amd64 (from .../libxml2_2.8.0+dfsg1-7+nmu1_amd64.deb) ...
 Selecting previously unselected package libffi5:amd64.
@@ -178,7 +177,7 @@ Unpacking libunistring0:amd64 (from .../libunistring0_0.9.3-5_amd64.deb) ...
 Selecting previously unselected package libgettextpo0:amd64.
 Unpacking libgettextpo0:amd64 (from .../libgettextpo0_0.18.1.1-10_amd64.deb) ...
 Selecting previously unselected package file.
-Unpacking file (from .../archives/file_5.12-2_amd64.deb) ...
+Unpacking file (from .../file_1%3a5.11-3_amd64.deb) ...
 Selecting previously unselected package gettext-base.
 Unpacking gettext-base (from .../gettext-base_0.18.1.1-10_amd64.deb) ...
 Selecting previously unselected package mime-support.
@@ -194,7 +193,7 @@ Unpacking python (from .../python_2.7.3-4_all.deb) ...
 Selecting previously unselected package python2.6-minimal.
 Unpacking python2.6-minimal (from .../python2.6-minimal_2.6.8-1.1_amd64.deb) ...
 Selecting previously unselected package cdbs.
-Unpacking cdbs (from .../archives/cdbs_0.4.120_all.deb) ...
+Unpacking cdbs (from .../archives/cdbs_0.4.121_all.deb) ...
 Selecting previously unselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-15_amd64.deb) ...
 Selecting previously unselected package libasprintf-dev:amd64.
@@ -208,9 +207,9 @@ Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) .
 Selecting previously unselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.16+nmu2_all.deb) ...
 Selecting previously unselected package debhelper.
-Unpacking debhelper (from .../debhelper_9.20120909_all.deb) ...
+Unpacking debhelper (from .../debhelper_9.20130504_all.deb) ...
 Selecting previously unselected package help2man.
-Unpacking help2man (from .../help2man_1.41.1_amd64.deb) ...
+Unpacking help2man (from .../help2man_1.41.2_amd64.deb) ...
 Selecting previously unselected package python2.6.
 Unpacking python2.6 (from .../python2.6_2.6.8-1.1_amd64.deb) ...
 Selecting previously unselected package python-all.
@@ -222,18 +221,18 @@ Unpacking python-m2crypto (from .../python-m2crypto_0.21.1-3_amd64.deb) ...
 Selecting previously unselected package sbuild-build-depends-euca2ools-dummy.
 Unpacking sbuild-build-depends-euca2ools-dummy (from .../sbuild-build-depends-euca2ools-dummy.deb) ...
 Setting up libncursesw5:amd64 (5.9-10) ...
-Setting up libpipeline1:amd64 (1.2.2-1) ...
-Setting up libssl1.0.0:amd64 (1.0.1e-1) ...
-Setting up groff-base (1.22.2-1) ...
+Setting up libpipeline1:amd64 (1.2.3-1) ...
+Setting up libssl1.0.0:amd64 (1.0.1e-2) ...
+Setting up groff-base (1.22.2-2) ...
 Setting up bsdmainutils (9.0.4) ...
 update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode
 update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode
 Setting up man-db (2.6.3-3) ...
 Building database of manual pages ...
 Setting up libasprintf0c2:amd64 (0.18.1.1-10) ...
-Setting up libmagic1:amd64 (5.12-2) ...
+Setting up libmagic1:amd64 (1:5.11-3) ...
 Setting up libpcre3:amd64 (1:8.31-2) ...
-Setting up libsqlite3-0:amd64 (3.7.15.2-1) ...
+Setting up libsqlite3-0:amd64 (3.7.16.2-1) ...
 Setting up libxml2:amd64 (2.8.0+dfsg1-7+nmu1) ...
 Setting up libffi5:amd64 (3.0.10-3) ...
 Setting up libglib2.0-0:amd64 (2.33.12+really2.32.4-5) ...
@@ -242,7 +241,7 @@ Setting up libcroco3:amd64 (0.6.6-2) ...
 Setting up libexpat1:amd64 (2.1.0-1) ...
 Setting up libunistring0:amd64 (0.9.3-5) ...
 Setting up libgettextpo0:amd64 (0.18.1.1-10) ...
-Setting up file (5.12-2) ...
+Setting up file (1:5.11-3) ...
 Setting up gettext-base (0.18.1.1-10) ...
 Setting up mime-support (3.52-2) ...
 update-alternatives: using /usr/bin/see to provide /usr/bin/view (view) in auto mode
@@ -251,15 +250,15 @@ Setting up python2.7 (2.7.3-8) ...
 Setting up python-minimal (2.7.3-4) ...
 Setting up python (2.7.3-4) ...
 Setting up python2.6-minimal (2.6.8-1.1) ...
-Setting up cdbs (0.4.120) ...
+Setting up cdbs (0.4.121) ...
 Setting up html2text (1.3.2a-15) ...
 Setting up libasprintf-dev:amd64 (0.18.1.1-10) ...
 Setting up libgettextpo-dev:amd64 (0.18.1.1-10) ...
 Setting up gettext (0.18.1.1-10) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.16+nmu2) ...
-Setting up debhelper (9.20120909) ...
-Setting up help2man (1.41.1) ...
+Setting up debhelper (9.20130504) ...
+Setting up help2man (1.41.2) ...
 Setting up python2.6 (2.6.8-1.1) ...
 Setting up python-all (2.7.3-4) ...
 Setting up python-boto (2.3.0-1) ...
@@ -271,8 +270,8 @@ Setting up sbuild-build-depends-euca2ools-dummy (0.invalid.0) ...
 └──────────────────────────────────────────────────────────────────────────────┘
 
 Kernel: Linux 3.2.0-4-amd64 amd64 (x86_64)
-Toolchain package versions: binutils_2.22-8 dpkg-dev_1.16.9 g++-4.7_4.7.2-5 gcc-4.7_4.7.2-5 libc6-dev_2.13-38 libstdc++6_4.7.2-5 libstdc++6-4.7-dev_4.7.2-5 linux-libc-dev_3.2.39-2
-Package versions: apt_0.9.7.8 base-files_7.1 base-passwd_3.5.26 bash_4.2+dfsg-0.1 binutils_2.22-8 bsdmainutils_9.0.4 bsdutils_1:2.20.1-5.3 build-essential_11.6 bzip2_1.0.6-4 cdbs_0.4.120 coreutils_8.20-3 cpp_4:4.7.2-1 cpp-4.7_4.7.2-5 dash_0.5.7-3 debconf_1.5.49 debconf-i18n_1.5.49 debfoster_2.7-1.2 debhelper_9.20120909 debian-archive-keyring_2012.4 debianutils_4.3.4 diffutils_1:3.2-8 dpkg_1.16.9 dpkg-dev_1.16.9 e2fslibs_1.42.5-1 e2fsprogs_1.42.5-1 fakeroot_1.18.4-2 file_5.12-2 findutils_4.4.2-5 g++_4:4.7.2-1 g++-4.7_4.7.2-5 gcc_4:4.7.2-1 gcc-4.7_4.7.2-5 gcc-4.7-base_4.7.2-5 gettext_0.18.1.1-10 gettext-base_0.18.1.1-10 gnupg_1.4.12-7 gpgv_1.4.12-7 grep_2.14-1 groff-base_1.22.2-1 gzip_1.5-1.1 help2man_1.41.1 hostname_3.12 html2text_1.3.2a-15 initscripts_2.88dsf-41 insserv_1.14.0-5 intltool-debian_0.35.0+20060710.1 libacl1_2.2.51-8 libapt-pkg4.12_0.9.7.8 libasprintf-dev_0.18.1.1-10 libasprintf0c2_0.18.1.1-10 libattr1_1:2.4.46-8 libblkid1_2.20.1-5.3 libbz2-1.0_1.0.6-4 libc-bin_2.13-38 libc-dev-bin_2.13-38 libc6_2.13-38 libc6-dev_2.13-38 libclass-isa-perl_0.36-5 libcomerr2_1.42.5-1 libcroco3_0.6.6-2 libdb5.1_5.1.29-5 libdpkg-perl_1.16.9 libexpat1_2.1.0-1 libffi5_3.0.10-3 libfile-fcntllock-perl_0.14-2 libgc1c2_1:7.1-9.1 libgcc1_1:4.7.2-5 libgdbm3_1.8.3-11 libgettextpo-dev_0.18.1.1-10 libgettextpo0_0.18.1.1-10 libglib2.0-0_2.33.12+really2.32.4-5 libgmp10_2:5.0.5+dfsg-2 libgomp1_4.7.2-5 libitm1_4.7.2-5 liblocale-gettext-perl_1.05-7+b1 liblzma2_5.1.1alpha+20110809-2 liblzma5_5.1.1alpha+20120614-2 libmagic1_5.12-2 libmount1_2.20.1-5.3 libmpc2_0.9-4 libmpfr4_3.1.1-1 libncurses5_5.9-10 libncursesw5_5.9-10 libpam-modules_1.1.3-9 libpam-modules-bin_1.1.3-9 libpam-runtime_1.1.3-9 libpam0g_1.1.3-9 libpcre3_1:8.31-2 libpipeline1_1.2.2-1 libpod-plainer-perl_1.03-1 libquadmath0_4.7.2-5 libreadline6_6.2+dfsg-0.1 libselinux1_2.1.9-5 libsemanage-common_2.1.6-6 libsemanage1_2.1.6-6 libsepol1_2.1.4-3 libslang2_2.2.4-15 libsqlite3-0_3.7.15.2-1 libss2_1.42.5-1 libssl1.0.0_1.0.1e-1 libstdc++6_4.7.2-5 libstdc++6-4.7-dev_4.7.2-5 libswitch-perl_2.16-2 libtext-charwidth-perl_0.04-7+b1 libtext-iconv-perl_1.7-5 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_1.2000-1 libtinfo5_5.9-10 libunistring0_0.9.3-5 libusb-0.1-4_2:0.1.12-23+nmu1 libustr-1.0-1_1.0.4-3 libuuid1_2.20.1-5.3 libxml2_2.8.0+dfsg1-7+nmu1 linux-libc-dev_3.2.39-2 login_1:4.1.5.1-1 lsb-base_4.1+Debian9 make_3.81-8.2 man-db_2.6.3-3 mawk_1.3.3-17 mime-support_3.52-2 mount_2.20.1-5.3 multiarch-support_2.13-38 ncurses-base_5.9-10 ncurses-bin_5.9-10 passwd_1:4.1.5.1-1 patch_2.6.1-3 perl_5.14.2-20 perl-base_5.14.2-20 perl-modules_5.14.2-20 po-debconf_1.0.16+nmu2 python_2.7.3-4 python-all_2.7.3-4 python-boto_2.3.0-1 python-m2crypto_0.21.1-3 python-minimal_2.7.3-4 python2.6_2.6.8-1.1 python2.6-minimal_2.6.8-1.1 python2.7_2.7.3-8 python2.7-minimal_2.7.3-8 readline-common_6.2+dfsg-0.1 sbuild-build-depends-core-dummy_0.invalid.0 sbuild-build-depends-euca2ools-dummy_0.invalid.0 sed_4.2.1-10 sensible-utils_0.0.7 sysv-rc_2.88dsf-41 sysvinit_2.88dsf-41 sysvinit-utils_2.88dsf-41 tar_1.26+dfsg-0.1 tzdata_2013b-1 util-linux_2.20.1-5.3 xz-utils_5.1.1alpha+20120614-2 zlib1g_1:1.2.7.dfsg-13
+Toolchain package versions: binutils_2.22-8 dpkg-dev_1.16.10 g++-4.7_4.7.2-5 gcc-4.7_4.7.2-5 libc6-dev_2.13-38 libstdc++6_4.7.2-5 libstdc++6-4.7-dev_4.7.2-5 linux-libc-dev_3.2.41-2
+Package versions: apt_0.9.7.8 base-files_7.1 base-passwd_3.5.26 bash_4.2+dfsg-1 binutils_2.22-8 bsdmainutils_9.0.4 bsdutils_1:2.20.1-5.3 build-essential_11.6 bzip2_1.0.6-4 cdbs_0.4.121 coreutils_8.20-3 cpp_4:4.7.2-1 cpp-4.7_4.7.2-5 dash_0.5.7-3 debconf_1.5.50 debconf-i18n_1.5.50 debfoster_2.7-1.2 debhelper_9.20130504 debian-archive-keyring_2012.4 debianutils_4.3.4 diffutils_1:3.2-8 dpkg_1.16.10 dpkg-dev_1.16.10 e2fslibs_1.42.5-1.1 e2fsprogs_1.42.5-1.1 fakeroot_1.18.4-2 file_1:5.11-3 findutils_4.4.2-5 g++_4:4.7.2-1 g++-4.7_4.7.2-5 gcc_4:4.7.2-1 gcc-4.7_4.7.2-5 gcc-4.7-base_4.7.2-5 gettext_0.18.1.1-10 gettext-base_0.18.1.1-10 gnupg_1.4.12-7 gpgv_1.4.12-7 grep_2.14-1 groff-base_1.22.2-2 gzip_1.5-1.1 help2man_1.41.2 hostname_3.12 html2text_1.3.2a-15 initscripts_2.88dsf-41 insserv_1.14.0-5 intltool-debian_0.35.0+20060710.1 libacl1_2.2.51-8 libapt-pkg4.12_0.9.7.8 libasprintf-dev_0.18.1.1-10 libasprintf0c2_0.18.1.1-10 libattr1_1:2.4.46-8 libblkid1_2.20.1-5.3 libbz2-1.0_1.0.6-4 libc-bin_2.13-38 libc-dev-bin_2.13-38 libc6_2.13-38 libc6-dev_2.13-38 libclass-isa-perl_0.36-5 libcomerr2_1.42.5-1.1 libcroco3_0.6.6-2 libdb5.1_5.1.29-5 libdpkg-perl_1.16.10 libexpat1_2.1.0-1 libffi5_3.0.10-3 libfile-fcntllock-perl_0.14-2 libgc1c2_1:7.1-9.1 libgcc1_1:4.7.2-5 libgdbm3_1.8.3-11 libgettextpo-dev_0.18.1.1-10 libgettextpo0_0.18.1.1-10 libglib2.0-0_2.33.12+really2.32.4-5 libgmp10_2:5.0.5+dfsg-2 libgomp1_4.7.2-5 libitm1_4.7.2-5 liblocale-gettext-perl_1.05-7+b1 liblzma2_5.1.1alpha+20110809-2 liblzma5_5.1.1alpha+20120614-2 libmagic1_1:5.11-3 libmount1_2.20.1-5.3 libmpc2_0.9-4 libmpfr4_3.1.1-1 libncurses5_5.9-10 libncursesw5_5.9-10 libpam-modules_1.1.3-9 libpam-modules-bin_1.1.3-9 libpam-runtime_1.1.3-9 libpam0g_1.1.3-9 libpcre3_1:8.31-2 libpipeline1_1.2.3-1 libpod-plainer-perl_1.03-1 libquadmath0_4.7.2-5 libreadline6_6.2+dfsg-0.1 libselinux1_2.1.9-5 libsemanage-common_2.1.6-6 libsemanage1_2.1.6-6 libsepol1_2.1.4-3 libslang2_2.2.4-15 libsqlite3-0_3.7.16.2-1 libss2_1.42.5-1.1 libssl1.0.0_1.0.1e-2 libstdc++6_4.7.2-5 libstdc++6-4.7-dev_4.7.2-5 libswitch-perl_2.16-2 libtext-charwidth-perl_0.04-7+b1 libtext-iconv-perl_1.7-5 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_1.2000-1 libtinfo5_5.9-10 libunistring0_0.9.3-5 libusb-0.1-4_2:0.1.12-23+nmu1 libustr-1.0-1_1.0.4-3 libuuid1_2.20.1-5.3 libxml2_2.8.0+dfsg1-7+nmu1 linux-libc-dev_3.2.41-2 login_1:4.1.5.1-1 lsb-base_4.1+Debian9 make_3.81-8.2 man-db_2.6.3-3 mawk_1.3.3-17 mime-support_3.52-2 mount_2.20.1-5.3 multiarch-support_2.13-38 ncurses-base_5.9-10 ncurses-bin_5.9-10 passwd_1:4.1.5.1-1 patch_2.6.1-3 perl_5.14.2-21 perl-base_5.14.2-21 perl-modules_5.14.2-21 po-debconf_1.0.16+nmu2 python_2.7.3-4 python-all_2.7.3-4 python-boto_2.3.0-1 python-m2crypto_0.21.1-3 python-minimal_2.7.3-4 python2.6_2.6.8-1.1 python2.6-minimal_2.6.8-1.1 python2.7_2.7.3-8 python2.7-minimal_2.7.3-8 readline-common_6.2+dfsg-0.1 sbuild-build-depends-core-dummy_0.invalid.0 sbuild-build-depends-euca2ools-dummy_0.invalid.0 sed_4.2.1-10 sensible-utils_0.0.7 sysv-rc_2.88dsf-41 sysvinit_2.88dsf-41 sysvinit-utils_2.88dsf-41 tar_1.26+dfsg-5 tzdata_2013b-2 util-linux_2.20.1-5.3 xz-utils_5.1.1alpha+20120614-2 zlib1g_1:1.2.7.dfsg-13
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Build                                                                        │
@@ -282,10 +281,10 @@ Package versions: apt_0.9.7.8 base-files_7.1 base-passwd_3.5.26 bash_4.2+dfsg-0.
 Unpack source
 ─────────────
 
-dpkg-source: warning: extracting unsigned source package (euca2ools_2.1.3-1~experimental1.dsc)
+dpkg-source: warning: extracting unsigned source package (euca2ools_2.1.3-1.dsc)
 dpkg-source: info: extracting euca2ools in euca2ools-2.1.3
 dpkg-source: info: unpacking euca2ools_2.1.3.orig.tar.gz
-dpkg-source: info: unpacking euca2ools_2.1.3-1~experimental1.debian.tar.gz
+dpkg-source: info: unpacking euca2ools_2.1.3-1.debian.tar.gz
 
 Check disc space
 ────────────────
@@ -303,7 +302,7 @@ SCHROOT_CHROOT_NAME=sid-amd64-sbuild
 SCHROOT_COMMAND=env
 SCHROOT_GID=1000
 SCHROOT_GROUP=charles
-SCHROOT_SESSION_ID=sid-amd64-sbuild-c7045600-1a2b-4d5f-8957-e3ebc93768a8
+SCHROOT_SESSION_ID=sid-amd64-sbuild-3e6bd04a-f200-43f6-94af-cb88096d3a39
 SCHROOT_UID=1000
 SCHROOT_USER=charles
 SHELL=/bin/sh
@@ -319,7 +318,7 @@ dpkg-buildpackage
 ─────────────────
 
 dpkg-buildpackage: source package euca2ools
-dpkg-buildpackage: source version 2.1.3-1~experimental1
+dpkg-buildpackage: source version 2.1.3-1
 dpkg-buildpackage: source changed by Charles Plessy <plessy@debian.org>
  dpkg-source --before-build euca2ools-2.1.3
 dpkg-buildpackage: host architecture amd64
@@ -341,8 +340,8 @@ find "/«PKGBUILDDIR»" -prune -name '*.egg-info' -exec rm -rf '{}' ';'
  dpkg-source -b euca2ools-2.1.3
 dpkg-source: info: using source format `3.0 (quilt)'
 dpkg-source: info: building euca2ools using existing ./euca2ools_2.1.3.orig.tar.gz
-dpkg-source: info: building euca2ools in euca2ools_2.1.3-1~experimental1.debian.tar.gz
-dpkg-source: info: building euca2ools in euca2ools_2.1.3-1~experimental1.dsc
+dpkg-source: info: building euca2ools in euca2ools_2.1.3-1.debian.tar.gz
+dpkg-source: info: building euca2ools in euca2ools_2.1.3-1.dsc
  debian/rules build
 test -x debian/rules
 mkdir -p "."
@@ -1189,13 +1188,13 @@ dh_gencontrol -peuca2ools
 dpkg-gencontrol: warning: package euca2ools: unused substitution variable ${python:Versions}
 dh_md5sums -peuca2ools 
 dh_builddeb -peuca2ools -- -Z xz
-dpkg-deb: building package `euca2ools' in `../euca2ools_2.1.3-1~experimental1_all.deb'.
- dpkg-genchanges  >../euca2ools_2.1.3-1~experimental1_amd64.changes
+dpkg-deb: building package `euca2ools' in `../euca2ools_2.1.3-1_all.deb'.
+ dpkg-genchanges  >../euca2ools_2.1.3-1_amd64.changes
 dpkg-genchanges: including full source code in upload
  dpkg-source --after-build euca2ools-2.1.3
 dpkg-buildpackage: full upload (original source is included)
 ────────────────────────────────────────────────────────────────────────────────
-Build finished at 20130316-1201
+Build finished at 20130505-1945
 
 Finished
 ────────
@@ -1207,61 +1206,66 @@ I: Built successfully
 └──────────────────────────────────────────────────────────────────────────────┘
 
 
-euca2ools_2.1.3-1~experimental1_amd64.changes:
-──────────────────────────────────────────────
+euca2ools_2.1.3-1_amd64.changes:
+────────────────────────────────
 
 Format: 1.8
-Date: Sat, 16 Mar 2013 11:58:27 +0900
+Date: Sun, 05 May 2013 19:43:21 +0900
 Source: euca2ools
 Binary: euca2ools
 Architecture: source all
-Version: 2.1.3-1~experimental1
+Version: 2.1.3-1
 Distribution: unstable
 Urgency: low
 Maintainer: Debian Eucalyptus Maintainers <pkg-eucalyptus-maintainers@lists.alioth.debian.org>
 Changed-By: Charles Plessy <plessy@debian.org>
 Description: 
- euca2ools  - managing cloud instances for Eucalyptus
+ euca2ools  - tools for interacting with AWS API-compatible services
 Changes: 
- euca2ools (2.1.3-1~experimental1) experimental; urgency=low
+ euca2ools (2.1.3-1) unstable; urgency=low
  .
    6abfc5e Merge with upstream tag '/2.1.3'.
+   e542d80 Shorten description, blending text from upstream pages.
    84dddd6 Use uscan to download the current upstream version.
    d5bb90f Complies with Policy version 3.9.4.
    63e06c0 Normalised debian/control with 'cme fix dpkg-copyright'.
    0335864 Normalised VCS URLs.
+   0b53205 Added metadata about the upstream project.
+   f62c1f9 Watch tag numbers on GitHub.
+   3ce83ab Removed DM-Upload-Allowed field.
+   0510d6b debian/rules: removed obsolete commands from the clean target.
 Checksums-Sha1: 
- e4f5039364968c205f2c9d049d61bde8cb586edc 1404 euca2ools_2.1.3-1~experimental1.dsc
+ 504e42578711a42f59e7ec3f41d517888bcc7851 1348 euca2ools_2.1.3-1.dsc
  24c75da03ca3589aaf1fae0e3eb6e76a6d4bd11b 97006 euca2ools_2.1.3.orig.tar.gz
- e03f58e988e90b8d6e03507bda1bc6979c87d068 5520 euca2ools_2.1.3-1~experimental1.debian.tar.gz
- e1047f465f8cb67459e3f39a7b12d90a70ca5b84 161008 euca2ools_2.1.3-1~experimental1_all.deb
+ 4247bf2372b36144249bb7a7c25e4dd60f0db225 5165 euca2ools_2.1.3-1.debian.tar.gz
+ 1395472a78898f83cd650687e04944170af1fc9e 160630 euca2ools_2.1.3-1_all.deb
 Checksums-Sha256: 
- 9697de80aecd18a32fd434329c7b66054b0d9ab3c50bb46ca92bd2bcf3b2e649 1404 euca2ools_2.1.3-1~experimental1.dsc
+ 4af56dc3981bc7816de8ae398e7b60e391d879937fe515c7e4ddb743574a1ec5 1348 euca2ools_2.1.3-1.dsc
  1a20b7f9ca3e08c9ab32b34103d94e19be10e0a7b9eff1b0dc4013541bb7b321 97006 euca2ools_2.1.3.orig.tar.gz
- 423be88639d96530162d3466a9cbf13af9a4fab37b2d2832b4e4881d7a27512e 5520 euca2ools_2.1.3-1~experimental1.debian.tar.gz
- dd65a068d7def86a7d5e64cac48e4ccd3b6af18d6891292665cbc3f49f5edbdf 161008 euca2ools_2.1.3-1~experimental1_all.deb
+ bfb2575c62bd8bf2d85ad2b240e08ac0b84111c323e6b87b273c53b3c0ffc0c6 5165 euca2ools_2.1.3-1.debian.tar.gz
+ 8d478a771bb46740a7a4e80b81a0d17a1a0b510b626e5ab04cc54b96ecc62efe 160630 euca2ools_2.1.3-1_all.deb
 Files: 
- 87fe635ecf41edfcf5b42cee1499827c 1404 utils optional euca2ools_2.1.3-1~experimental1.dsc
+ b9197df294df768785cb673870f602e3 1348 utils optional euca2ools_2.1.3-1.dsc
  a76c752e6e7a7eeab978ba69f14788b4 97006 utils optional euca2ools_2.1.3.orig.tar.gz
- 2c059856d3bf14c7154ca91dfbd8b9ce 5520 utils optional euca2ools_2.1.3-1~experimental1.debian.tar.gz
- 0f689d844d3ef35d9e5ee6e5e1d1fb74 161008 utils optional euca2ools_2.1.3-1~experimental1_all.deb
+ cf3ce28679fb303b136f7f9b98231e15 5165 utils optional euca2ools_2.1.3-1.debian.tar.gz
+ 4536597923b8c2146463163572ccab06 160630 utils optional euca2ools_2.1.3-1_all.deb
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Package contents                                                             │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 
-euca2ools_2.1.3-1~experimental1_all.deb
-───────────────────────────────────────
+euca2ools_2.1.3-1_all.deb
+─────────────────────────
 
  new debian package, version 2.0.
- size 161008 bytes: control archive=11616 bytes.
-    1724 bytes,    31 lines      control              
+ size 160630 bytes: control archive=11254 bytes.
+    1065 bytes,    19 lines      control              
    29989 bytes,   377 lines      md5sums              
      159 bytes,     9 lines   *  postinst             #!/bin/sh
      255 bytes,    14 lines   *  prerm                #!/bin/sh
  Package: euca2ools
- Version: 2.1.3-1~experimental1
+ Version: 2.1.3-1
  Architecture: all
  Maintainer: Debian Eucalyptus Maintainers <pkg-eucalyptus-maintainers@lists.alioth.debian.org>
  Installed-Size: 783
@@ -1269,40 +1273,28 @@ euca2ools_2.1.3-1~experimental1_all.deb
  Section: utils
  Priority: optional
  Homepage: http://www.eucalyptus.com/download/euca2ools
- Description: managing cloud instances for Eucalyptus
-  EUCALYPTUS is an open source service overlay that implements elastic
-  computing using existing resources. The goal of EUCALYPTUS is to allow
-  sites with existing clusters and server infrastructure to co-host an
-  elastic computing service that is interface-compatible with Amazon's EC2.
-  .
-  Elastic Utility Computing Architecture for Linking Your Programs
-  To Useful Systems - is an open-source software infrastructure for
-  implementing "cloud computing" on clusters.  Eucalyptus Systems is the
-  pioneer in open source cloud computing technology that delivers hybrid
-  cloud deployments for enterprise data centers. Leveraging Linux and web
-  service technologies that commonly exist in today's IT infrastructure,
-  Eucalyptus enables customers to quickly and easily create elastic clouds
-  in minutes. This "no lock-in" approach provides users with ultimate
-  flexibility when delivering their SLAs.
-  .
-  Eucalyptus is more than just virtualization. Along with building virtual
-  machines, the technology supports the network and storage infrastructure
-  within the cloud environment. Eucalyptus works with multiple flavors
-  of Linux including Ubuntu, OpenSuse, Debian, and CentOS. Eucalyptus
-  currently supports Xen and KVM hypervisors.  These tools are meant to
-  be CLI compatible with the ec2-api-tools.
+ Description: tools for interacting with AWS API-compatible services
+  Command-line tools for interacting with Amazon Web Services (AWS) and other
+  AWS-compatible services, such as Eucalyptus and OpenStack, that export a
+  REST/Query-based API compatible with Amazon EC2, IAM, and S3 services.  The
+  tools can be used with both Amazon's services and with installations of the
+  Eucalyptus open-source cloud-computing infrastructure.  The tools were inspired
+  by command-line tools distributed by Amazon (api-tools and ami-tools) and
+  largely accept the same options and environment variables.  However, these
+  tools were implemented from scratch in Python, relying on the Boto AWS library
+  and M2Crypto toolkit.
 
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/commands/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/commands/eustore/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/pyshared/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/pyshared/euca2ools/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/pyshared/euca2ools/commands/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/pyshared/euca2ools/commands/eustore/
 -rw-r--r-- root/root      2576 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/eustore/__init__.py
 -rw-r--r-- root/root      3581 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/eustore/describeimages.py
 -rw-r--r-- root/root     19119 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/eustore/installimage.py
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/commands/euare/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/pyshared/euca2ools/commands/euare/
 -rw-r--r-- root/root      1949 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euare/__init__.py
 -rw-r--r-- root/root      5072 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euare/addgrouppolicy.py
 -rw-r--r-- root/root      5060 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euare/adduserpolicy.py
@@ -1364,7 +1356,7 @@ drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/c
 -rw-r--r-- root/root      3045 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euare/updateuserinfo.py
 -rw-r--r-- root/root      3553 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euare/uploadservercertificate.py
 -rw-r--r-- root/root      3064 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euare/uploadsigningcertificate.py
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/commands/euca/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/pyshared/euca2ools/commands/euca/
 -rw-r--r-- root/root      1521 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euca/__init__.py
 -rw-r--r-- root/root      1966 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euca/allocateaddress.py
 -rw-r--r-- root/root      2568 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euca/associateaddress.py
@@ -1425,7 +1417,7 @@ drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/c
 -rw-r--r-- root/root      8642 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/euca/uploadbundle.py
 -rw-r--r-- root/root      1519 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/__init__.py
 -rw-r--r-- root/root     25416 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/commands/eucacommand.py
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/nc/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/pyshared/euca2ools/nc/
 -rw-r--r-- root/root      1478 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/nc/__init__.py
 -rw-r--r-- root/root      7338 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/nc/auth.py
 -rw-r--r-- root/root      7769 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/nc/connection.py
@@ -1435,543 +1427,543 @@ drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/pyshared/euca2ools/n
 -rw-r--r-- root/root      7444 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/image.py
 -rw-r--r-- root/root      2441 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/metadata.py
 -rw-r--r-- root/root      5511 2013-02-06 09:34 ./usr/share/pyshared/euca2ools/utils.py
--rw-r--r-- root/root       774 2013-03-16 12:00 ./usr/share/pyshared/euca2ools-2.1.3.egg-info
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/man/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/man/man1/
--rw-r--r-- root/root       921 2013-03-16 12:00 ./usr/share/man/man1/eustore-install-image.1.gz
--rw-r--r-- root/root       549 2013-03-16 12:00 ./usr/share/man/man1/eustore-describe-images.1.gz
--rw-r--r-- root/root       602 2013-03-16 12:00 ./usr/share/man/man1/euca-version.1.gz
--rw-r--r-- root/root       950 2013-03-16 12:00 ./usr/share/man/man1/euca-upload-bundle.1.gz
--rw-r--r-- root/root       664 2013-03-16 12:00 ./usr/share/man/man1/euca-unmonitor-instances.1.gz
--rw-r--r-- root/root       802 2013-03-16 12:00 ./usr/share/man/man1/euca-unbundle.1.gz
--rw-r--r-- root/root       650 2013-03-16 12:00 ./usr/share/man/man1/euca-terminate-instances.1.gz
--rw-r--r-- root/root       680 2013-03-16 12:00 ./usr/share/man/man1/euca-stop-instances.1.gz
--rw-r--r-- root/root       654 2013-03-16 12:00 ./usr/share/man/man1/euca-start-instances.1.gz
--rw-r--r-- root/root      1106 2013-03-16 12:00 ./usr/share/man/man1/euca-run-instances.1.gz
--rw-r--r-- root/root       938 2013-03-16 12:00 ./usr/share/man/man1/euca-revoke.1.gz
--rw-r--r-- root/root       707 2013-03-16 12:00 ./usr/share/man/man1/euca-reset-image-attribute.1.gz
--rw-r--r-- root/root       639 2013-03-16 12:00 ./usr/share/man/man1/euca-release-address.1.gz
--rw-r--r-- root/root      1011 2013-03-16 12:00 ./usr/share/man/man1/euca-register.1.gz
--rw-r--r-- root/root       646 2013-03-16 12:00 ./usr/share/man/man1/euca-reboot-instances.1.gz
--rw-r--r-- root/root       657 2013-03-16 12:00 ./usr/share/man/man1/euca-monitor-instances.1.gz
--rw-r--r-- root/root       817 2013-03-16 12:00 ./usr/share/man/man1/euca-modify-image-attribute.1.gz
--rw-r--r-- root/root       705 2013-03-16 12:00 ./usr/share/man/man1/euca-import-keypair.1.gz
--rw-r--r-- root/root       737 2013-03-16 12:00 ./usr/share/man/man1/euca-get-password.1.gz
--rw-r--r-- root/root       692 2013-03-16 12:00 ./usr/share/man/man1/euca-get-password-data.1.gz
--rw-r--r-- root/root       672 2013-03-16 12:00 ./usr/share/man/man1/euca-get-console-output.1.gz
--rw-r--r-- root/root       779 2013-03-16 12:00 ./usr/share/man/man1/euca-download-bundle.1.gz
--rw-r--r-- root/root       649 2013-03-16 12:00 ./usr/share/man/man1/euca-disassociate-address.1.gz
--rw-r--r-- root/root       795 2013-03-16 12:00 ./usr/share/man/man1/euca-detach-volume.1.gz
--rw-r--r-- root/root      1041 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-volumes.1.gz
--rw-r--r-- root/root       800 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-tags.1.gz
--rw-r--r-- root/root      1074 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-snapshots.1.gz
--rw-r--r-- root/root       692 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-regions.1.gz
--rw-r--r-- root/root       686 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-keypairs.1.gz
--rw-r--r-- root/root      1682 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-instances.1.gz
--rw-r--r-- root/root      1491 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-images.1.gz
--rw-r--r-- root/root       828 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-image-attribute.1.gz
--rw-r--r-- root/root       942 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-group.1.gz
--rw-r--r-- root/root       911 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-bundle-tasks.1.gz
--rw-r--r-- root/root       744 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-availability-zones.1.gz
--rw-r--r-- root/root       711 2013-03-16 12:00 ./usr/share/man/man1/euca-describe-addresses.1.gz
--rw-r--r-- root/root       650 2013-03-16 12:00 ./usr/share/man/man1/euca-deregister.1.gz
--rw-r--r-- root/root       665 2013-03-16 12:00 ./usr/share/man/man1/euca-delete-volume.1.gz
--rw-r--r-- root/root       700 2013-03-16 12:00 ./usr/share/man/man1/euca-delete-tags.1.gz
--rw-r--r-- root/root       648 2013-03-16 12:00 ./usr/share/man/man1/euca-delete-snapshot.1.gz
--rw-r--r-- root/root       642 2013-03-16 12:00 ./usr/share/man/man1/euca-delete-keypair.1.gz
--rw-r--r-- root/root       627 2013-03-16 12:00 ./usr/share/man/man1/euca-delete-group.1.gz
--rw-r--r-- root/root       905 2013-03-16 12:00 ./usr/share/man/man1/euca-delete-bundle.1.gz
--rw-r--r-- root/root       746 2013-03-16 12:00 ./usr/share/man/man1/euca-create-volume.1.gz
--rw-r--r-- root/root       713 2013-03-16 12:00 ./usr/share/man/man1/euca-create-tags.1.gz
--rw-r--r-- root/root       690 2013-03-16 12:00 ./usr/share/man/man1/euca-create-snapshot.1.gz
--rw-r--r-- root/root       717 2013-03-16 12:00 ./usr/share/man/man1/euca-create-keypair.1.gz
--rw-r--r-- root/root       810 2013-03-16 12:00 ./usr/share/man/man1/euca-create-image.1.gz
--rw-r--r-- root/root       683 2013-03-16 12:00 ./usr/share/man/man1/euca-create-group.1.gz
--rw-r--r-- root/root       704 2013-03-16 12:00 ./usr/share/man/man1/euca-confirm-product-instance.1.gz
--rw-r--r-- root/root       655 2013-03-16 12:00 ./usr/share/man/man1/euca-check-bucket.1.gz
--rw-r--r-- root/root       664 2013-03-16 12:00 ./usr/share/man/man1/euca-cancel-bundle-task.1.gz
--rw-r--r-- root/root      1395 2013-03-16 12:00 ./usr/share/man/man1/euca-bundle-vol.1.gz
--rw-r--r-- root/root      1179 2013-03-16 12:00 ./usr/share/man/man1/euca-bundle-upload.1.gz
--rw-r--r-- root/root       942 2013-03-16 12:00 ./usr/share/man/man1/euca-bundle-instance.1.gz
--rw-r--r-- root/root      1203 2013-03-16 12:00 ./usr/share/man/man1/euca-bundle-image.1.gz
--rw-r--r-- root/root       932 2013-03-16 12:00 ./usr/share/man/man1/euca-authorize.1.gz
--rw-r--r-- root/root       743 2013-03-16 12:00 ./usr/share/man/man1/euca-attach-volume.1.gz
--rw-r--r-- root/root       701 2013-03-16 12:00 ./usr/share/man/man1/euca-associate-address.1.gz
--rw-r--r-- root/root       615 2013-03-16 12:00 ./usr/share/man/man1/euca-allocate-address.1.gz
--rw-r--r-- root/root       730 2013-03-16 12:00 ./usr/share/man/man1/euare-useruploadpolicy.1.gz
--rw-r--r-- root/root       729 2013-03-16 12:00 ./usr/share/man/man1/euare-userupdateinfo.1.gz
--rw-r--r-- root/root       697 2013-03-16 12:00 ./usr/share/man/man1/euare-userresyncmfadevice.1.gz
--rw-r--r-- root/root       699 2013-03-16 12:00 ./usr/share/man/man1/euare-usermodloginprofile.1.gz
--rw-r--r-- root/root       768 2013-03-16 12:00 ./usr/share/man/man1/euare-usermodkey.1.gz
--rw-r--r-- root/root       783 2013-03-16 12:00 ./usr/share/man/man1/euare-usermodcert.1.gz
--rw-r--r-- root/root       977 2013-03-16 12:00 ./usr/share/man/man1/euare-usermod.1.gz
--rw-r--r-- root/root       949 2013-03-16 12:00 ./usr/share/man/man1/euare-userlistpolicies.1.gz
--rw-r--r-- root/root       782 2013-03-16 12:00 ./usr/share/man/man1/euare-userlistmfadevices.1.gz
--rw-r--r-- root/root       862 2013-03-16 12:00 ./usr/share/man/man1/euare-userlistkeys.1.gz
--rw-r--r-- root/root       878 2013-03-16 12:00 ./usr/share/man/man1/euare-userlistgroups.1.gz
--rw-r--r-- root/root       912 2013-03-16 12:00 ./usr/share/man/man1/euare-userlistcerts.1.gz
--rw-r--r-- root/root      1003 2013-03-16 12:00 ./usr/share/man/man1/euare-userlistbypath.1.gz
--rw-r--r-- root/root       678 2013-03-16 12:00 ./usr/share/man/man1/euare-usergetpolicy.1.gz
--rw-r--r-- root/root       660 2013-03-16 12:00 ./usr/share/man/man1/euare-usergetloginprofile.1.gz
--rw-r--r-- root/root       667 2013-03-16 12:00 ./usr/share/man/man1/euare-usergetinfo.1.gz
--rw-r--r-- root/root       725 2013-03-16 12:00 ./usr/share/man/man1/euare-usergetattributes.1.gz
--rw-r--r-- root/root       698 2013-03-16 12:00 ./usr/share/man/man1/euare-userenablemfadevice.1.gz
--rw-r--r-- root/root       678 2013-03-16 12:00 ./usr/share/man/man1/euare-userdelpolicy.1.gz
--rw-r--r-- root/root       659 2013-03-16 12:00 ./usr/share/man/man1/euare-userdelloginprofile.1.gz
--rw-r--r-- root/root       686 2013-03-16 12:00 ./usr/share/man/man1/euare-userdelkey.1.gz
--rw-r--r-- root/root       688 2013-03-16 12:00 ./usr/share/man/man1/euare-userdelcert.1.gz
--rw-r--r-- root/root       817 2013-03-16 12:00 ./usr/share/man/man1/euare-userdel.1.gz
--rw-r--r-- root/root       617 2013-03-16 12:00 ./usr/share/man/man1/euare-userdeactivatemfadevice.1.gz
--rw-r--r-- root/root       653 2013-03-16 12:00 ./usr/share/man/man1/euare-usercreatecert.1.gz
--rw-r--r-- root/root       881 2013-03-16 12:00 ./usr/share/man/man1/euare-usercreate.1.gz
--rw-r--r-- root/root       699 2013-03-16 12:00 ./usr/share/man/man1/euare-useraddpolicy.1.gz
--rw-r--r-- root/root       687 2013-03-16 12:00 ./usr/share/man/man1/euare-useraddloginprofile.1.gz
--rw-r--r-- root/root       655 2013-03-16 12:00 ./usr/share/man/man1/euare-useraddkey.1.gz
--rw-r--r-- root/root       723 2013-03-16 12:00 ./usr/share/man/man1/euare-useraddcert.1.gz
--rw-r--r-- root/root       851 2013-03-16 12:00 ./usr/share/man/man1/euare-servercertupload.1.gz
--rw-r--r-- root/root       664 2013-03-16 12:00 ./usr/share/man/man1/euare-servercertmod.1.gz
--rw-r--r-- root/root       918 2013-03-16 12:00 ./usr/share/man/man1/euare-servercertlistbypath.1.gz
--rw-r--r-- root/root       590 2013-03-16 12:00 ./usr/share/man/man1/euare-servercertgetattributes.1.gz
--rw-r--r-- root/root       571 2013-03-16 12:00 ./usr/share/man/man1/euare-servercertdel.1.gz
--rw-r--r-- root/root       728 2013-03-16 12:00 ./usr/share/man/man1/euare-groupuploadpolicy.1.gz
--rw-r--r-- root/root       668 2013-03-16 12:00 ./usr/share/man/man1/euare-groupremoveuser.1.gz
--rw-r--r-- root/root       750 2013-03-16 12:00 ./usr/share/man/man1/euare-groupmod.1.gz
--rw-r--r-- root/root       865 2013-03-16 12:00 ./usr/share/man/man1/euare-grouplistusers.1.gz
--rw-r--r-- root/root       954 2013-03-16 12:00 ./usr/share/man/man1/euare-grouplistpolicies.1.gz
--rw-r--r-- root/root      1001 2013-03-16 12:00 ./usr/share/man/man1/euare-grouplistbypath.1.gz
--rw-r--r-- root/root       678 2013-03-16 12:00 ./usr/share/man/man1/euare-groupgetpolicy.1.gz
--rw-r--r-- root/root       681 2013-03-16 12:00 ./usr/share/man/man1/euare-groupdelpolicy.1.gz
--rw-r--r-- root/root       811 2013-03-16 12:00 ./usr/share/man/man1/euare-groupdel.1.gz
--rw-r--r-- root/root       845 2013-03-16 12:00 ./usr/share/man/man1/euare-groupcreate.1.gz
--rw-r--r-- root/root       663 2013-03-16 12:00 ./usr/share/man/man1/euare-groupadduser.1.gz
--rw-r--r-- root/root       705 2013-03-16 12:00 ./usr/share/man/man1/euare-groupaddpolicy.1.gz
--rw-r--r-- root/root       509 2013-03-16 12:00 ./usr/share/man/man1/euare-getldapsyncstatus.1.gz
--rw-r--r-- root/root       629 2013-03-16 12:00 ./usr/share/man/man1/euare-accountuploadpolicy.1.gz
--rw-r--r-- root/root       792 2013-03-16 12:00 ./usr/share/man/man1/euare-accountlistpolicies.1.gz
--rw-r--r-- root/root       511 2013-03-16 12:00 ./usr/share/man/man1/euare-accountlist.1.gz
--rw-r--r-- root/root       618 2013-03-16 12:00 ./usr/share/man/man1/euare-accountgetsummary.1.gz
--rw-r--r-- root/root       576 2013-03-16 12:00 ./usr/share/man/man1/euare-accountgetpolicy.1.gz
--rw-r--r-- root/root       579 2013-03-16 12:00 ./usr/share/man/man1/euare-accountdelpolicy.1.gz
--rw-r--r-- root/root       561 2013-03-16 12:00 ./usr/share/man/man1/euare-accountdel.1.gz
--rw-r--r-- root/root       534 2013-03-16 12:00 ./usr/share/man/man1/euare-accountcreate.1.gz
--rw-r--r-- root/root       615 2013-03-16 12:00 ./usr/share/man/man1/euare-accountaliaslist.1.gz
--rw-r--r-- root/root       651 2013-03-16 12:00 ./usr/share/man/man1/euare-accountaliasdelete.1.gz
--rw-r--r-- root/root       651 2013-03-16 12:00 ./usr/share/man/man1/euare-accountaliascreate.1.gz
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/doc/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/share/doc/euca2ools/
--rw-r--r-- root/root      2127 2013-03-16 11:59 ./usr/share/doc/euca2ools/changelog.Debian.gz
+-rw-r--r-- root/root       774 2013-05-05 19:45 ./usr/share/pyshared/euca2ools-2.1.3.egg-info
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/man/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/man/man1/
+-rw-r--r-- root/root       921 2013-05-05 19:45 ./usr/share/man/man1/eustore-install-image.1.gz
+-rw-r--r-- root/root       549 2013-05-05 19:45 ./usr/share/man/man1/eustore-describe-images.1.gz
+-rw-r--r-- root/root       602 2013-05-05 19:45 ./usr/share/man/man1/euca-version.1.gz
+-rw-r--r-- root/root       950 2013-05-05 19:45 ./usr/share/man/man1/euca-upload-bundle.1.gz
+-rw-r--r-- root/root       664 2013-05-05 19:45 ./usr/share/man/man1/euca-unmonitor-instances.1.gz
+-rw-r--r-- root/root       802 2013-05-05 19:45 ./usr/share/man/man1/euca-unbundle.1.gz
+-rw-r--r-- root/root       650 2013-05-05 19:45 ./usr/share/man/man1/euca-terminate-instances.1.gz
+-rw-r--r-- root/root       680 2013-05-05 19:45 ./usr/share/man/man1/euca-stop-instances.1.gz
+-rw-r--r-- root/root       654 2013-05-05 19:45 ./usr/share/man/man1/euca-start-instances.1.gz
+-rw-r--r-- root/root      1106 2013-05-05 19:45 ./usr/share/man/man1/euca-run-instances.1.gz
+-rw-r--r-- root/root       938 2013-05-05 19:45 ./usr/share/man/man1/euca-revoke.1.gz
+-rw-r--r-- root/root       707 2013-05-05 19:45 ./usr/share/man/man1/euca-reset-image-attribute.1.gz
+-rw-r--r-- root/root       639 2013-05-05 19:45 ./usr/share/man/man1/euca-release-address.1.gz
+-rw-r--r-- root/root      1011 2013-05-05 19:45 ./usr/share/man/man1/euca-register.1.gz
+-rw-r--r-- root/root       646 2013-05-05 19:45 ./usr/share/man/man1/euca-reboot-instances.1.gz
+-rw-r--r-- root/root       657 2013-05-05 19:45 ./usr/share/man/man1/euca-monitor-instances.1.gz
+-rw-r--r-- root/root       817 2013-05-05 19:45 ./usr/share/man/man1/euca-modify-image-attribute.1.gz
+-rw-r--r-- root/root       705 2013-05-05 19:45 ./usr/share/man/man1/euca-import-keypair.1.gz
+-rw-r--r-- root/root       737 2013-05-05 19:45 ./usr/share/man/man1/euca-get-password.1.gz
+-rw-r--r-- root/root       692 2013-05-05 19:45 ./usr/share/man/man1/euca-get-password-data.1.gz
+-rw-r--r-- root/root       672 2013-05-05 19:45 ./usr/share/man/man1/euca-get-console-output.1.gz
+-rw-r--r-- root/root       779 2013-05-05 19:45 ./usr/share/man/man1/euca-download-bundle.1.gz
+-rw-r--r-- root/root       649 2013-05-05 19:45 ./usr/share/man/man1/euca-disassociate-address.1.gz
+-rw-r--r-- root/root       795 2013-05-05 19:45 ./usr/share/man/man1/euca-detach-volume.1.gz
+-rw-r--r-- root/root      1041 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-volumes.1.gz
+-rw-r--r-- root/root       800 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-tags.1.gz
+-rw-r--r-- root/root      1074 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-snapshots.1.gz
+-rw-r--r-- root/root       692 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-regions.1.gz
+-rw-r--r-- root/root       686 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-keypairs.1.gz
+-rw-r--r-- root/root      1682 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-instances.1.gz
+-rw-r--r-- root/root      1491 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-images.1.gz
+-rw-r--r-- root/root       828 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-image-attribute.1.gz
+-rw-r--r-- root/root       942 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-group.1.gz
+-rw-r--r-- root/root       911 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-bundle-tasks.1.gz
+-rw-r--r-- root/root       744 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-availability-zones.1.gz
+-rw-r--r-- root/root       711 2013-05-05 19:45 ./usr/share/man/man1/euca-describe-addresses.1.gz
+-rw-r--r-- root/root       650 2013-05-05 19:45 ./usr/share/man/man1/euca-deregister.1.gz
+-rw-r--r-- root/root       665 2013-05-05 19:45 ./usr/share/man/man1/euca-delete-volume.1.gz
+-rw-r--r-- root/root       700 2013-05-05 19:45 ./usr/share/man/man1/euca-delete-tags.1.gz
+-rw-r--r-- root/root       648 2013-05-05 19:45 ./usr/share/man/man1/euca-delete-snapshot.1.gz
+-rw-r--r-- root/root       642 2013-05-05 19:45 ./usr/share/man/man1/euca-delete-keypair.1.gz
+-rw-r--r-- root/root       627 2013-05-05 19:45 ./usr/share/man/man1/euca-delete-group.1.gz
+-rw-r--r-- root/root       905 2013-05-05 19:45 ./usr/share/man/man1/euca-delete-bundle.1.gz
+-rw-r--r-- root/root       746 2013-05-05 19:45 ./usr/share/man/man1/euca-create-volume.1.gz
+-rw-r--r-- root/root       713 2013-05-05 19:45 ./usr/share/man/man1/euca-create-tags.1.gz
+-rw-r--r-- root/root       690 2013-05-05 19:45 ./usr/share/man/man1/euca-create-snapshot.1.gz
+-rw-r--r-- root/root       717 2013-05-05 19:45 ./usr/share/man/man1/euca-create-keypair.1.gz
+-rw-r--r-- root/root       810 2013-05-05 19:45 ./usr/share/man/man1/euca-create-image.1.gz
+-rw-r--r-- root/root       683 2013-05-05 19:45 ./usr/share/man/man1/euca-create-group.1.gz
+-rw-r--r-- root/root       704 2013-05-05 19:45 ./usr/share/man/man1/euca-confirm-product-instance.1.gz
+-rw-r--r-- root/root       655 2013-05-05 19:45 ./usr/share/man/man1/euca-check-bucket.1.gz
+-rw-r--r-- root/root       664 2013-05-05 19:45 ./usr/share/man/man1/euca-cancel-bundle-task.1.gz
+-rw-r--r-- root/root      1395 2013-05-05 19:45 ./usr/share/man/man1/euca-bundle-vol.1.gz
+-rw-r--r-- root/root      1179 2013-05-05 19:45 ./usr/share/man/man1/euca-bundle-upload.1.gz
+-rw-r--r-- root/root       942 2013-05-05 19:45 ./usr/share/man/man1/euca-bundle-instance.1.gz
+-rw-r--r-- root/root      1203 2013-05-05 19:45 ./usr/share/man/man1/euca-bundle-image.1.gz
+-rw-r--r-- root/root       932 2013-05-05 19:45 ./usr/share/man/man1/euca-authorize.1.gz
+-rw-r--r-- root/root       743 2013-05-05 19:45 ./usr/share/man/man1/euca-attach-volume.1.gz
+-rw-r--r-- root/root       701 2013-05-05 19:45 ./usr/share/man/man1/euca-associate-address.1.gz
+-rw-r--r-- root/root       615 2013-05-05 19:45 ./usr/share/man/man1/euca-allocate-address.1.gz
+-rw-r--r-- root/root       730 2013-05-05 19:45 ./usr/share/man/man1/euare-useruploadpolicy.1.gz
+-rw-r--r-- root/root       729 2013-05-05 19:45 ./usr/share/man/man1/euare-userupdateinfo.1.gz
+-rw-r--r-- root/root       697 2013-05-05 19:45 ./usr/share/man/man1/euare-userresyncmfadevice.1.gz
+-rw-r--r-- root/root       699 2013-05-05 19:45 ./usr/share/man/man1/euare-usermodloginprofile.1.gz
+-rw-r--r-- root/root       768 2013-05-05 19:45 ./usr/share/man/man1/euare-usermodkey.1.gz
+-rw-r--r-- root/root       783 2013-05-05 19:45 ./usr/share/man/man1/euare-usermodcert.1.gz
+-rw-r--r-- root/root       977 2013-05-05 19:45 ./usr/share/man/man1/euare-usermod.1.gz
+-rw-r--r-- root/root       949 2013-05-05 19:45 ./usr/share/man/man1/euare-userlistpolicies.1.gz
+-rw-r--r-- root/root       782 2013-05-05 19:45 ./usr/share/man/man1/euare-userlistmfadevices.1.gz
+-rw-r--r-- root/root       862 2013-05-05 19:45 ./usr/share/man/man1/euare-userlistkeys.1.gz
+-rw-r--r-- root/root       878 2013-05-05 19:45 ./usr/share/man/man1/euare-userlistgroups.1.gz
+-rw-r--r-- root/root       912 2013-05-05 19:45 ./usr/share/man/man1/euare-userlistcerts.1.gz
+-rw-r--r-- root/root      1003 2013-05-05 19:45 ./usr/share/man/man1/euare-userlistbypath.1.gz
+-rw-r--r-- root/root       678 2013-05-05 19:45 ./usr/share/man/man1/euare-usergetpolicy.1.gz
+-rw-r--r-- root/root       660 2013-05-05 19:45 ./usr/share/man/man1/euare-usergetloginprofile.1.gz
+-rw-r--r-- root/root       667 2013-05-05 19:45 ./usr/share/man/man1/euare-usergetinfo.1.gz
+-rw-r--r-- root/root       725 2013-05-05 19:45 ./usr/share/man/man1/euare-usergetattributes.1.gz
+-rw-r--r-- root/root       698 2013-05-05 19:45 ./usr/share/man/man1/euare-userenablemfadevice.1.gz
+-rw-r--r-- root/root       678 2013-05-05 19:45 ./usr/share/man/man1/euare-userdelpolicy.1.gz
+-rw-r--r-- root/root       659 2013-05-05 19:45 ./usr/share/man/man1/euare-userdelloginprofile.1.gz
+-rw-r--r-- root/root       686 2013-05-05 19:45 ./usr/share/man/man1/euare-userdelkey.1.gz
+-rw-r--r-- root/root       688 2013-05-05 19:45 ./usr/share/man/man1/euare-userdelcert.1.gz
+-rw-r--r-- root/root       817 2013-05-05 19:45 ./usr/share/man/man1/euare-userdel.1.gz
+-rw-r--r-- root/root       617 2013-05-05 19:45 ./usr/share/man/man1/euare-userdeactivatemfadevice.1.gz
+-rw-r--r-- root/root       653 2013-05-05 19:45 ./usr/share/man/man1/euare-usercreatecert.1.gz
+-rw-r--r-- root/root       881 2013-05-05 19:45 ./usr/share/man/man1/euare-usercreate.1.gz
+-rw-r--r-- root/root       699 2013-05-05 19:45 ./usr/share/man/man1/euare-useraddpolicy.1.gz
+-rw-r--r-- root/root       687 2013-05-05 19:45 ./usr/share/man/man1/euare-useraddloginprofile.1.gz
+-rw-r--r-- root/root       655 2013-05-05 19:45 ./usr/share/man/man1/euare-useraddkey.1.gz
+-rw-r--r-- root/root       723 2013-05-05 19:45 ./usr/share/man/man1/euare-useraddcert.1.gz
+-rw-r--r-- root/root       851 2013-05-05 19:45 ./usr/share/man/man1/euare-servercertupload.1.gz
+-rw-r--r-- root/root       664 2013-05-05 19:45 ./usr/share/man/man1/euare-servercertmod.1.gz
+-rw-r--r-- root/root       918 2013-05-05 19:45 ./usr/share/man/man1/euare-servercertlistbypath.1.gz
+-rw-r--r-- root/root       590 2013-05-05 19:45 ./usr/share/man/man1/euare-servercertgetattributes.1.gz
+-rw-r--r-- root/root       571 2013-05-05 19:45 ./usr/share/man/man1/euare-servercertdel.1.gz
+-rw-r--r-- root/root       728 2013-05-05 19:45 ./usr/share/man/man1/euare-groupuploadpolicy.1.gz
+-rw-r--r-- root/root       668 2013-05-05 19:45 ./usr/share/man/man1/euare-groupremoveuser.1.gz
+-rw-r--r-- root/root       750 2013-05-05 19:45 ./usr/share/man/man1/euare-groupmod.1.gz
+-rw-r--r-- root/root       865 2013-05-05 19:45 ./usr/share/man/man1/euare-grouplistusers.1.gz
+-rw-r--r-- root/root       954 2013-05-05 19:45 ./usr/share/man/man1/euare-grouplistpolicies.1.gz
+-rw-r--r-- root/root      1001 2013-05-05 19:45 ./usr/share/man/man1/euare-grouplistbypath.1.gz
+-rw-r--r-- root/root       678 2013-05-05 19:45 ./usr/share/man/man1/euare-groupgetpolicy.1.gz
+-rw-r--r-- root/root       681 2013-05-05 19:45 ./usr/share/man/man1/euare-groupdelpolicy.1.gz
+-rw-r--r-- root/root       811 2013-05-05 19:45 ./usr/share/man/man1/euare-groupdel.1.gz
+-rw-r--r-- root/root       845 2013-05-05 19:45 ./usr/share/man/man1/euare-groupcreate.1.gz
+-rw-r--r-- root/root       663 2013-05-05 19:45 ./usr/share/man/man1/euare-groupadduser.1.gz
+-rw-r--r-- root/root       705 2013-05-05 19:45 ./usr/share/man/man1/euare-groupaddpolicy.1.gz
+-rw-r--r-- root/root       509 2013-05-05 19:45 ./usr/share/man/man1/euare-getldapsyncstatus.1.gz
+-rw-r--r-- root/root       629 2013-05-05 19:45 ./usr/share/man/man1/euare-accountuploadpolicy.1.gz
+-rw-r--r-- root/root       792 2013-05-05 19:45 ./usr/share/man/man1/euare-accountlistpolicies.1.gz
+-rw-r--r-- root/root       511 2013-05-05 19:45 ./usr/share/man/man1/euare-accountlist.1.gz
+-rw-r--r-- root/root       618 2013-05-05 19:45 ./usr/share/man/man1/euare-accountgetsummary.1.gz
+-rw-r--r-- root/root       576 2013-05-05 19:45 ./usr/share/man/man1/euare-accountgetpolicy.1.gz
+-rw-r--r-- root/root       579 2013-05-05 19:45 ./usr/share/man/man1/euare-accountdelpolicy.1.gz
+-rw-r--r-- root/root       561 2013-05-05 19:45 ./usr/share/man/man1/euare-accountdel.1.gz
+-rw-r--r-- root/root       534 2013-05-05 19:45 ./usr/share/man/man1/euare-accountcreate.1.gz
+-rw-r--r-- root/root       615 2013-05-05 19:45 ./usr/share/man/man1/euare-accountaliaslist.1.gz
+-rw-r--r-- root/root       651 2013-05-05 19:45 ./usr/share/man/man1/euare-accountaliasdelete.1.gz
+-rw-r--r-- root/root       651 2013-05-05 19:45 ./usr/share/man/man1/euare-accountaliascreate.1.gz
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/doc/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/share/doc/euca2ools/
+-rw-r--r-- root/root      2055 2013-05-05 19:43 ./usr/share/doc/euca2ools/changelog.Debian.gz
 -rw-r--r-- root/root       793 2013-02-06 09:34 ./usr/share/doc/euca2ools/changelog.gz
--rw-r--r-- root/root      1508 2013-03-16 11:34 ./usr/share/doc/euca2ools/copyright
--rw-r--r-- root/root      1443 2013-01-03 20:04 ./usr/share/doc/euca2ools/README.Debian
+-rw-r--r-- root/root      1508 2013-05-05 19:40 ./usr/share/doc/euca2ools/copyright
+-rw-r--r-- root/root      1443 2013-03-16 12:26 ./usr/share/doc/euca2ools/README.Debian
 -rw-r--r-- root/root      1588 2013-02-06 09:34 ./usr/share/doc/euca2ools/README
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/bin/
--rwxr-xr-x root/root       189 2013-03-16 12:00 ./usr/bin/euare-accountaliascreate
--rwxr-xr-x root/root       189 2013-03-16 12:00 ./usr/bin/euare-accountaliasdelete
--rwxr-xr-x root/root       189 2013-03-16 12:00 ./usr/bin/euare-accountaliaslist
--rwxr-xr-x root/root       174 2013-03-16 12:00 ./usr/bin/euare-accountcreate
--rwxr-xr-x root/root       174 2013-03-16 12:00 ./usr/bin/euare-accountdel
--rwxr-xr-x root/root       192 2013-03-16 12:00 ./usr/bin/euare-accountdelpolicy
--rwxr-xr-x root/root       183 2013-03-16 12:00 ./usr/bin/euare-accountgetpolicy
--rwxr-xr-x root/root       186 2013-03-16 12:00 ./usr/bin/euare-accountgetsummary
--rwxr-xr-x root/root       171 2013-03-16 12:00 ./usr/bin/euare-accountlist
--rwxr-xr-x root/root       192 2013-03-16 12:00 ./usr/bin/euare-accountlistpolicies
--rwxr-xr-x root/root       183 2013-03-16 12:00 ./usr/bin/euare-accountuploadpolicy
--rwxr-xr-x root/root       186 2013-03-16 12:00 ./usr/bin/euare-getldapsyncstatus
--rwxr-xr-x root/root       177 2013-03-16 12:00 ./usr/bin/euare-groupaddpolicy
--rwxr-xr-x root/root       177 2013-03-16 12:00 ./usr/bin/euare-groupadduser
--rwxr-xr-x root/root       168 2013-03-16 12:00 ./usr/bin/euare-groupcreate
--rwxr-xr-x root/root       168 2013-03-16 12:00 ./usr/bin/euare-groupdel
--rwxr-xr-x root/root       186 2013-03-16 12:00 ./usr/bin/euare-groupdelpolicy
--rwxr-xr-x root/root       177 2013-03-16 12:00 ./usr/bin/euare-groupgetpolicy
--rwxr-xr-x root/root       165 2013-03-16 12:00 ./usr/bin/euare-grouplistbypath
--rwxr-xr-x root/root       186 2013-03-16 12:00 ./usr/bin/euare-grouplistpolicies
--rwxr-xr-x root/root       159 2013-03-16 12:00 ./usr/bin/euare-grouplistusers
--rwxr-xr-x root/root       168 2013-03-16 12:00 ./usr/bin/euare-groupmod
--rwxr-xr-x root/root       192 2013-03-16 12:00 ./usr/bin/euare-groupremoveuser
--rwxr-xr-x root/root       177 2013-03-16 12:00 ./usr/bin/euare-groupuploadpolicy
--rwxr-xr-x root/root       204 2013-03-16 12:00 ./usr/bin/euare-servercertdel
--rwxr-xr-x root/root       195 2013-03-16 12:00 ./usr/bin/euare-servercertgetattributes
--rwxr-xr-x root/root       201 2013-03-16 12:00 ./usr/bin/euare-servercertlistbypath
--rwxr-xr-x root/root       204 2013-03-16 12:00 ./usr/bin/euare-servercertmod
--rwxr-xr-x root/root       204 2013-03-16 12:00 ./usr/bin/euare-servercertupload
--rwxr-xr-x root/root       207 2013-03-16 12:00 ./usr/bin/euare-useraddcert
--rwxr-xr-x root/root       180 2013-03-16 12:00 ./usr/bin/euare-useraddkey
--rwxr-xr-x root/root       189 2013-03-16 12:00 ./usr/bin/euare-useraddloginprofile
--rwxr-xr-x root/root       174 2013-03-16 12:00 ./usr/bin/euare-useraddpolicy
--rwxr-xr-x root/root       165 2013-03-16 12:00 ./usr/bin/euare-usercreate
--rwxr-xr-x root/root       207 2013-03-16 12:00 ./usr/bin/euare-usercreatecert
--rwxr-xr-x root/root       192 2013-03-16 12:00 ./usr/bin/euare-userdeactivatemfadevice
--rwxr-xr-x root/root       165 2013-03-16 12:00 ./usr/bin/euare-userdel
--rwxr-xr-x root/root       207 2013-03-16 12:00 ./usr/bin/euare-userdelcert
--rwxr-xr-x root/root       180 2013-03-16 12:00 ./usr/bin/euare-userdelkey
--rwxr-xr-x root/root       189 2013-03-16 12:00 ./usr/bin/euare-userdelloginprofile
--rwxr-xr-x root/root       183 2013-03-16 12:00 ./usr/bin/euare-userdelpolicy
--rwxr-xr-x root/root       180 2013-03-16 12:00 ./usr/bin/euare-userenablemfadevice
--rwxr-xr-x root/root       156 2013-03-16 12:00 ./usr/bin/euare-usergetattributes
--rwxr-xr-x root/root       168 2013-03-16 12:00 ./usr/bin/euare-usergetinfo
--rwxr-xr-x root/root       180 2013-03-16 12:00 ./usr/bin/euare-usergetloginprofile
--rwxr-xr-x root/root       174 2013-03-16 12:00 ./usr/bin/euare-usergetpolicy
--rwxr-xr-x root/root       162 2013-03-16 12:00 ./usr/bin/euare-userlistbypath
--rwxr-xr-x root/root       204 2013-03-16 12:00 ./usr/bin/euare-userlistcerts
--rwxr-xr-x root/root       186 2013-03-16 12:00 ./usr/bin/euare-userlistgroups
--rwxr-xr-x root/root       177 2013-03-16 12:00 ./usr/bin/euare-userlistkeys
--rwxr-xr-x root/root       177 2013-03-16 12:00 ./usr/bin/euare-userlistmfadevices
--rwxr-xr-x root/root       183 2013-03-16 12:00 ./usr/bin/euare-userlistpolicies
--rwxr-xr-x root/root       165 2013-03-16 12:00 ./usr/bin/euare-usermod
--rwxr-xr-x root/root       207 2013-03-16 12:00 ./usr/bin/euare-usermodcert
--rwxr-xr-x root/root       180 2013-03-16 12:00 ./usr/bin/euare-usermodkey
--rwxr-xr-x root/root       189 2013-03-16 12:00 ./usr/bin/euare-usermodloginprofile
--rwxr-xr-x root/root       180 2013-03-16 12:00 ./usr/bin/euare-userresyncmfadevice
--rwxr-xr-x root/root       177 2013-03-16 12:00 ./usr/bin/euare-userupdateinfo
--rwxr-xr-x root/root       174 2013-03-16 12:00 ./usr/bin/euare-useruploadpolicy
--rwxr-xr-x root/root      1725 2013-03-16 12:00 ./usr/bin/euca-allocate-address
--rwxr-xr-x root/root      1729 2013-03-16 12:00 ./usr/bin/euca-associate-address
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-attach-volume
--rwxr-xr-x root/root      1708 2013-03-16 12:00 ./usr/bin/euca-authorize
--rwxr-xr-x root/root      1714 2013-03-16 12:00 ./usr/bin/euca-bundle-image
--rwxr-xr-x root/root      1723 2013-03-16 12:00 ./usr/bin/euca-bundle-instance
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-bundle-upload
--rwxr-xr-x root/root      1708 2013-03-16 12:00 ./usr/bin/euca-bundle-vol
--rwxr-xr-x root/root      1729 2013-03-16 12:00 ./usr/bin/euca-cancel-bundle-task
--rwxr-xr-x root/root      1714 2013-03-16 12:00 ./usr/bin/euca-check-bucket
--rwxr-xr-x root/root      1747 2013-03-16 12:00 ./usr/bin/euca-confirm-product-instance
--rwxr-xr-x root/root      1738 2013-03-16 12:00 ./usr/bin/euca-create-group
--rwxr-xr-x root/root      1714 2013-03-16 12:00 ./usr/bin/euca-create-image
--rwxr-xr-x root/root      1720 2013-03-16 12:00 ./usr/bin/euca-create-keypair
--rwxr-xr-x root/root      1723 2013-03-16 12:00 ./usr/bin/euca-create-snapshot
--rwxr-xr-x root/root      1711 2013-03-16 12:00 ./usr/bin/euca-create-tags
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-create-volume
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-delete-bundle
--rwxr-xr-x root/root      1714 2013-03-16 12:00 ./usr/bin/euca-delete-group
--rwxr-xr-x root/root      1719 2013-03-16 12:00 ./usr/bin/euca-delete-keypair
--rwxr-xr-x root/root      1723 2013-03-16 12:00 ./usr/bin/euca-delete-snapshot
--rwxr-xr-x root/root      1711 2013-03-16 12:00 ./usr/bin/euca-delete-tags
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-delete-volume
--rwxr-xr-x root/root      1711 2013-03-16 12:00 ./usr/bin/euca-deregister
--rwxr-xr-x root/root      1732 2013-03-16 12:00 ./usr/bin/euca-describe-addresses
--rwxr-xr-x root/root      1756 2013-03-16 12:00 ./usr/bin/euca-describe-availability-zones
--rwxr-xr-x root/root      1737 2013-03-16 12:00 ./usr/bin/euca-describe-bundle-tasks
--rwxr-xr-x root/root      1723 2013-03-16 12:00 ./usr/bin/euca-describe-group
--rwxr-xr-x root/root      1747 2013-03-16 12:00 ./usr/bin/euca-describe-image-attribute
--rwxr-xr-x root/root      1722 2013-03-16 12:00 ./usr/bin/euca-describe-images
--rwxr-xr-x root/root      1731 2013-03-16 12:00 ./usr/bin/euca-describe-instances
--rwxr-xr-x root/root      1728 2013-03-16 12:00 ./usr/bin/euca-describe-keypairs
--rwxr-xr-x root/root      1726 2013-03-16 12:00 ./usr/bin/euca-describe-regions
--rwxr-xr-x root/root      1732 2013-03-16 12:00 ./usr/bin/euca-describe-snapshots
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-describe-tags
--rwxr-xr-x root/root      1726 2013-03-16 12:00 ./usr/bin/euca-describe-volumes
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-detach-volume
--rwxr-xr-x root/root      1738 2013-03-16 12:00 ./usr/bin/euca-disassociate-address
--rwxr-xr-x root/root      1723 2013-03-16 12:00 ./usr/bin/euca-download-bundle
--rwxr-xr-x root/root      1729 2013-03-16 12:00 ./usr/bin/euca-get-console-output
--rwxr-xr-x root/root      1714 2013-03-16 12:00 ./usr/bin/euca-get-password
--rwxr-xr-x root/root      1726 2013-03-16 12:00 ./usr/bin/euca-get-password-data
--rwxr-xr-x root/root      1719 2013-03-16 12:00 ./usr/bin/euca-import-keypair
--rwxr-xr-x root/root      1741 2013-03-16 12:00 ./usr/bin/euca-modify-image-attribute
--rwxr-xr-x root/root      1729 2013-03-16 12:00 ./usr/bin/euca-monitor-instances
--rwxr-xr-x root/root      1726 2013-03-16 12:00 ./usr/bin/euca-reboot-instances
--rwxr-xr-x root/root      1705 2013-03-16 12:00 ./usr/bin/euca-register
--rwxr-xr-x root/root      1722 2013-03-16 12:00 ./usr/bin/euca-release-address
--rwxr-xr-x root/root      1738 2013-03-16 12:00 ./usr/bin/euca-reset-image-attribute
--rwxr-xr-x root/root      1699 2013-03-16 12:00 ./usr/bin/euca-revoke
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-run-instances
--rwxr-xr-x root/root      1723 2013-03-16 12:00 ./usr/bin/euca-start-instances
--rwxr-xr-x root/root      1720 2013-03-16 12:00 ./usr/bin/euca-stop-instances
--rwxr-xr-x root/root      1735 2013-03-16 12:00 ./usr/bin/euca-terminate-instances
--rwxr-xr-x root/root      1705 2013-03-16 12:00 ./usr/bin/euca-unbundle
--rwxr-xr-x root/root      1735 2013-03-16 12:00 ./usr/bin/euca-unmonitor-instances
--rwxr-xr-x root/root      1717 2013-03-16 12:00 ./usr/bin/euca-upload-bundle
--rwxr-xr-x root/root      1703 2013-03-16 12:00 ./usr/bin/euca-version
--rwxr-xr-x root/root      1694 2013-03-16 12:00 ./usr/bin/eustore-describe-images
--rwxr-xr-x root/root      1688 2013-03-16 12:00 ./usr/bin/eustore-install-image
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/nc/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/nc/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/
-drwxr-xr-x root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/bin/euca-describe-groups -> euca-describe-group
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/bin/euca-add-keypair -> euca-create-keypair
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/bin/euca-add-group -> euca-create-group
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/installimage.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/installimage.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/describeimages.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/uploadsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadsigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/uploadservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuserinfo.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updatesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updatesigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updategroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateaccesskey.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/templaterequest.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/templaterequest.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/resyncmfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/resyncmfadevice.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/removeuserfromgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/removeuserfromgroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/putuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putuserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/putgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putgrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/putaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putaccountpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listusers.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listusers.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listuserpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listuserpolicies.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listsigningcertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listsigningcertificates.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listservercertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listservercertificates.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listmfadevices.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listmfadevices.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listgroupsforuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroupsforuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listgroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroups.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listgrouppolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgrouppolicies.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccounts.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccounts.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccountpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountpolicies.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccountaliases.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountaliases.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccesskeys.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccesskeys.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserinfo.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getldapsyncstatus.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getldapsyncstatus.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getaccountsummary.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountsummary.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/enablemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/enablemfadevice.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deletesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletesigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deletegrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountalias.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccount.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccesskey.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deactivatemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deactivatemfadevice.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createsigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/creategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/creategroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccountalias.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccount.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccesskey.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/addusertogroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addusertogroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/adduserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/adduserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/addgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addgrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/uploadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/uploadbundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/unmonitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unmonitorinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/unbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unbundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/terminateinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/terminateinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/stopinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/stopinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/startinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/startinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/runinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/runinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/revoke.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/revoke.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/resetimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/resetimageattribute.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/releaseaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/releaseaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/register.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/register.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/rebootinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/rebootinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/monitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/monitorinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/modifyimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/modifyimageattribute.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/importkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/importkeypair.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/getpassworddata.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassworddata.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/getpassword.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassword.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/getconsoleoutput.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getconsoleoutput.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/downloadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/downloadbundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/disassociateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/disassociateaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/detachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/detachvolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describevolumes.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describevolumes.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describetags.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describesnapshots.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describesnapshots.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeregions.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeregions.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describekeypairs.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describekeypairs.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimages.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimageattribute.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describegroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describegroups.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describebundletasks.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describebundletasks.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeavailabilityzones.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeavailabilityzones.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeaddresses.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeaddresses.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deregister.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deregister.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletevolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletevolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletetags.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletesnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletesnapshot.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletekeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletekeypair.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletegroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletebundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletebundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createvolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createtags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createtags.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createsnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsnapshot.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createsecuritygroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsecuritygroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createkeypair.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createimage.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/confirmproductinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/confirmproductinstance.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/checkbucket.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/checkbucket.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/cancelbundletask.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/cancelbundletask.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundlevol.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundlevol.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundleupload.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleupload.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundleinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleinstance.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundleimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleimage.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/authorize.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/authorize.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/attachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/attachvolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/associateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/associateaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/allocateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/allocateaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eucacommand.py -> ../../../../../share/pyshared/euca2ools/commands/eucacommand.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/commands/__init__.py -> ../../../../../share/pyshared/euca2ools/commands/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/nc/connection.py -> ../../../../../share/pyshared/euca2ools/nc/connection.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/nc/auth.py -> ../../../../../share/pyshared/euca2ools/nc/auth.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/nc/__init__.py -> ../../../../../share/pyshared/euca2ools/nc/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/utils.py -> ../../../../share/pyshared/euca2ools/utils.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/metadata.py -> ../../../../share/pyshared/euca2ools/metadata.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/image.py -> ../../../../share/pyshared/euca2ools/image.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/exceptions.py -> ../../../../share/pyshared/euca2ools/exceptions.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/bundler.py -> ../../../../share/pyshared/euca2ools/bundler.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools/__init__.py -> ../../../../share/pyshared/euca2ools/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.6/dist-packages/euca2ools-2.1.3.egg-info -> ../../../share/pyshared/euca2ools-2.1.3.egg-info
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools-2.1.3.egg-info -> ../../../share/pyshared/euca2ools-2.1.3.egg-info
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/__init__.py -> ../../../../share/pyshared/euca2ools/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/bundler.py -> ../../../../share/pyshared/euca2ools/bundler.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/exceptions.py -> ../../../../share/pyshared/euca2ools/exceptions.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/image.py -> ../../../../share/pyshared/euca2ools/image.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/metadata.py -> ../../../../share/pyshared/euca2ools/metadata.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/utils.py -> ../../../../share/pyshared/euca2ools/utils.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/nc/__init__.py -> ../../../../../share/pyshared/euca2ools/nc/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/nc/auth.py -> ../../../../../share/pyshared/euca2ools/nc/auth.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/nc/connection.py -> ../../../../../share/pyshared/euca2ools/nc/connection.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/__init__.py -> ../../../../../share/pyshared/euca2ools/commands/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eucacommand.py -> ../../../../../share/pyshared/euca2ools/commands/eucacommand.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/allocateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/allocateaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/associateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/associateaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/attachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/attachvolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/authorize.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/authorize.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundleimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleimage.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundleinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleinstance.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundleupload.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleupload.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundlevol.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundlevol.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/cancelbundletask.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/cancelbundletask.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/checkbucket.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/checkbucket.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/confirmproductinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/confirmproductinstance.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createimage.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createkeypair.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createsecuritygroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsecuritygroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createsnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsnapshot.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createtags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createtags.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createvolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletebundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletebundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletegroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletekeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletekeypair.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletesnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletesnapshot.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletetags.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletevolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletevolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deregister.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deregister.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeaddresses.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeaddresses.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeavailabilityzones.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeavailabilityzones.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describebundletasks.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describebundletasks.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describegroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describegroups.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimageattribute.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimages.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describekeypairs.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describekeypairs.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeregions.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeregions.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describesnapshots.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describesnapshots.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describetags.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describevolumes.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describevolumes.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/detachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/detachvolume.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/disassociateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/disassociateaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/downloadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/downloadbundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/getconsoleoutput.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getconsoleoutput.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/getpassword.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassword.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/getpassworddata.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassworddata.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/importkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/importkeypair.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/modifyimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/modifyimageattribute.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/monitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/monitorinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/rebootinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/rebootinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/register.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/register.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/releaseaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/releaseaddress.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/resetimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/resetimageattribute.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/revoke.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/revoke.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/runinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/runinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/startinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/startinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/stopinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/stopinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/terminateinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/terminateinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/unbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unbundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/unmonitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unmonitorinstances.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/uploadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/uploadbundle.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/addgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addgrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/adduserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/adduserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/addusertogroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addusertogroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccesskey.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccount.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccountalias.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/creategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/creategroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createsigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deactivatemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deactivatemfadevice.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccesskey.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccount.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountalias.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deletegrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deletesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletesigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/enablemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/enablemfadevice.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getaccountsummary.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountsummary.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getldapsyncstatus.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getldapsyncstatus.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserinfo.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccesskeys.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccesskeys.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccountaliases.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountaliases.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccountpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountpolicies.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccounts.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccounts.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listgrouppolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgrouppolicies.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listgroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroups.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listgroupsforuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroupsforuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listmfadevices.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listmfadevices.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listservercertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listservercertificates.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listsigningcertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listsigningcertificates.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listuserpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listuserpolicies.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listusers.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listusers.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/putaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putaccountpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/putgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putgrouppolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/putuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putuserpolicy.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/removeuserfromgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/removeuserfromgroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/resyncmfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/resyncmfadevice.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/templaterequest.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/templaterequest.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateaccesskey.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updategroup.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateloginprofile.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updatesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updatesigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuser.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuserinfo.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/uploadservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadservercertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/uploadsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadsigningcertificate.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/__init__.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/describeimages.py
-lrwxrwxrwx root/root         0 2013-03-16 12:00 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/installimage.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/installimage.py
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/bin/
+-rwxr-xr-x root/root       189 2013-05-05 19:45 ./usr/bin/euare-accountaliascreate
+-rwxr-xr-x root/root       189 2013-05-05 19:45 ./usr/bin/euare-accountaliasdelete
+-rwxr-xr-x root/root       189 2013-05-05 19:45 ./usr/bin/euare-accountaliaslist
+-rwxr-xr-x root/root       174 2013-05-05 19:45 ./usr/bin/euare-accountcreate
+-rwxr-xr-x root/root       174 2013-05-05 19:45 ./usr/bin/euare-accountdel
+-rwxr-xr-x root/root       192 2013-05-05 19:45 ./usr/bin/euare-accountdelpolicy
+-rwxr-xr-x root/root       183 2013-05-05 19:45 ./usr/bin/euare-accountgetpolicy
+-rwxr-xr-x root/root       186 2013-05-05 19:45 ./usr/bin/euare-accountgetsummary
+-rwxr-xr-x root/root       171 2013-05-05 19:45 ./usr/bin/euare-accountlist
+-rwxr-xr-x root/root       192 2013-05-05 19:45 ./usr/bin/euare-accountlistpolicies
+-rwxr-xr-x root/root       183 2013-05-05 19:45 ./usr/bin/euare-accountuploadpolicy
+-rwxr-xr-x root/root       186 2013-05-05 19:45 ./usr/bin/euare-getldapsyncstatus
+-rwxr-xr-x root/root       177 2013-05-05 19:45 ./usr/bin/euare-groupaddpolicy
+-rwxr-xr-x root/root       177 2013-05-05 19:45 ./usr/bin/euare-groupadduser
+-rwxr-xr-x root/root       168 2013-05-05 19:45 ./usr/bin/euare-groupcreate
+-rwxr-xr-x root/root       168 2013-05-05 19:45 ./usr/bin/euare-groupdel
+-rwxr-xr-x root/root       186 2013-05-05 19:45 ./usr/bin/euare-groupdelpolicy
+-rwxr-xr-x root/root       177 2013-05-05 19:45 ./usr/bin/euare-groupgetpolicy
+-rwxr-xr-x root/root       165 2013-05-05 19:45 ./usr/bin/euare-grouplistbypath
+-rwxr-xr-x root/root       186 2013-05-05 19:45 ./usr/bin/euare-grouplistpolicies
+-rwxr-xr-x root/root       159 2013-05-05 19:45 ./usr/bin/euare-grouplistusers
+-rwxr-xr-x root/root       168 2013-05-05 19:45 ./usr/bin/euare-groupmod
+-rwxr-xr-x root/root       192 2013-05-05 19:45 ./usr/bin/euare-groupremoveuser
+-rwxr-xr-x root/root       177 2013-05-05 19:45 ./usr/bin/euare-groupuploadpolicy
+-rwxr-xr-x root/root       204 2013-05-05 19:45 ./usr/bin/euare-servercertdel
+-rwxr-xr-x root/root       195 2013-05-05 19:45 ./usr/bin/euare-servercertgetattributes
+-rwxr-xr-x root/root       201 2013-05-05 19:45 ./usr/bin/euare-servercertlistbypath
+-rwxr-xr-x root/root       204 2013-05-05 19:45 ./usr/bin/euare-servercertmod
+-rwxr-xr-x root/root       204 2013-05-05 19:45 ./usr/bin/euare-servercertupload
+-rwxr-xr-x root/root       207 2013-05-05 19:45 ./usr/bin/euare-useraddcert
+-rwxr-xr-x root/root       180 2013-05-05 19:45 ./usr/bin/euare-useraddkey
+-rwxr-xr-x root/root       189 2013-05-05 19:45 ./usr/bin/euare-useraddloginprofile
+-rwxr-xr-x root/root       174 2013-05-05 19:45 ./usr/bin/euare-useraddpolicy
+-rwxr-xr-x root/root       165 2013-05-05 19:45 ./usr/bin/euare-usercreate
+-rwxr-xr-x root/root       207 2013-05-05 19:45 ./usr/bin/euare-usercreatecert
+-rwxr-xr-x root/root       192 2013-05-05 19:45 ./usr/bin/euare-userdeactivatemfadevice
+-rwxr-xr-x root/root       165 2013-05-05 19:45 ./usr/bin/euare-userdel
+-rwxr-xr-x root/root       207 2013-05-05 19:45 ./usr/bin/euare-userdelcert
+-rwxr-xr-x root/root       180 2013-05-05 19:45 ./usr/bin/euare-userdelkey
+-rwxr-xr-x root/root       189 2013-05-05 19:45 ./usr/bin/euare-userdelloginprofile
+-rwxr-xr-x root/root       183 2013-05-05 19:45 ./usr/bin/euare-userdelpolicy
+-rwxr-xr-x root/root       180 2013-05-05 19:45 ./usr/bin/euare-userenablemfadevice
+-rwxr-xr-x root/root       156 2013-05-05 19:45 ./usr/bin/euare-usergetattributes
+-rwxr-xr-x root/root       168 2013-05-05 19:45 ./usr/bin/euare-usergetinfo
+-rwxr-xr-x root/root       180 2013-05-05 19:45 ./usr/bin/euare-usergetloginprofile
+-rwxr-xr-x root/root       174 2013-05-05 19:45 ./usr/bin/euare-usergetpolicy
+-rwxr-xr-x root/root       162 2013-05-05 19:45 ./usr/bin/euare-userlistbypath
+-rwxr-xr-x root/root       204 2013-05-05 19:45 ./usr/bin/euare-userlistcerts
+-rwxr-xr-x root/root       186 2013-05-05 19:45 ./usr/bin/euare-userlistgroups
+-rwxr-xr-x root/root       177 2013-05-05 19:45 ./usr/bin/euare-userlistkeys
+-rwxr-xr-x root/root       177 2013-05-05 19:45 ./usr/bin/euare-userlistmfadevices
+-rwxr-xr-x root/root       183 2013-05-05 19:45 ./usr/bin/euare-userlistpolicies
+-rwxr-xr-x root/root       165 2013-05-05 19:45 ./usr/bin/euare-usermod
+-rwxr-xr-x root/root       207 2013-05-05 19:45 ./usr/bin/euare-usermodcert
+-rwxr-xr-x root/root       180 2013-05-05 19:45 ./usr/bin/euare-usermodkey
+-rwxr-xr-x root/root       189 2013-05-05 19:45 ./usr/bin/euare-usermodloginprofile
+-rwxr-xr-x root/root       180 2013-05-05 19:45 ./usr/bin/euare-userresyncmfadevice
+-rwxr-xr-x root/root       177 2013-05-05 19:45 ./usr/bin/euare-userupdateinfo
+-rwxr-xr-x root/root       174 2013-05-05 19:45 ./usr/bin/euare-useruploadpolicy
+-rwxr-xr-x root/root      1725 2013-05-05 19:45 ./usr/bin/euca-allocate-address
+-rwxr-xr-x root/root      1729 2013-05-05 19:45 ./usr/bin/euca-associate-address
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-attach-volume
+-rwxr-xr-x root/root      1708 2013-05-05 19:45 ./usr/bin/euca-authorize
+-rwxr-xr-x root/root      1714 2013-05-05 19:45 ./usr/bin/euca-bundle-image
+-rwxr-xr-x root/root      1723 2013-05-05 19:45 ./usr/bin/euca-bundle-instance
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-bundle-upload
+-rwxr-xr-x root/root      1708 2013-05-05 19:45 ./usr/bin/euca-bundle-vol
+-rwxr-xr-x root/root      1729 2013-05-05 19:45 ./usr/bin/euca-cancel-bundle-task
+-rwxr-xr-x root/root      1714 2013-05-05 19:45 ./usr/bin/euca-check-bucket
+-rwxr-xr-x root/root      1747 2013-05-05 19:45 ./usr/bin/euca-confirm-product-instance
+-rwxr-xr-x root/root      1738 2013-05-05 19:45 ./usr/bin/euca-create-group
+-rwxr-xr-x root/root      1714 2013-05-05 19:45 ./usr/bin/euca-create-image
+-rwxr-xr-x root/root      1720 2013-05-05 19:45 ./usr/bin/euca-create-keypair
+-rwxr-xr-x root/root      1723 2013-05-05 19:45 ./usr/bin/euca-create-snapshot
+-rwxr-xr-x root/root      1711 2013-05-05 19:45 ./usr/bin/euca-create-tags
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-create-volume
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-delete-bundle
+-rwxr-xr-x root/root      1714 2013-05-05 19:45 ./usr/bin/euca-delete-group
+-rwxr-xr-x root/root      1719 2013-05-05 19:45 ./usr/bin/euca-delete-keypair
+-rwxr-xr-x root/root      1723 2013-05-05 19:45 ./usr/bin/euca-delete-snapshot
+-rwxr-xr-x root/root      1711 2013-05-05 19:45 ./usr/bin/euca-delete-tags
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-delete-volume
+-rwxr-xr-x root/root      1711 2013-05-05 19:45 ./usr/bin/euca-deregister
+-rwxr-xr-x root/root      1732 2013-05-05 19:45 ./usr/bin/euca-describe-addresses
+-rwxr-xr-x root/root      1756 2013-05-05 19:45 ./usr/bin/euca-describe-availability-zones
+-rwxr-xr-x root/root      1737 2013-05-05 19:45 ./usr/bin/euca-describe-bundle-tasks
+-rwxr-xr-x root/root      1723 2013-05-05 19:45 ./usr/bin/euca-describe-group
+-rwxr-xr-x root/root      1747 2013-05-05 19:45 ./usr/bin/euca-describe-image-attribute
+-rwxr-xr-x root/root      1722 2013-05-05 19:45 ./usr/bin/euca-describe-images
+-rwxr-xr-x root/root      1731 2013-05-05 19:45 ./usr/bin/euca-describe-instances
+-rwxr-xr-x root/root      1728 2013-05-05 19:45 ./usr/bin/euca-describe-keypairs
+-rwxr-xr-x root/root      1726 2013-05-05 19:45 ./usr/bin/euca-describe-regions
+-rwxr-xr-x root/root      1732 2013-05-05 19:45 ./usr/bin/euca-describe-snapshots
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-describe-tags
+-rwxr-xr-x root/root      1726 2013-05-05 19:45 ./usr/bin/euca-describe-volumes
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-detach-volume
+-rwxr-xr-x root/root      1738 2013-05-05 19:45 ./usr/bin/euca-disassociate-address
+-rwxr-xr-x root/root      1723 2013-05-05 19:45 ./usr/bin/euca-download-bundle
+-rwxr-xr-x root/root      1729 2013-05-05 19:45 ./usr/bin/euca-get-console-output
+-rwxr-xr-x root/root      1714 2013-05-05 19:45 ./usr/bin/euca-get-password
+-rwxr-xr-x root/root      1726 2013-05-05 19:45 ./usr/bin/euca-get-password-data
+-rwxr-xr-x root/root      1719 2013-05-05 19:45 ./usr/bin/euca-import-keypair
+-rwxr-xr-x root/root      1741 2013-05-05 19:45 ./usr/bin/euca-modify-image-attribute
+-rwxr-xr-x root/root      1729 2013-05-05 19:45 ./usr/bin/euca-monitor-instances
+-rwxr-xr-x root/root      1726 2013-05-05 19:45 ./usr/bin/euca-reboot-instances
+-rwxr-xr-x root/root      1705 2013-05-05 19:45 ./usr/bin/euca-register
+-rwxr-xr-x root/root      1722 2013-05-05 19:45 ./usr/bin/euca-release-address
+-rwxr-xr-x root/root      1738 2013-05-05 19:45 ./usr/bin/euca-reset-image-attribute
+-rwxr-xr-x root/root      1699 2013-05-05 19:45 ./usr/bin/euca-revoke
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-run-instances
+-rwxr-xr-x root/root      1723 2013-05-05 19:45 ./usr/bin/euca-start-instances
+-rwxr-xr-x root/root      1720 2013-05-05 19:45 ./usr/bin/euca-stop-instances
+-rwxr-xr-x root/root      1735 2013-05-05 19:45 ./usr/bin/euca-terminate-instances
+-rwxr-xr-x root/root      1705 2013-05-05 19:45 ./usr/bin/euca-unbundle
+-rwxr-xr-x root/root      1735 2013-05-05 19:45 ./usr/bin/euca-unmonitor-instances
+-rwxr-xr-x root/root      1717 2013-05-05 19:45 ./usr/bin/euca-upload-bundle
+-rwxr-xr-x root/root      1703 2013-05-05 19:45 ./usr/bin/euca-version
+-rwxr-xr-x root/root      1694 2013-05-05 19:45 ./usr/bin/eustore-describe-images
+-rwxr-xr-x root/root      1688 2013-05-05 19:45 ./usr/bin/eustore-install-image
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/nc/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/nc/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/
+drwxr-xr-x root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/bin/euca-describe-groups -> euca-describe-group
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/bin/euca-add-keypair -> euca-create-keypair
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/bin/euca-add-group -> euca-create-group
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/installimage.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/installimage.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/describeimages.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eustore/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/uploadsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadsigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/uploadservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuserinfo.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updatesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updatesigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updategroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/updateaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateaccesskey.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/templaterequest.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/templaterequest.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/resyncmfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/resyncmfadevice.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/removeuserfromgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/removeuserfromgroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/putuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putuserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/putgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putgrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/putaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putaccountpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listusers.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listusers.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listuserpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listuserpolicies.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listsigningcertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listsigningcertificates.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listservercertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listservercertificates.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listmfadevices.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listmfadevices.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listgroupsforuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroupsforuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listgroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroups.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listgrouppolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgrouppolicies.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccounts.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccounts.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccountpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountpolicies.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccountaliases.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountaliases.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/listaccesskeys.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccesskeys.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserinfo.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getldapsyncstatus.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getldapsyncstatus.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getaccountsummary.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountsummary.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/getaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/enablemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/enablemfadevice.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deletesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletesigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deletegrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountalias.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccount.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deleteaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccesskey.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/deactivatemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deactivatemfadevice.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createsigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/creategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/creategroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccountalias.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccount.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/createaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccesskey.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/addusertogroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addusertogroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/adduserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/adduserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/addgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addgrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euare/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/uploadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/uploadbundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/unmonitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unmonitorinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/unbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unbundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/terminateinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/terminateinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/stopinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/stopinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/startinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/startinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/runinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/runinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/revoke.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/revoke.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/resetimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/resetimageattribute.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/releaseaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/releaseaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/register.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/register.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/rebootinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/rebootinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/monitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/monitorinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/modifyimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/modifyimageattribute.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/importkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/importkeypair.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/getpassworddata.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassworddata.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/getpassword.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassword.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/getconsoleoutput.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getconsoleoutput.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/downloadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/downloadbundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/disassociateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/disassociateaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/detachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/detachvolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describevolumes.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describevolumes.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describetags.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describesnapshots.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describesnapshots.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeregions.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeregions.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describekeypairs.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describekeypairs.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimages.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimageattribute.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describegroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describegroups.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describebundletasks.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describebundletasks.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeavailabilityzones.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeavailabilityzones.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/describeaddresses.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeaddresses.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deregister.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deregister.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletevolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletevolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletetags.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletesnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletesnapshot.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletekeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletekeypair.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletegroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/deletebundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletebundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createvolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createtags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createtags.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createsnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsnapshot.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createsecuritygroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsecuritygroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createkeypair.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/createimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createimage.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/confirmproductinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/confirmproductinstance.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/checkbucket.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/checkbucket.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/cancelbundletask.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/cancelbundletask.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundlevol.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundlevol.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundleupload.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleupload.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundleinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleinstance.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/bundleimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleimage.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/authorize.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/authorize.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/attachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/attachvolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/associateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/associateaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/allocateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/allocateaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/euca/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/eucacommand.py -> ../../../../../share/pyshared/euca2ools/commands/eucacommand.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/commands/__init__.py -> ../../../../../share/pyshared/euca2ools/commands/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/nc/connection.py -> ../../../../../share/pyshared/euca2ools/nc/connection.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/nc/auth.py -> ../../../../../share/pyshared/euca2ools/nc/auth.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/nc/__init__.py -> ../../../../../share/pyshared/euca2ools/nc/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/utils.py -> ../../../../share/pyshared/euca2ools/utils.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/metadata.py -> ../../../../share/pyshared/euca2ools/metadata.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/image.py -> ../../../../share/pyshared/euca2ools/image.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/exceptions.py -> ../../../../share/pyshared/euca2ools/exceptions.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/bundler.py -> ../../../../share/pyshared/euca2ools/bundler.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools/__init__.py -> ../../../../share/pyshared/euca2ools/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.6/dist-packages/euca2ools-2.1.3.egg-info -> ../../../share/pyshared/euca2ools-2.1.3.egg-info
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools-2.1.3.egg-info -> ../../../share/pyshared/euca2ools-2.1.3.egg-info
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/__init__.py -> ../../../../share/pyshared/euca2ools/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/bundler.py -> ../../../../share/pyshared/euca2ools/bundler.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/exceptions.py -> ../../../../share/pyshared/euca2ools/exceptions.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/image.py -> ../../../../share/pyshared/euca2ools/image.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/metadata.py -> ../../../../share/pyshared/euca2ools/metadata.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/utils.py -> ../../../../share/pyshared/euca2ools/utils.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/nc/__init__.py -> ../../../../../share/pyshared/euca2ools/nc/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/nc/auth.py -> ../../../../../share/pyshared/euca2ools/nc/auth.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/nc/connection.py -> ../../../../../share/pyshared/euca2ools/nc/connection.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/__init__.py -> ../../../../../share/pyshared/euca2ools/commands/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eucacommand.py -> ../../../../../share/pyshared/euca2ools/commands/eucacommand.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/allocateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/allocateaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/associateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/associateaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/attachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/attachvolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/authorize.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/authorize.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundleimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleimage.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundleinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleinstance.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundleupload.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundleupload.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/bundlevol.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/bundlevol.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/cancelbundletask.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/cancelbundletask.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/checkbucket.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/checkbucket.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/confirmproductinstance.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/confirmproductinstance.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createimage.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createimage.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createkeypair.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createsecuritygroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsecuritygroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createsnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createsnapshot.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createtags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createtags.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/createvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/createvolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletebundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletebundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletegroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletekeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletekeypair.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletesnapshot.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletesnapshot.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletetags.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deletevolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deletevolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/deregister.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/deregister.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeaddresses.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeaddresses.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeavailabilityzones.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeavailabilityzones.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describebundletasks.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describebundletasks.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describegroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describegroups.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimageattribute.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeimages.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describekeypairs.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describekeypairs.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describeregions.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describeregions.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describesnapshots.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describesnapshots.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describetags.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describetags.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/describevolumes.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/describevolumes.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/detachvolume.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/detachvolume.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/disassociateaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/disassociateaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/downloadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/downloadbundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/getconsoleoutput.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getconsoleoutput.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/getpassword.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassword.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/getpassworddata.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/getpassworddata.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/importkeypair.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/importkeypair.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/modifyimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/modifyimageattribute.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/monitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/monitorinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/rebootinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/rebootinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/register.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/register.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/releaseaddress.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/releaseaddress.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/resetimageattribute.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/resetimageattribute.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/revoke.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/revoke.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/runinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/runinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/startinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/startinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/stopinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/stopinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/terminateinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/terminateinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/unbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unbundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/unmonitorinstances.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/unmonitorinstances.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euca/uploadbundle.py -> ../../../../../../share/pyshared/euca2ools/commands/euca/uploadbundle.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/addgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addgrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/adduserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/adduserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/addusertogroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/addusertogroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccesskey.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccount.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createaccountalias.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/creategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/creategroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createsigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/createuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/createuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deactivatemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deactivatemfadevice.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccesskey.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccount.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccount.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccountalias.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountalias.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteaccountpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deletegroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deletegrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletegrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deletesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deletesigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/deleteuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/deleteuserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/enablemfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/enablemfadevice.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getaccountsummary.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getaccountsummary.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getgrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getldapsyncstatus.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getldapsyncstatus.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserinfo.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/getuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/getuserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccesskeys.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccesskeys.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccountaliases.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountaliases.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccountpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccountpolicies.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listaccounts.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listaccounts.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listgrouppolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgrouppolicies.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listgroups.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroups.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listgroupsforuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listgroupsforuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listmfadevices.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listmfadevices.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listservercertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listservercertificates.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listsigningcertificates.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listsigningcertificates.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listuserpolicies.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listuserpolicies.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/listusers.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/listusers.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/putaccountpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putaccountpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/putgrouppolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putgrouppolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/putuserpolicy.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/putuserpolicy.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/removeuserfromgroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/removeuserfromgroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/resyncmfadevice.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/resyncmfadevice.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/templaterequest.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/templaterequest.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateaccesskey.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateaccesskey.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updategroup.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updategroup.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateloginprofile.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateloginprofile.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updatesigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updatesigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateuser.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuser.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/updateuserinfo.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/updateuserinfo.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/uploadservercertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadservercertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/euare/uploadsigningcertificate.py -> ../../../../../../share/pyshared/euca2ools/commands/euare/uploadsigningcertificate.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/__init__.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/__init__.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/describeimages.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/describeimages.py
+lrwxrwxrwx root/root         0 2013-05-05 19:45 ./usr/lib/python2.7/dist-packages/euca2ools/commands/eustore/installimage.py -> ../../../../../../share/pyshared/euca2ools/commands/eustore/installimage.py
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -2001,19 +1993,19 @@ Not cleaning session: cloned chroot in use
 
 Build Architecture: amd64
 Build-Space: 5092
-Build-Time: 15
+Build-Time: 14
 Distribution: unstable
 Host Architecture: amd64
-Install-Time: 41
-Job: euca2ools_2.1.3-1~experimental1.dsc
+Install-Time: 47
+Job: euca2ools_2.1.3-1.dsc
 Lintian: pass
 Machine Architecture: amd64
 Package: euca2ools
-Package-Time: 65
-Source-Version: 2.1.3-1~experimental1
+Package-Time: 67
+Source-Version: 2.1.3-1
 Space: 5092
 Status: successful
-Version: 2.1.3-1~experimental1
+Version: 2.1.3-1
 ────────────────────────────────────────────────────────────────────────────────
-Finished at 20130316-1201
-Build needed 00:01:05, 5092k disc space
+Finished at 20130505-1945
+Build needed 00:01:07, 5092k disc space
