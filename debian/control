@@ -26,6 +26,7 @@ Depends: ${python:Depends},
          python-m2crypto (>= 0.20.2),
          python-boto (>= 2.0~),
          ${misc:Depends}
+Recommends: openssl
 Description: tools for interacting with AWS API-compatible services
  Command-line tools for interacting with Amazon Web Services (AWS) and other
  AWS-compatible services, such as Eucalyptus and OpenStack, that export a
