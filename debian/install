@@ -1,2 +1,2 @@
 bin/* /usr/bin/
-ec2-ami-tools/ /usr/share/euca2ools/certs
+certs/* /usr/share/euca2ools/certs/
