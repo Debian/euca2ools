@@ -1,6 +1,11 @@
 euca2ools (3.0.0-1) UNRELEASED; urgency=low
 
   14bc124 Pulled upstream tag 3.0.0 
+  156c1fe Recommend openssl for euca-get-password.
+  fbaa65b Stopped to use the Python libraries boto and m2crypto, and started to
+          use lxml, requestbuilder, requests, setuptools and six.
+  e667720 Redistribute Amazon certificates (Closes: #709475).
+          URL: http://s3.amazonaws.com/ec2-downloads/ec2-ami-tools-1.4.0.9.zip
 
  -- Charles Plessy <plessy@debian.org>  Sun, 16 Jun 2013 10:06:25 +0900
 
