@@ -1,11 +1,15 @@
-euca2ools (3.0.0-1) UNRELEASED; urgency=low
+euca2ools (3.0.0-1) unstable; urgency=low
 
   14bc124 Pulled upstream tag 3.0.0 
   156c1fe Recommend openssl for euca-get-password.
   fbaa65b Stopped to use the Python libraries boto and m2crypto, and started to
           use lxml, requestbuilder, requests, setuptools and six.
+  b96b52a Install conf/euca2ools.ini as example file.
+  3104f05 Stop setting DEB_DH_BUILDDEB_ARGS now that Dpkg defaults to xz.
+  a99df07 Use Debhelper 9.
+  575dccb Remove Boto and M2Crypto in the description: not used anymore.
 
- -- Charles Plessy <plessy@debian.org>  Sun, 16 Jun 2013 10:06:25 +0900
+ -- Charles Plessy <plessy@debian.org>  Wed, 21 Aug 2013 11:29:58 +0900
 
 euca2ools (2.1.3-1) unstable; urgency=low
 
