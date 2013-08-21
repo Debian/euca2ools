@@ -9,7 +9,7 @@ Uploaders: Chris Grzegorczyk <grze@eucalyptus.com>,
 Section: utils
 Priority: optional
 Build-Depends: cdbs (>= 0.4.90~),
-               debhelper (>= 8),
+               debhelper (>= 9),
                help2man,
                python-all,
                python-lxml,
