@@ -10,8 +10,6 @@ DEB_PYTHON_SETUP_CMD = setup.py
 
 DEB_INDEP_PACKAGES=euca2ools
 
-DEB_DH_BUILDDEB_ARGS = -- -Z xz
-
 build/euca2ools::
 	$(MAKE) man
 
