@@ -8,6 +8,7 @@ euca2ools (3.0.0-1) unstable; urgency=low
   3104f05 Stop setting DEB_DH_BUILDDEB_ARGS now that Dpkg defaults to xz.
   a99df07 Use Debhelper 9.
   575dccb Remove Boto and M2Crypto in the description: not used anymore.
+  7b92093 Install certificates in /usr/share/euca2ools/certs/ (Closes: #709475)
 
  -- Charles Plessy <plessy@debian.org>  Wed, 21 Aug 2013 11:29:58 +0900
 
