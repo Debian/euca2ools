@@ -41,5 +41,4 @@ Description: tools for interacting with AWS API-compatible services
  Eucalyptus open-source cloud-computing infrastructure.  The tools were inspired
  by command-line tools distributed by Amazon (api-tools and ami-tools) and
  largely accept the same options and environment variables.  However, these
- tools were implemented from scratch in Python, relying on the Boto AWS library
- and M2Crypto toolkit.
+ tools were implemented from scratch in Python.
