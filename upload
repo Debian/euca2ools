@@ -1,6 +1,6 @@
-u euca2ools_3.0.0-1.debian.tar.gz ftp.upload.debian.org Wed Aug 21 12:12:44 2013
-u euca2ools_3.0.0.orig.tar.gz ftp.upload.debian.org Wed Aug 21 12:12:46 2013
-u euca2ools_3.0.0-1.dsc ftp.upload.debian.org Wed Aug 21 12:12:47 2013
-u euca2ools_3.0.0-1_all.deb ftp.upload.debian.org Wed Aug 21 12:12:49 2013
-u euca2ools_3.0.0-1_amd64.changes ftp.upload.debian.org Wed Aug 21 12:12:50 2013
-s euca2ools_3.0.0-1_amd64.changes ftp.upload.debian.org Wed Aug 21 12:12:50 2013
+u euca2ools_3.0.2.orig.tar.gz ftp.upload.debian.org Sat Oct 12 12:22:39 2013
+u euca2ools_3.0.2-1_all.deb ftp.upload.debian.org Sat Oct 12 12:22:41 2013
+u euca2ools_3.0.2-1.debian.tar.gz ftp.upload.debian.org Sat Oct 12 12:22:43 2013
+u euca2ools_3.0.2-1.dsc ftp.upload.debian.org Sat Oct 12 12:22:44 2013
+u euca2ools_3.0.2-1_amd64.changes ftp.upload.debian.org Sat Oct 12 12:22:45 2013
+s euca2ools_3.0.2-1_amd64.changes ftp.upload.debian.org Sat Oct 12 12:22:45 2013

@@ -1,9 +1,12 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
 Format: 1.8
-Date: Wed, 21 Aug 2013 11:29:58 +0900
+Date: Sat, 12 Oct 2013 11:54:05 +0900
 Source: euca2ools
 Binary: euca2ools
 Architecture: source all
-Version: 3.0.0-1
+Version: 3.0.2-1
 Distribution: unstable
 Urgency: low
 Maintainer: Debian Eucalyptus Maintainers <pkg-eucalyptus-maintainers@lists.alioth.debian.org>
@@ -11,28 +14,39 @@ Changed-By: Charles Plessy <plessy@debian.org>
 Description: 
  euca2ools  - tools for interacting with AWS API-compatible services
 Changes: 
- euca2ools (3.0.0-1) unstable; urgency=low
+ euca2ools (3.0.2-1) unstable; urgency=low
  .
-   14bc124 Pulled upstream tag 3.0.0
-   156c1fe Recommend openssl for euca-get-password.
-   fbaa65b Stopped to use the Python libraries boto and m2crypto, and started to
-           use lxml, requestbuilder, requests, setuptools and six.
-   b96b52a Install conf/euca2ools.ini as example file.
-   3104f05 Stop setting DEB_DH_BUILDDEB_ARGS now that Dpkg defaults to xz.
-   a99df07 Use Debhelper 9.
-   575dccb Remove Boto and M2Crypto in the description: not used anymore.
+   6641f8a Merged upstream tag 3.0.2
 Checksums-Sha1: 
- 435330564eae0d35a26131ba55c1dfdc4bcfcef2 1395 euca2ools_3.0.0-1.dsc
- 0f6d54310d5700daab297af7880ac7ce38c8e34b 150622 euca2ools_3.0.0.orig.tar.gz
- 43f612de3cb886095ac5db959b09f133f342a816 5428 euca2ools_3.0.0-1.debian.tar.gz
- b25c42efde14052ba1a5291addf1eb85c0189cb2 251098 euca2ools_3.0.0-1_all.deb
+ deca2ec598b0a7f8c37c3fb270ef138ad55000bd 2281 euca2ools_3.0.2-1.dsc
+ 73e235e7e6b17c8d1fb064c14aa24a3de36640e7 154394 euca2ools_3.0.2.orig.tar.gz
+ 390cc8ea44f32dfd6e54a1de54342d4da5b9c019 5453 euca2ools_3.0.2-1.debian.tar.gz
+ d1ee53eb03194ea2db690b948a4fc77f34b57f0e 254236 euca2ools_3.0.2-1_all.deb
 Checksums-Sha256: 
- 4c1dfd56170d977b4a1633d74aa3fc413cb75442d571f04915f011d6df1ba0fa 1395 euca2ools_3.0.0-1.dsc
- ee107d008fd27c820da2868fb90ee8bce859ecab6d923d070892ef5a08b5215a 150622 euca2ools_3.0.0.orig.tar.gz
- 95595c732cb913e9f97e6d301686d5b7e2aec75f0b197238318a04fcc96cc386 5428 euca2ools_3.0.0-1.debian.tar.gz
- 2f9c7d211b9d8ab3ca49b3bf8d6eef3262b73afaaf35ff1cc31245ea57d55b50 251098 euca2ools_3.0.0-1_all.deb
+ 1276d09dde18cf3166d227ec89fda7fe66c3d1e8daf0687ec209be0c9498b90a 2281 euca2ools_3.0.2-1.dsc
+ 8eb5996f11cd11d2dbe02c29cc3474adbbdddf826ae566c19e9aef622bd29949 154394 euca2ools_3.0.2.orig.tar.gz
+ 26fb79d170cd0cf9c2284a46c15b323cfea83a2de4693864c40c8e7e90e0ad11 5453 euca2ools_3.0.2-1.debian.tar.gz
+ aae06fd84f9fc22bbdbfa23da4ea8640ad5eb9c38166ae084c97ac33bc129f31 254236 euca2ools_3.0.2-1_all.deb
 Files: 
- 604ccd521a526cddc07870ecd7cda611 1395 utils optional euca2ools_3.0.0-1.dsc
- 658f7819248663255040ce964202ce64 150622 utils optional euca2ools_3.0.0.orig.tar.gz
- 656b0433e594aa2004d0136a42c25a59 5428 utils optional euca2ools_3.0.0-1.debian.tar.gz
- 05de52caa7294fc6d3bac71d7ce56335 251098 utils optional euca2ools_3.0.0-1_all.deb
+ 078a70ead59ae81e226acacb5a793fd0 2281 utils optional euca2ools_3.0.2-1.dsc
+ ad4dedb5366d764b0ed1e53451df18c7 154394 utils optional euca2ools_3.0.2.orig.tar.gz
+ 1350722d74434390d0591dc1bc570aff 5453 utils optional euca2ools_3.0.2-1.debian.tar.gz
+ 4894f465cd4addbb8ac9eb8fda45f16f 254236 utils optional euca2ools_3.0.2-1_all.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.14 (GNU/Linux)
+
+iQIcBAEBCAAGBQJSWMBjAAoJEMW9bI8ildUCJDUQAI41nPXrac4yoeojp9BKChyS
+j09AwLVWAgkzvaY9Zlp/9JR+T3O0/E4f6cdpqnjyONkVrASefY+1EFmlMyJfmDx/
+REwXto4svEhTHtyv1bMrxwxmHAZKDFJ6PTmasHw2T4DyOfxx1QixVVrs91Q0z0Tw
+d+PWcUzMaB41w+3VovvEFU4hd7ulx6nvW5oTOAhb/AORZadmgxW2vaIzspIWvMN6
+/8YtAgntYMw2dC9kGT17WBAsnuhmAs25WIDCaYEYseooO9J2hZt6PmE88kYg5ugd
+b9KjaQnWMkY20YWKkRS8XPWGRp9OxoF+Mhoz2Y+R3d3Yr3UeZHBb7spJ+DSJGfpm
+QeG16zH1jhUTNMn4mUSbgT9n2oMaqwdLoxeVVnEWxcSe04jn1mDvlaXxdvLzxQCw
+aVdWZLi2XqiwRX2s7uKtfOFmrz0h96mDcB3uB+Ui9/vSo4C7dbHUyX3p1qVQqkNC
+YUKMoAnt3q2O5hdLXHqGDhLg/CSAQDnrnkioXbM1pCS7PGlmVkgNdxrjNa5hodEf
+ubm2DlrH8EW/Tsj6HcYEZTdZ8TvuAzsC5VQiaMIgxON0lBMFTrK1zOZiJKIDm/3E
+GT7lcxbl5Txq9Xuz48p3USTrDLNm7h981Bq1E1rBWZiAp29ofgHEhJ+bTTG6JKkF
+NVNLXLKNp+PRMdYH+RWY
+=zomH
+-----END PGP SIGNATURE-----
