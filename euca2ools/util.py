@@ -23,7 +23,9 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+import getpass
 import os
+import sys
 import tempfile
 
 
@@ -42,12 +44,12 @@ def build_progressbar_label_template(fnames):
 
 # pylint: disable=W0622
 def mkdtemp_for_large_files(suffix='', prefix='tmp', dir=None):
-    '''
+    """
     Like tempfile.mkdtemp, but using /var/tmp as a last resort instead of /tmp.
 
     This is meant for utilities that create large files, as /tmp is often a
     ramdisk.
-    '''
+    """
 
     if dir is None:
         dir = (os.getenv('TMPDIR') or os.getenv('TEMP') or os.getenv('TMP') or
@@ -62,3 +64,13 @@ def sanitize_path(path):
     :param path: The path string to sanitize.
     """
     return os.path.abspath(os.path.expandvars(os.path.expanduser(path)))
+
+
+def prompt_for_password():
+    pass1 = getpass.getpass(prompt='New password: ')
+    pass2 = getpass.getpass(prompt='Retype new password: ')
+    if pass1 == pass2:
+        return pass1
+    else:
+        print >> sys.stderr, 'error: passwords do not match'
+        return prompt_for_password()

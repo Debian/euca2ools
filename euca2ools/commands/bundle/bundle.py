@@ -78,6 +78,7 @@ class Bundle(object):
             partdir = os.path.dirname(manifest_filename)
         new_bundle = cls()
         with open(manifest_filename) as manifest_file:
+            # noinspection PyUnresolvedReferences
             manifest = lxml.objectify.parse(manifest_file).getroot()
         new_bundle.digest = manifest.image.digest.text
         new_bundle.digest_algorithm = manifest.image.digest.get('algorithm')
@@ -113,6 +114,10 @@ class Bundle(object):
             self.image_size = os.path.getsize(image_filename)
         if self.image_size > self.EC2_IMAGE_SIZE_LIMIT:
             msg = "this image is larger than EC2's size limit"
+            self.log.warn(msg)
+            print >> sys.stderr, 'warning:', msg
+        elif self.image_size == 0:
+            msg = 'this image is an empty file'
             self.log.warn(msg)
             print >> sys.stderr, 'warning:', msg
         # pipe for getting the digest from sha1sum
@@ -183,14 +188,17 @@ class Bundle(object):
     def _write_parts(self, infile, part_prefix, part_size):
         with self._lock:
             self.parts = []
-        for part_no in itertools.count():
-            part_fname = '{0}.part.{1}'.format(part_prefix, part_no)
-            part_info = _write_single_part(infile, part_fname, part_size)
-            with self._lock:
-                self.parts.append(part_info)
-            if part_info['size'] < part_size:
-                # That's the last part
-                return
+        try:
+            for part_no in itertools.count():
+                part_fname = '{0}.part.{1}'.format(part_prefix, part_no)
+                part_info = _write_single_part(infile, part_fname, part_size)
+                with self._lock:
+                    self.parts.append(part_info)
+                if part_info['size'] < part_size:
+                    # That's the last part
+                    return
+        finally:
+            infile.close()
 
     def extract_image(self, destdir, progressbar=None):
         assert self.digest_algorithm == 'SHA1'

@@ -38,6 +38,7 @@ from euca2ools.commands.walrus import Walrus
 from euca2ools.util import mkdtemp_for_large_files
 import hashlib
 import os.path
+import random
 from requestbuilder import Arg, MutuallyExclusiveArgList
 from requestbuilder.auth import QuerySigV2Auth, S3RestAuth
 import requestbuilder.commands.http
@@ -74,6 +75,8 @@ class InstallImage(EuStoreRequest, FileTransferProgressBarMixin):
                 help='''location to place the image and other artifacts
                 (default:  dir named by TMPDIR, TEMP, or TMP environment
                 variables, or otherwise /var/tmp)'''),
+            Arg('--pad-name', action='store_true', help='''add some random
+                characters to the image's name to ensure it is unique'''),
             Arg('--kernel', help='''ID of the kernel image to use instead of
                 the one bundled with the image'''),
             Arg('--ramdisk', help='''ID of the ramdisk image to use instead of
@@ -97,6 +100,7 @@ class InstallImage(EuStoreRequest, FileTransferProgressBarMixin):
                 help='storage service endpoint URL'),
             Arg('-y', '--yes', action='store_true', help=argparse.SUPPRESS)]
 
+    # noinspection PyExceptionInherit
     def configure(self):
         EuStoreRequest.configure(self)
         set_userregion(self.config, self.args.get('userregion'))
@@ -240,7 +244,8 @@ class InstallImage(EuStoreRequest, FileTransferProgressBarMixin):
             url = urlparse.urljoin(endpoint, image['url'])
             self.log.info('downloading image from %s', url)
             label = 'Downloading image '.format(os.path.basename(url))
-            req = requestbuilder.commands.http.Get(label=label, url=url,
+            req = requestbuilder.commands.http.Get(
+                label=label, url=url,
                 show_progress=self.args.get('show_progress', False),
                 dest=workdir, config=self.config)
             tarball_path, tarball_size = req.main()
@@ -274,8 +279,14 @@ class InstallImage(EuStoreRequest, FileTransferProgressBarMixin):
     def bundle_and_register_all(self, workdir, tarball_filename):
         if self.args['show_progress']:
             print 'Preparing to extract image...'
-        image_name = 'eustore-{0}'.format(
-            os.path.splitext(os.path.basename(tarball_filename))[0])
+        if self.args.get('pad_name', False):
+            image_name_pad = '{0:0>8x}-'.format(random.randrange(16**8))
+        else:
+            image_name_pad = ''
+        image_name = 'eustore-{0}{1}'.format(
+            image_name_pad,
+            os.path.splitext(os.path.basename(tarball_filename))[0]
+            .replace('.', '_'))
         tarball = tarfile.open(tarball_filename, 'r:gz')
         try:
             members = tarball.getmembers()
@@ -300,9 +311,10 @@ class InstallImage(EuStoreRequest, FileTransferProgressBarMixin):
                             tarball, member, workdir, 'Extracting kernel ')
                         manifest_loc = self.bundle_and_upload_image(
                             kernel_image, 'kernel', workdir)
-                        req = RegisterImage(config=self.config,
-                            service=self.__eucalyptus,
-                            ImageLocation=manifest_loc, Name=image_name,
+                        req = RegisterImage(
+                            config=self.config, service=self.__eucalyptus,
+                            ImageLocation=manifest_loc,
+                            Name=(image_name + '-kernel'),
                             Description=self.args.get('description'),
                             Architecture=self.args.get('architecture'))
                         response = req.main()
@@ -317,9 +329,10 @@ class InstallImage(EuStoreRequest, FileTransferProgressBarMixin):
                             tarball, member, workdir, 'Extracting ramdisk')
                         manifest_loc = self.bundle_and_upload_image(
                             ramdisk_image, 'ramdisk', workdir)
-                        req = RegisterImage(config=self.config,
-                            service=self.__eucalyptus,
-                            ImageLocation=manifest_loc, Name=image_name,
+                        req = RegisterImage(
+                            config=self.config, service=self.__eucalyptus,
+                            ImageLocation=manifest_loc,
+                            Name=(image_name + '-ramdisk'),
                             Description=self.args.get('description'),
                             Architecture=self.args.get('architecture'))
                         response = req.main()
@@ -336,16 +349,22 @@ class InstallImage(EuStoreRequest, FileTransferProgressBarMixin):
             for member in members:
                 if member.name in bundled_images:
                     continue
+                if any(s in member.name for s in ('initrd', 'initramfs',
+                                                  'loader')):
+                    # Make sure we don't accidentally register a ramdisk image.
+                    # This can happen when use of --ramdisk prevents us from
+                    # pruning it later.
+                    continue
                 if machine_id is None and member.name.endswith('.img'):
                     bundled_images.append(member.name)
                     machine_image = self.extract_without_path(
                         tarball, member, workdir, 'Extracting image  ')
-                    manifest_loc = self.bundle_and_upload_image(machine_image,
-                        'machine', workdir, kernel_id=kernel_id,
+                    manifest_loc = self.bundle_and_upload_image(
+                        machine_image, 'machine', workdir, kernel_id=kernel_id,
                         ramdisk_id=ramdisk_id)
-                    req = RegisterImage(config=self.config,
-                        service=self.__eucalyptus, ImageLocation=manifest_loc,
-                        Name=image_name,
+                    req = RegisterImage(
+                        config=self.config, service=self.__eucalyptus,
+                        ImageLocation=manifest_loc, Name=image_name,
                         Description=self.args.get('description'),
                         Architecture=self.args.get('architecture'))
                     response = req.main()

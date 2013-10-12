@@ -24,10 +24,11 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import base64
-from euca2ools.commands.argtypes import (delimited_list,
-    ec2_block_device_mapping)
-from euca2ools.commands.autoscaling import AutoScalingRequest
 import os.path
+
+from euca2ools.commands.argtypes import (delimited_list,
+                                         ec2_block_device_mapping)
+from euca2ools.commands.autoscaling import AutoScalingRequest
 from requestbuilder import Arg, MutuallyExclusiveArgList
 from requestbuilder.exceptions import ArgumentError
 
@@ -44,10 +45,10 @@ class CreateLaunchConfiguration(AutoScalingRequest):
                 help='instance type for use for instances (required)'),
             Arg('--block-device-mapping', dest='BlockDeviceMappings.member',
                 metavar='DEVICE1=MAPPED1,DEVICE2=MAPPED2,...',
-                type=delimited_list(','), help='''a comma-separated list of
-                block device mappings for the image, in the form DEVICE=MAPPED,
-                where "MAPPED" is "none", "ephemeral(0-3)", or
-                "[SNAP-ID]:[SIZE]:[true|false]'''),
+                type=delimited_list(',', item_type=ec2_block_device_mapping),
+                help='''a comma-separated list of block device mappings for the
+                image, in the form DEVICE=MAPPED, where "MAPPED" is "none",
+                "ephemeral(0-3)", or "[SNAP-ID]:[SIZE]:[true|false]'''),
             Arg('--ebs-optimized', dest='EbsOptimized', action='store_const',
                 const='true',
                 help='whether the instance is optimized for EBS I/O'),
@@ -83,6 +84,7 @@ class CreateLaunchConfiguration(AutoScalingRequest):
                     help='''file containing user data to make available to
                     instances'''))]
 
+    # noinspection PyExceptionInherit
     def configure(self):
         AutoScalingRequest.configure(self)
         if self.args.get('user_data'):
@@ -102,9 +104,3 @@ class CreateLaunchConfiguration(AutoScalingRequest):
             with open(self.args['user_data_file']) as user_data_file:
                 self.params['UserData'] = base64.b64encode(
                     user_data_file.read())
-
-    def preprocess(self):
-        if self.args.get('block_device_mapping'):
-            mappings = map(ec2_block_device_mapping,
-                           self.args['block_device_mapping'])
-            self.params['BlockDeviceMappings.member'] = mappings
