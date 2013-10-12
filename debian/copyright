@@ -1,5 +1,5 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Source: https://github.com/eucalyptus/euca2ools/archive/3.0.0.tar.gz
+Source: https://github.com/eucalyptus/euca2ools/archive/3.0.2.tar.gz
 
 Files: *
 Copyright: © 2009-2013, Eucalyptus Systems, Inc.

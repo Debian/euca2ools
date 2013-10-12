@@ -1,3 +1,9 @@
+euca2ools (3.0.2-1) unstable; urgency=low
+
+  6641f8a Merged upstream tag 3.0.2
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 12 Oct 2013 11:54:05 +0900
+
 euca2ools (3.0.0-1) unstable; urgency=low
 
   14bc124 Pulled upstream tag 3.0.0 
