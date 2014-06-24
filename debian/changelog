@@ -1,3 +1,9 @@
+euca2ools (3.1.0+2014060901-1) UNRELEASED; urgency=medium
+
+  f2436a0 Merged upstream commit 825506e, shortly after tag v3.1.0. 
+
+ -- Charles Plessy <plessy@debian.org>  Wed, 25 Jun 2014 08:16:37 +0900
+
 euca2ools (3.0.2-1) unstable; urgency=low
 
   6641f8a Merged upstream tag 3.0.2
