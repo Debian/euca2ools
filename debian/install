@@ -1,2 +1,3 @@
 bin/* /usr/bin/
 certs/* /usr/share/euca2ools/certs/
+conf/* /etc/euca2ools
