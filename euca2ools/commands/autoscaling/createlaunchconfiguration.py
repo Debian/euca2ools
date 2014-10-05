@@ -30,7 +30,8 @@ from requestbuilder import Arg, MutuallyExclusiveArgList
 from requestbuilder.exceptions import ArgumentError
 
 from euca2ools.commands.argtypes import (delimited_list,
-                                         ec2_block_device_mapping)
+                                         ec2_block_device_mapping,
+                                         flexible_bool)
 from euca2ools.commands.autoscaling import AutoScalingRequest
 
 
@@ -44,6 +45,10 @@ class CreateLaunchConfiguration(AutoScalingRequest):
             Arg('-t', '--instance-type', dest='InstanceType', metavar='TYPE',
                 required=True,
                 help='instance type for use for instances (required)'),
+            Arg('--associate-public-ip-address',
+                dest='AssociatePublicIpAddress', type=flexible_bool,
+                metavar='{true,false}', help='''[VPC only] whether to
+                assign instances public IP addresses'''),
             Arg('--block-device-mapping', dest='BlockDeviceMappings.member',
                 metavar='DEVICE1=MAPPED1,DEVICE2=MAPPED2,...',
                 type=delimited_list(',', item_type=ec2_block_device_mapping),

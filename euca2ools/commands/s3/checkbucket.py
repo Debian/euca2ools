@@ -31,7 +31,10 @@ from euca2ools.commands.s3 import S3Request
 class CheckBucket(S3Request):
     DESCRIPTION = 'Return successfully if a bucket exists'
     ARGS = [Arg('bucket', route_to=None, help='name of the bucket to check')]
-    METHOD = 'HEAD'
 
     def preprocess(self):
+        # We use GET instead of HEAD so we can get redirections when we talk
+        # to the wrong region.
+        self.method = 'GET'
         self.path = self.args['bucket']
+        self.params['max-keys'] = 0

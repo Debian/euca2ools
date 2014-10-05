@@ -104,13 +104,13 @@ class RunInstances(EC2Request):
                 help='''[VPC only] assign a specific primary private IP address
                 to an instance's interface'''),
             MutuallyExclusiveArgList(
-                Arg('--secondary-private-ip-address', metavar='ADDRESS',
-                    action='append', route_to=None, help='''[VPC only]
-                    assign a specific secondary private IP address to an
-                    instance's network interface.  Use this option multiple
-                    times to add additional addresses.'''),
-                Arg('--secondary-private-ip-address-count', metavar='COUNT',
-                    type=int, route_to=None, help='''[VPC only]
+                Arg('--secondary-address', '--secondary-private-ip-address',
+                    metavar='ADDRESS', action='append', route_to=None,
+                    help='''[VPC only] assign a specific secondary private IP
+                    address to an instance's network interface.  Use this
+                    option multiple times to add additional addresses.'''),
+                Arg('--secondary-count', '--secondary-private-ip-address-count',
+                    metavar='COUNT', type=int, route_to=None, help='''[VPC only]
                     automatically assign a specific number of secondary private
                     IP addresses to an instance's network interface''')),
             Arg('-a', '--network-interface', dest='NetworkInterface',
@@ -202,10 +202,12 @@ class RunInstances(EC2Request):
 
         for group in self.args['group']:
             if group.startswith('sg-'):
-                self.params.setdefault('SecurityGroupId', [])
+                if not self.params.get('SecurityGroupId'):
+                    self.params['SecurityGroupId'] = []
                 self.params['SecurityGroupId'].append(group)
             else:
-                self.params.setdefault('SecurityGroup', [])
+                if not self.params.get('SecurityGroup'):
+                    self.params['SecurityGroup'] = []
                 self.params['SecurityGroup'].append(group)
 
         iprofile = self.args.get('iam_profile')
@@ -224,7 +226,8 @@ class RunInstances(EC2Request):
         if self.args.get('secondary_private_ip_address'):
             sec_ips = [{'PrivateIpAddress': addr} for addr in
                        self.args['secondary_private_ip_address']]
-            cli_iface.setdefault('PrivateIpAddresses', [])
+            if not cli_iface.get('PrivateIpAddresses'):
+                cli_iface['PrivateIpAddresses'] = []
             cli_iface['PrivateIpAddresses'].extend(sec_ips)
         if self.args.get('secondary_private_ip_address_count'):
             sec_ip_count = self.args['secondary_private_ip_address_count']
@@ -233,7 +236,8 @@ class RunInstances(EC2Request):
             cli_iface['SubnetId'] = self.args['subnet']
         if cli_iface:
             cli_iface['DeviceIndex'] = 0
-            self.params.setdefault('NetworkInterface', [])
+            if not self.params.get('NetworkInterface'):
+                self.params['NetworkInterface'] = []
             self.params['NetworkInterface'].append(cli_iface)
 
     def print_result(self, result):

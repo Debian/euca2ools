@@ -46,7 +46,7 @@ class DescribeInstances(EC2Request):
                Filter('availability-zone'),
                Filter('block-device-mapping.attach-time',
                       help='volume attachment time'),
-               Filter('block-device-mapping.delete-on-termination', type=bool,
+               Filter('block-device-mapping.delete-on-termination',
                       help='''whether a volume is deleted upon instance
                       termination'''),
                Filter('block-device-mapping.device-name',
@@ -64,6 +64,8 @@ class DescribeInstances(EC2Request):
                Filter('group-id', help='security group ID'),
                Filter('group-name', help='security group name'),
                Filter('hypervisor', help='hypervisor type'),
+               Filter('iam-instance-profile.arn',
+                      help="ARN of the instance's instance profile"),
                Filter('image-id', help='machine image ID'),
                Filter('instance.group-id', help='security group ID'),
                Filter('instance.group-name', help='security group name'),
