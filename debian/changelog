@@ -1,6 +1,6 @@
-euca2ools (3.1.0-1) UNRELEASED; urgency=medium
+euca2ools (3.2.0~pre1-1) UNRELEASED; urgency=medium
 
-  f2436a0 Merged upstream commit 825506e, shortly after tag v3.1.0. 
+  493e785 Merged upstream tag v3.2.0-pre1. 
   311d7d7 Conforms to Policy version 3.9.5.
   4fae14b Emulate source package 1.0 format with single-debian-patch option.
 
