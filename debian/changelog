@@ -1,9 +1,11 @@
-euca2ools (3.1.0-1) UNRELEASED; urgency=medium
+euca2ools (3.1.0-1) unstable; urgency=medium
 
   5d9d911 Merge tag 'v3.1.0' into debian/unstable
           Closes: #734616, #758910
+  1cf5c42 Depends on python-requestbuilder >= 0.2.3.
+  bc2ef72 Conforms to Policy 3.9.6.
 
- -- Charles Plessy <plessy@debian.org>  Thu, 09 Oct 2014 08:10:21 +0900
+ -- Charles Plessy <plessy@debian.org>  Thu, 09 Oct 2014 08:20:20 +0900
 
 euca2ools (3.0.2-1) unstable; urgency=low
 
