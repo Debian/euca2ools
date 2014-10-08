@@ -13,7 +13,7 @@ Build-Depends: cdbs (>= 0.4.90~),
                help2man,
                python-all,
                python-lxml,
-               python-requestbuilder,
+               python-requestbuilder (>= 0.2.3),
                python-requests,
                python-setuptools,
                python-six
