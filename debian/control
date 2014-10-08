@@ -17,7 +17,7 @@ Build-Depends: cdbs (>= 0.4.90~),
                python-requests,
                python-setuptools,
                python-six
-Standards-Version: 3.9.4
+Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-eucalyptus/euca2ools.git
 Vcs-Git: git://anonscm.debian.org/pkg-eucalyptus/euca2ools.git
 Homepage: http://www.eucalyptus.com/download/euca2ools
