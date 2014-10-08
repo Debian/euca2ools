@@ -1,4 +1,4 @@
-# Copyright 2009-2012 Eucalyptus Systems, Inc.
+# Copyright 2009-2014 Eucalyptus Systems, Inc.
 #
 # Redistribution and use of this software in source and binary forms,
 # with or without modification, are permitted provided that the following
@@ -23,13 +23,20 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-from euca2ools import __version__
 import glob
 import os.path
 import platform
+import sys
+
 import requestbuilder
 import requests
-import sys
+
+from euca2ools import __version__
+
+
+DATADIR = '/usr/share/euca2ools'
+SYSCONFDIR = '/etc/euca2ools'
+USERCONFDIR = '~/.euca'
 
 
 class Euca2ools(object):
@@ -37,9 +44,9 @@ class Euca2ools(object):
     A class with attributes and methods that define the entire euca2ools suite
     """
 
-    CONFIG_PATHS = ('/etc/euca2ools/euca2ools.ini',
-                    '/etc/euca2ools/conf.d/*.ini',
-                    '~/.euca/*.ini')
+    CONFIG_PATHS = (os.path.join(SYSCONFDIR, 'euca2ools.ini'),
+                    os.path.join(SYSCONFDIR, 'conf.d', '*.ini'),
+                    os.path.join(USERCONFDIR, '*.ini'))
 
     def __init__(self):
         self.__user_agent = None
@@ -47,7 +54,7 @@ class Euca2ools(object):
     # noinspection PyBroadException
     @staticmethod
     def format_version():
-        version_lines = ['euca2ools {0} (Sparta)'.format(__version__)]
+        version_lines = ['euca2ools {0} (Omega)'.format(__version__)]
         try:
             if os.path.isfile('/etc/eucalyptus/eucalyptus-version'):
                 with open('/etc/eucalyptus/eucalyptus-version') as ver_file:
@@ -76,12 +83,14 @@ class Euca2ools(object):
             tokens = []
             impl = platform.python_implementation()
             if impl == 'PyPy':
+                # pylint: disable=E1101
                 impl_version = '{0}.{1}.{2}'.format(
                     sys.pypy_version_info.major,
                     sys.pypy_version_info.minor,
                     sys.pypy_version_info.micro)
                 if sys.pypy_version_info.releaselevel != 'final':
                     impl_version += sys.pypy_version_info.releaselevel
+                # pylint: enable=E1101
             else:
                 # I'm guessing for non-CPython implementations; feel free to
                 # submit patches or the needed implementation-specific API
