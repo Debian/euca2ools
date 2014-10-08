@@ -1,3 +1,10 @@
+euca2ools (3.1.0-1) UNRELEASED; urgency=medium
+
+  5d9d911 Merge tag 'v3.1.0' into debian/unstable
+          Closes: #734616, #758910
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 09 Oct 2014 08:10:21 +0900
+
 euca2ools (3.0.2-1) unstable; urgency=low
 
   6641f8a Merged upstream tag 3.0.2
