@@ -1,11 +1,12 @@
-euca2ools (3.2.0~pre1-1) experimental; urgency=medium
+euca2ools (3.3.1-1) UNRELEASED; urgency=medium
 
-  493e785 Merged upstream tag v3.2.0-pre1. 
+  d271cb9 Merge tag 'v3.3.1'
   3f4b6a5 Depends on python-requestbuilder >= 0.2.3.
   349794b Conforms to Policy version 3.9.6.
   4fae14b Emulate source package 1.0 format with single-debian-patch option.
+  75ceff1 Use secure VCS URIs.
 
- -- Charles Plessy <plessy@debian.org>  Thu, 09 Oct 2014 08:31:52 +0900
+ -- Charles Plessy <plessy@debian.org>  Sat, 30 Jul 2016 11:55:10 +0900
 
 euca2ools (3.0.2-1) unstable; urgency=low
 
