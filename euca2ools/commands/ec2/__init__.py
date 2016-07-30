@@ -1,4 +1,4 @@
-# Copyright 2009-2014 Eucalyptus Systems, Inc.
+# Copyright (c) 2009-2016 Hewlett Packard Enterprise Development LP
 #
 # Redistribution and use of this software in source and binary forms,
 # with or without modification, are permitted provided that the following
@@ -34,7 +34,7 @@ import sys
 
 import lxml.etree
 from requestbuilder import Arg
-from requestbuilder.auth import QuerySigV2Auth
+import requestbuilder.auth.aws
 from requestbuilder.exceptions import ArgumentError, AuthError, ClientError
 from requestbuilder.mixins import TabifyingMixin
 from requestbuilder.request import AWSQueryRequest
@@ -43,7 +43,7 @@ import requests.exceptions
 
 from euca2ools.commands import Euca2ools
 from euca2ools.exceptions import AWSError
-from euca2ools.util import substitute_euca_region
+from euca2ools.util import add_fake_region_name
 
 
 class EC2(BaseService):
@@ -57,8 +57,8 @@ class EC2(BaseService):
                 help='compute service endpoint URL')]
 
     def configure(self):
-        substitute_euca_region(self)
-        BaseService.configure(self)
+        requestbuilder.service.BaseService.configure(self)
+        add_fake_region_name(self)
 
     def handle_http_error(self, response):
         raise AWSError(response)
@@ -67,7 +67,7 @@ class EC2(BaseService):
 class EC2Request(AWSQueryRequest, TabifyingMixin):
     SUITE = Euca2ools
     SERVICE_CLASS = EC2
-    AUTH_CLASS = QuerySigV2Auth
+    AUTH_CLASS = requestbuilder.auth.aws.HmacV4Auth
     METHOD = 'POST'
 
     def __init__(self, **kwargs):
@@ -95,12 +95,11 @@ class EC2Request(AWSQueryRequest, TabifyingMixin):
         instance_line = ['INSTANCE']
         for key in ['instanceId', 'imageId', 'dnsName', 'privateDnsName']:
             instance_line.append(instance.get(key))
-        instance_line.append(instance.get('instanceState', {})
-                                     .get('name'))
+        instance_line.append(instance.get('instanceState', {}).get('name'))
         instance_line.append(instance.get('keyName'))
         instance_line.append(instance.get('amiLaunchIndex'))
         instance_line.append(','.join([code['productCode'] for code in
-                             instance.get('productCodes', [])]))
+                                       instance.get('productCodes', [])]))
         instance_line.append(instance.get('instanceType'))
         instance_line.append(instance.get('launchTime'))
         instance_line.append(instance.get('placement', {}).get(
@@ -177,7 +176,7 @@ class EC2Request(AWSQueryRequest, TabifyingMixin):
     def print_vpc(self, vpc):
         print self.tabify(('VPC', vpc.get('vpcId'), vpc.get('state'),
                            vpc.get('cidrBlock'), vpc.get('dhcpOptionsId'),
-                           vpc.get('instanceTenancy')))
+                           vpc.get('instanceTenancy'), vpc.get('isDefault')))
         for tag in vpc.get('tagSet') or []:
             self.print_resource_tag(tag, vpc.get('vpcId'))
 
@@ -281,7 +280,7 @@ class EC2Request(AWSQueryRequest, TabifyingMixin):
         print self.tabify(['NETWORKINTERFACE'] + nic_info)
         if nic.get('attachment'):
             attachment_info = [nic['attachment'].get(attr) for attr in (
-                'attachmentID', 'deviceIndex', 'status', 'attachTime',
+                'attachmentId', 'deviceIndex', 'status', 'attachTime',
                 'deleteOnTermination')]
             print self.tabify(['ATTACHMENT'] + attachment_info)
         privaddresses = nic.get('privateIpAddressesSet', [])
@@ -298,7 +297,8 @@ class EC2Request(AWSQueryRequest, TabifyingMixin):
             else:
                 privaddress = None
             print self.tabify(('ASSOCIATION', association.get('publicIp'),
-                               association.get('ipOwnerId'), privaddress))
+                               association.get('ipOwnerId'),
+                               privaddress.get('privateIpAddress')))
         for group in nic.get('groupSet', []):
             print self.tabify(('GROUP', group.get('groupId'),
                                group.get('groupName')))
@@ -310,6 +310,8 @@ class EC2Request(AWSQueryRequest, TabifyingMixin):
             print self.tabify(('PRIVATEIPADDRESS',
                                privaddress.get('privateIpAddress'),
                                privaddress.get('privateDnsName'), primary))
+        for tag in nic.get('tagSet') or []:
+            self.print_resource_tag(tag, nic.get('networkInterfaceId'))
 
     def print_customer_gateway(self, cgw):
         print self.tabify(('CUSTOMERGATEWAY', cgw.get('customerGatewayId'),
@@ -354,7 +356,7 @@ class EC2Request(AWSQueryRequest, TabifyingMixin):
                     self.log.info('using connection info stylesheet %s',
                                   stylesheet)
                     with open(stylesheet) as stylesheet_file:
-                        xslt_root = lxml.etree.parse(xslt_file)
+                        xslt_root = lxml.etree.parse(stylesheet_file)
                 transform = lxml.etree.XSLT(xslt_root)
                 conn_info_root = lxml.etree.parse(io.BytesIO(
                     vpn.get('customerGatewayConfiguration')))
@@ -541,7 +543,7 @@ def parse_ports(protocol, port_range=None, icmp_type_code=None):
     # changes then please fix this.
     from_port = None
     to_port = None
-    if protocol in ('icmp', '1', 1):
+    if str(protocol).lower() in ('icmp', '1'):
         if port_range:
             raise ArgumentError('argument -p/--port-range: not compatible '
                                 'with protocol "{0}"'.format(protocol))
@@ -561,7 +563,7 @@ def parse_ports(protocol, port_range=None, icmp_type_code=None):
         if from_port < -1 or to_port < -1:
             raise ArgumentError('argument -t/--icmp-type-code: ICMP type, '
                                 'code must be at least -1')
-    elif protocol in ('tcp', '6', 6, 'udp', '13', 13, 'sctp', '132', 132):
+    elif str(protocol).lower() in ('tcp', '6', 'udp', '17'):
         if icmp_type_code:
             raise ArgumentError('argument -t/--icmp-type-code: not compatible '
                                 'with protocol "{0}"'.format(protocol))

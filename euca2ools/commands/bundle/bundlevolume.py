@@ -63,7 +63,7 @@ class BundleVolume(BaseCommand, FileTransferProgressBarMixin):
             # -r/--arch is required, but to keep the UID check we do at the
             # beginning of configure() first we enforce that there instead.
             Arg('-r', '--arch', help="the image's architecture (required)",
-                choices=('i386', 'x86_64', 'armhf', 'ppc', 'ppc64')),
+                choices=('i386', 'x86_64', 'armhf', 'ppc', 'ppc64', 'ppc64le')),
             Arg('-e', '--exclude', metavar='PATH,...',
                 type=delimited_list(','),
                 help='comma-separated list of paths to exclude'),
@@ -481,7 +481,7 @@ def _get_all_mounts():
 
 
 def _get_filesystem_info(device):
-    blkid = subprocess.Popen(['blkid', '-d', '-o', 'export', device],
+    blkid = subprocess.Popen(['blkid', '-o', 'export', device],
                              stdout=subprocess.PIPE)
     fsinfo = {}
     for line in blkid.stdout:
@@ -493,6 +493,8 @@ def _get_filesystem_info(device):
         elif key == 'UUID':
             fsinfo['uuid'] = val
     blkid.wait()
+    if blkid.returncode != 0:
+        raise subprocess.CalledProcessError(blkid.returncode, 'blkid')
     return fsinfo
 
 

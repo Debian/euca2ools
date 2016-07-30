@@ -1,4 +1,4 @@
-# Copyright 2009-2013 Eucalyptus Systems, Inc.
+# Copyright (c) 2009-2016 Hewlett Packard Enterprise Development LP
 #
 # Redistribution and use of this software in source and binary forms,
 # with or without modification, are permitted provided that the following
@@ -24,7 +24,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from euca2ools.commands.ec2 import EC2Request
-from requestbuilder import Arg, Filter
+from requestbuilder import Arg, Filter, GenericTagFilter
 
 
 class DescribeSecurityGroups(EC2Request):
@@ -55,6 +55,8 @@ class DescribeSecurityGroups(EC2Request):
                Filter('tag-key', help='key of a tag assigned to the group'),
                Filter('tag-value',
                       help='value of a tag assigned to the group'),
+               GenericTagFilter('tag:KEY',
+                                help='specific tag key/value combination'),
                Filter('vpc-id',
                       help='[VPC only] ID of a VPC the group belongs to')]
     LIST_TAGS = ['securityGroupInfo', 'ipPermissions', 'ipPermissionsEgress',
@@ -89,10 +91,10 @@ class DescribeSecurityGroups(EC2Request):
                 print self.tabify(perm_base + perm_item)
             for othergroup in perm.get('groups', []):
                 perm_item = ['FROM', 'USER', othergroup.get('userId')]
+                if othergroup.get('groupName'):
+                    perm_item.extend(['NAME', othergroup['groupName']])
                 if othergroup.get('groupId'):
                     perm_item.extend(['ID', othergroup['groupId']])
-                else:
-                    perm_item.extend(['GRPNAME', othergroup['groupName']])
                 perm_item.append('ingress')
                 print self.tabify(perm_base + perm_item)
         for perm in group.get('ipPermissionsEgress', []):
@@ -105,10 +107,10 @@ class DescribeSecurityGroups(EC2Request):
                 print self.tabify(perm_base + perm_item)
             for othergroup in perm.get('groups', []):
                 perm_item = ['TO', 'USER', othergroup.get('userId')]
+                if othergroup.get('groupName'):
+                    perm_item.extend(['NAME', othergroup['groupName']])
                 if othergroup.get('groupId'):
                     perm_item.extend(['ID', othergroup['groupId']])
-                else:
-                    perm_item.extend(['GRPNAME', othergroup['groupName']])
                 perm_item.append('egress')
                 print self.tabify(perm_base + perm_item)
         for tag in group.get('tagSet', []):

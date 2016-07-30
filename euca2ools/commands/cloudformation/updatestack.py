@@ -1,4 +1,4 @@
-# Copyright 2014 Eucalyptus Systems, Inc.
+# Copyright (c) 2014-2016 Hewlett Packard Enterprise Development LP
 #
 # Redistribution and use of this software in source and binary forms,
 # with or without modification, are permitted provided that the following
@@ -23,11 +23,11 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-from requestbuilder import Arg, MutuallyExclusiveArgList
+from requestbuilder import Arg, EMPTY, MutuallyExclusiveArgList
 
+from euca2ools.commands.argtypes import binary_tag_def, delimited_list
 from euca2ools.commands.cloudformation import CloudFormationRequest
 from euca2ools.commands.cloudformation.argtypes import parameter_list
-
 
 class UpdateStack(CloudFormationRequest):
     DESCRIPTION = 'Update a stack with a new template'
@@ -40,10 +40,22 @@ class UpdateStack(CloudFormationRequest):
                 Arg('--template-url', dest='TemplateURL', metavar='URL',
                     help='URL pointing to a new JSON template for the stack'))
             .required(),
+            Arg('--capabilities', dest='Capabilities.member',
+                metavar='CAP[,...]', type=delimited_list(','),
+                help='capabilities needed to update the stack'),
             Arg('-p', '--parameter', dest='param_sets', route_to=None,
                 metavar='KEY=VALUE', type=parameter_list, action='append',
                 help='''key and value of the parameters to use with the
-                stack's template, separated by an "=" character''')]
+                stack's template, separated by an "=" character'''),
+            MutuallyExclusiveArgList(
+                Arg('--tag', dest='Tags.member', metavar='KEY[=VALUE]',
+                    type=binary_tag_def, action='append',
+                    help='''key and optional value of a tag to add, separated
+                    by an "=" character.  If no value is given the tag's value
+                    is set to an empty string.'''),
+                Arg('--delete-tags', dest='Tags', action='store_const',
+                    const=EMPTY,
+                    help='remove all tags associated with the stack'))]
 
     def configure(self):
         CloudFormationRequest.configure(self)

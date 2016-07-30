@@ -1,4 +1,4 @@
-# Copyright 2009-2014 Eucalyptus Systems, Inc.
+# Copyright 2009-2015 Eucalyptus Systems, Inc.
 #
 # Redistribution and use of this software in source and binary forms,
 # with or without modification, are permitted provided that the following
@@ -37,7 +37,8 @@ from euca2ools import __version__
 
 
 REQUIREMENTS = ['lxml',
-                'requestbuilder>=0.2.0-pre3',
+                'PyYAML',
+                'requestbuilder>=0.4',
                 'requests',
                 'six>=1.4']
 if sys.version_info < (2, 7):
@@ -126,16 +127,19 @@ setup(name="euca2ools",
       scripts=sum((glob.glob('bin/euare-*'),
                    glob.glob('bin/euca-*'),
                    glob.glob('bin/euform-*'),
+                   glob.glob('bin/euimage-*'),
                    glob.glob('bin/eulb-*'),
                    glob.glob('bin/euscale-*'),
                    glob.glob('bin/euwatch-*')),
                   []),
-      data_files=[('share/man/man1', glob.glob('man/*.1'))],
+      data_files=[('share/man/man1', glob.glob('man/*.1')),
+                  ('share/man/man5', glob.glob('man/*.5')),
+                  ('share/man/man7', glob.glob('man/*.7'))],
       packages=find_packages(),
       install_requires=REQUIREMENTS,
       license='BSD (Simplified)',
       platforms='Posix; MacOS X',
-      classifiers=['Development Status :: 4 - Beta',
+      classifiers=['Development Status :: 5 - Production/Stable',
                    'Intended Audience :: Developers',
                    'Intended Audience :: System Administrators',
                    'License :: OSI Approved :: Simplified BSD License',

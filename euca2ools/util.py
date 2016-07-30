@@ -1,4 +1,4 @@
-# Copyright 2009-2014 Eucalyptus Systems, Inc.
+# Copyright 2009-2015 Eucalyptus Systems, Inc.
 #
 # Redistribution and use of this software in source and binary forms,
 # with or without modification, are permitted provided that the following
@@ -25,10 +25,17 @@
 
 import datetime
 import getpass
+import inspect
 import os.path
+import pkgutil
 import stat
+import struct
 import sys
 import tempfile
+
+import requestbuilder.service
+
+import euca2ools.commands
 
 
 def build_progressbar_label_template(fnames):
@@ -78,27 +85,6 @@ def strip_response_metadata(response_dict):
         return response_dict
 
 
-def substitute_euca_region(obj):
-    if os.getenv('EUCA_REGION') and not os.getenv(obj.REGION_ENVVAR):
-        msg = ('EUCA_REGION environment variable is deprecated; use {0} '
-               'instead').format(obj.REGION_ENVVAR)
-        obj.log.warn(msg)
-        print >> sys.stderr, msg
-        os.environ[obj.REGION_ENVVAR] = os.getenv('EUCA_REGION')
-
-
-def magic(config, msg, suffix=None):
-    if not sys.stdout.isatty() or not sys.stderr.isatty():
-        return ''
-    try:
-        if config.convert_to_bool(config.get_global_option('magic'),
-                                  default=False):
-            return '\033[95m{0}\033[0m{1}'.format(msg, suffix or '')
-        return ''
-    except ValueError:
-        return ''
-
-
 def build_iam_policy(effect, resources, actions):
     policy = {'Statement': []}
     for resource in resources or []:
@@ -124,3 +110,92 @@ def get_filesize(filename):
         raise TypeError("'{0}' does not have a usable file size"
                         .format(filename))
     return os.path.getsize(filename)
+
+
+def get_vmdk_image_size(filename):
+    if get_filesize(filename) < 1024:
+        raise ValueError('File {0} is to small to be a valid Stream'
+                         ' Optimized VMDK'.format(filename))
+    # see https://www.vmware.com/support/developer/vddk/vmdk_50_technote.pdf
+    # for header/footer format
+    with open(filename, 'rb') as disk:
+        data = struct.unpack('<iiiqqqqiqqq?bbbbh433c', disk.read(512))
+        if data[9] & 0xffffffffffffffff == 0:
+            # move to 1024 bytes from the end and read footer
+            disk.seek(-1024, 2)
+            data = struct.unpack('<iiiqqqqiqqq?bbbbh433c', disk.read(512))
+
+    # validate
+    if 1447904331 != data[0]:
+        raise ValueError('File {0} is not a Stream Optimized VMDK'
+                         .format(filename))
+    if data[2] & 0x10000 == 0:
+        raise ValueError('File {0} does not contain compressed parts'
+                         .format(filename))
+    if data[2] & 0x20000 == 0:
+        raise ValueError('File {0} does not have all data present'
+                         .format(filename))
+    if data[11]:
+        raise ValueError('File {0} marked with unclean shutdown'
+                         .format(filename))
+    if data[16] != 1:
+        raise ValueError('File {0} uses unsupported compression algorithm'
+                         .format(filename))
+
+    return 512 * data[3]
+
+
+def check_dict_whitelist(dict_, err_context, whitelist=None):
+    if not isinstance(dict_, dict):
+        raise ValueError('{0} must be a dict'.format(err_context))
+    if whitelist:
+        differences = set(dict_.keys()) - set(whitelist)
+        if differences:
+            raise ValueError('unrecognized {0} argument(s): {1}'
+                             .format(err_context, ', '.join(differences)))
+
+
+def transform_dict(dict_, transformation_dict):
+    transformed = {}
+    for key, val in dict_.iteritems():
+        if key in transformation_dict:
+            transformed[transformation_dict[key]] = val
+        else:
+            transformed[key] = val
+    return transformed
+
+
+def add_fake_region_name(service):
+    """
+    If no name for a region is otherwise defined (i.e. service.region_name
+    is None and the AWS_AUTH_REGION environment variable is not set),
+    log a warning and add a fake region name so HmacV4Auth has something
+    to work with.  This works because eucalyptus doesn't care what name
+    one chooses for a region.
+
+    Setups that use eucarc files against AWS will still be broken.
+
+    This was added in euca2ools the 3.3 series and should be removed
+    some time after that.
+    """
+
+    if service.region_name is None and not os.getenv('AWS_AUTH_REGION'):
+        service.region_name = 'undefined-{0}'.format(os.getpid())
+        service.log.warn('added fake region name %s', service.region_name)
+
+
+def generate_service_names():
+    """
+    Generate a dict with keys for each service and values for those
+    services' corresponding URL environment variables, if any.
+    """
+    services = {'properties': 'EUCA_PROPERTIES_URL',
+                'reporting': 'EUCA_REPORTING_URL'}
+    for importer, modname, ispkg in pkgutil.iter_modules(
+            euca2ools.commands.__path__, euca2ools.commands.__name__ + '.'):
+        module = __import__(modname, fromlist='dummy')
+        for name, obj in inspect.getmembers(module):
+            if (inspect.isclass(obj) and inspect.getmodule(obj) == module and
+                    issubclass(obj, requestbuilder.service.BaseService)):
+                services[obj.NAME] = obj.URL_ENVVAR
+    return services

@@ -93,7 +93,7 @@ class BundleManifest(object):
                 manifest.enc_key = _decrypt_hex(
                     xml.image.user_encrypted_key.text.strip(),
                     privkey_filename)
-            except ValueError:
+            except (AttributeError, ValueError):
                 manifest.enc_key = _decrypt_hex(
                     xml.image.ec2_encrypted_key.text.strip(), privkey_filename)
             manifest.enc_algorithm = xml.image.user_encrypted_key.get(
@@ -101,7 +101,7 @@ class BundleManifest(object):
             try:
                 manifest.enc_iv = _decrypt_hex(
                     xml.image.user_encrypted_iv.text.strip(), privkey_filename)
-            except ValueError:
+            except (AttributeError, ValueError):
                 manifest.enc_iv = _decrypt_hex(
                     xml.image.ec2_encrypted_iv.text.strip(), privkey_filename)
 
@@ -145,6 +145,21 @@ class BundleManifest(object):
         mconfig = xml.machine_configuration
         assert self.image_arch is not None
         mconfig.architecture = self.image_arch
+        if self.image_type == 'machine':
+            if self.block_device_mappings:
+                mconfig.block_device_mapping = None
+                for virtual, device in sorted(
+                        self.block_device_mappings.items()):
+                    xml_mapping = lxml.objectify.Element('mapping')
+                    xml_mapping.virtual = virtual
+                    xml_mapping.device = device
+                    mconfig.block_device_mapping.append(xml_mapping)
+            if self.product_codes:
+                mconfig.product_codes = None
+                for code in self.product_codes:
+                    xml_code = lxml.objectify.Element('product_code')
+                    mconfig.product_codes.append(xml_code)
+                    mconfig.product_codes.product_code[-1] = code
         # kernel_id and ramdisk_id are normally meaningful only for machine
         # images, but eucalyptus also uses them to indicate kernel and ramdisk
         # images using the magic string "true", so their presence cannot be
@@ -155,21 +170,6 @@ class BundleManifest(object):
             mconfig.kernel_id = self.kernel_id
         if self.ramdisk_id:
             mconfig.ramdisk_id = self.ramdisk_id
-        if self.image_type == 'machine':
-            if self.block_device_mappings:
-                mconfig.block_device_mapping = None
-                for virtual, device in sorted(
-                        self.block_device_mappings.items()):
-                    xml_mapping = lxml.objectify.Element('mapping')
-                    xml_mapping.device = device
-                    xml_mapping.virtual = virtual
-                    mconfig.block_device_mapping.append(xml_mapping)
-            if self.product_codes:
-                mconfig.product_codes = None
-                for code in self.product_codes:
-                    xml_code = lxml.objectify.Element('product_code')
-                    mconfig.product_codes.append(xml_code)
-                    mconfig.product_codes.product_code[-1] = code
 
         # Image info
         xml.image = None
@@ -177,6 +177,12 @@ class BundleManifest(object):
         xml.image.name = self.image_name
         assert self.account_id is not None
         xml.image.user = self.account_id
+
+        # xml.image.type must appear immediately after xml.image.user
+        # for EC2 compatibility.
+        assert self.image_type is not None
+        xml.image.type = self.image_type
+
         assert self.image_digest is not None
         xml.image.digest = self.image_digest
         assert self.image_digest_algorithm is not None
@@ -186,28 +192,29 @@ class BundleManifest(object):
         xml.image.size = self.image_size
         assert self.bundled_image_size is not None
         xml.image.bundled_size = self.bundled_image_size
-        assert self.image_type is not None
-
-        xml.image.type = self.image_type
 
         # Bundle encryption keys (these are cloud-specific)
         assert self.enc_key is not None
         assert self.enc_iv is not None
         assert self.enc_algorithm is not None
-        # xml.image.append(lxml.etree.Comment(' EC2 cert fingerprint:  {0} '
-        #                                     .format(ec2_fp)))
         xml.image.ec2_encrypted_key = _public_encrypt(self.enc_key,
                                                       ec2_cert_filename)
         xml.image.ec2_encrypted_key.set('algorithm', self.enc_algorithm)
-        # xml.image.append(lxml.etree.Comment(' User cert fingerprint: {0} '
-        #                                     .format(user_fp)))
-        xml.image.user_encrypted_key = _public_encrypt(self.enc_key,
-                                                       user_cert_filename)
+        if user_cert_filename:
+            xml.image.user_encrypted_key = _public_encrypt(self.enc_key,
+                                                           user_cert_filename)
+        else:
+            # Absence results in 400 (InvalidManifest)
+            xml.image.user_encrypted_key = None
         xml.image.user_encrypted_key.set('algorithm', self.enc_algorithm)
         xml.image.ec2_encrypted_iv = _public_encrypt(self.enc_iv,
                                                      ec2_cert_filename)
-        xml.image.user_encrypted_iv = _public_encrypt(self.enc_iv,
-                                                      user_cert_filename)
+        if user_cert_filename:
+            xml.image.user_encrypted_iv = _public_encrypt(self.enc_iv,
+                                                          user_cert_filename)
+        else:
+            # Absence results in 400 (InvalidManifest)
+            xml.image.user_encrypted_iv = None
 
         # Bundle parts
         xml.image.parts = None
@@ -227,10 +234,14 @@ class BundleManifest(object):
         # Cleanup for signature
         lxml.objectify.deannotate(xml, xsi_nil=True)
         lxml.etree.cleanup_namespaces(xml)
-        to_sign = (lxml.etree.tostring(xml.machine_configuration) +
-                   lxml.etree.tostring(xml.image))
-        self.log.debug('string to sign: %s', repr(to_sign))
-        signature = _rsa_sha1_sign(to_sign, privkey_filename)
+        if privkey_filename:
+            to_sign = (lxml.etree.tostring(xml.machine_configuration) +
+                       lxml.etree.tostring(xml.image))
+            signature = _rsa_sha1_sign(to_sign, privkey_filename)
+        else:
+            # Absence yields 400 (InvalidManifest)
+            # Empty contents yield 500 (InternalError)
+            signature = 'UNSIGNED'
         xml.signature = signature
         self.log.debug('hex-encoded signature: %s', signature)
         lxml.objectify.deannotate(xml, xsi_nil=True)
@@ -239,7 +250,8 @@ class BundleManifest(object):
         pretty_manifest = lxml.etree.tostring(xml, pretty_print=True).strip()
         self.log.debug('%s', pretty_manifest, extra={'append': True})
         self.log.debug('-- end of manifest content --')
-        return lxml.etree.tostring(xml, pretty_print=pretty_print).strip()
+        return lxml.etree.tostring(xml, xml_declaration=True,
+                                   pretty_print=pretty_print).strip()
 
     def dump_to_file(self, manifest_file, privkey_filename,
                      user_cert_filename, ec2_cert_filename,

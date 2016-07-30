@@ -24,7 +24,6 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import argparse
-import datetime
 import os.path
 import tempfile
 
@@ -90,14 +89,15 @@ class ResumeImport(EC2Request, S3AccessMixin, FileTransferProgressBarMixin):
             vol_container = task['importVolume']
         else:
             vol_container = task['importInstance']['volumes'][0]
-        manifest = self.__get_or_create_manifest(vol_container)
-
-        actual_size = euca2ools.util.get_filesize(self.args['source'])
-        if actual_size != manifest.image_size:
+        file_size = euca2ools.util.get_filesize(self.args['source'])
+        manifest = self.__get_or_create_manifest(vol_container, file_size)
+        file_size_from_manifest = manifest.image_parts[-1].end + 1
+        if file_size_from_manifest != file_size:
             raise ArgumentError(
                 'file "{0}" is not the same size as the file the import '
                 'started with (expected: {1}, actual: {2})'
-                .format(self.args['source'], manifest.image_size, actual_size))
+                .format(self.args['source'], file_size_from_manifest,
+                        file_size))
 
         # Now we have a manifest; check to see what parts are already uploaded
         _, bucket, _ = self.args['s3_service'].resolve_url_to_location(
@@ -118,7 +118,7 @@ class ResumeImport(EC2Request, S3AccessMixin, FileTransferProgressBarMixin):
                     raise
             # If it is already there we skip it
 
-    def __get_or_create_manifest(self, vol_container):
+    def __get_or_create_manifest(self, vol_container, file_size):
         _, bucket, key = self.args['s3_service'].resolve_url_to_location(
             vol_container['image']['importManifestUrl'])
         manifest_s3path = '/'.join((bucket, key))
@@ -137,7 +137,7 @@ class ResumeImport(EC2Request, S3AccessMixin, FileTransferProgressBarMixin):
         except ServerError as err:
             if err.status_code == 404:
                 self.log.info('creating new import manifest')
-                manifest = self.__generate_manifest(vol_container)
+                manifest = self.__generate_manifest(vol_container, file_size)
                 tempdir = tempfile.mkdtemp()
                 manifest_filename = os.path.join(tempdir,
                                                  os.path.basename(key))
@@ -153,9 +153,9 @@ class ResumeImport(EC2Request, S3AccessMixin, FileTransferProgressBarMixin):
                 raise
         return manifest
 
-    def __generate_manifest(self, vol_container):
+    def __generate_manifest(self, vol_container, file_size):
         days = self.args.get('expires') or 30
-        expiration = datetime.datetime.utcnow() + datetime.timedelta(days)
+        timeout = days * 86400  # in seconds
         _, bucket, key = self.args['s3_service'].resolve_url_to_location(
             vol_container['image']['importManifestUrl'])
         key_prefix = key.rsplit('/', 1)[0]
@@ -164,26 +164,24 @@ class ResumeImport(EC2Request, S3AccessMixin, FileTransferProgressBarMixin):
         delete_req = DeleteObject.from_other(
             self, service=self.args['s3_service'], auth=self.args['s3_auth'],
             path='/'.join((bucket, key)))
-        manifest.self_destruct_url = delete_req.get_presigned_url(expiration)
+        manifest.self_destruct_url = delete_req.get_presigned_url2(timeout)
         manifest.image_size = int(vol_container['image']['size'])
         manifest.volume_size = int(vol_container['volume']['size'])
         part_size = (self.args.get('part_size') or 10) * 2 ** 20  # MiB
-        for index, part_start in enumerate(xrange(0, manifest.image_size,
-                                                  part_size)):
+        for index, part_start in enumerate(xrange(0, file_size, part_size)):
             part = ImportImagePart()
             part.index = index
             part.start = part_start
-            part.end = min(part_start + part_size,
-                           int(vol_container['image']['size'])) - 1
+            part.end = min(part_start + part_size, file_size) - 1
             part.key = '{0}/{1}.part.{2}'.format(
                 key_prefix, os.path.basename(self.args['source']), index)
             part_path = '/'.join((bucket, part.key))
             head_req = HeadObject.from_other(delete_req, path=part_path)
             get_req = GetObject.from_other(delete_req, source=part_path)
             delete_req = DeleteObject.from_other(delete_req, path=part_path)
-            part.head_url = head_req.get_presigned_url(expiration)
-            part.get_url = get_req.get_presigned_url(expiration)
-            part.delete_url = delete_req.get_presigned_url(expiration)
+            part.head_url = head_req.get_presigned_url2(timeout)
+            part.get_url = get_req.get_presigned_url2(timeout)
+            part.delete_url = delete_req.get_presigned_url2(timeout)
             manifest.image_parts.append(part)
         return manifest
 

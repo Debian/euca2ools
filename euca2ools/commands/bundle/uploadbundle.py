@@ -1,4 +1,4 @@
-# Copyright 2009-2014 Eucalyptus Systems, Inc.
+# Copyright (c) 2009-2016 Hewlett Packard Enterprise Development LP
 #
 # Redistribution and use of this software in source and binary forms,
 # with or without modification, are permitted provided that the following
@@ -23,6 +23,7 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+import argparse
 import multiprocessing
 import os.path
 
@@ -44,12 +45,15 @@ class UploadBundle(S3Request, BundleUploadingMixin,
                 help='''directory that contains the bundle parts (default:
                 directory that contains the manifest)'''),
             # TODO:  make this work
-            Arg('--part', metavar='INT', type=int, default=0, help='''begin
-                uploading with a specific part number (default: 0)'''),
+            Arg('--part', metavar='INT', type=int, default=0,
+                help=argparse.SUPPRESS),
             Arg('--skipmanifest', action='store_true',
                 help='do not upload the manifest')]
 
     def configure(self):
+        # This goes before configure because -S's absence causes
+        # self.auth.configure to blow up.  With an upload policy that
+        # is undesirable.
         self.configure_bundle_upload_auth()
         S3Request.configure(self)
 
@@ -78,7 +82,7 @@ class UploadBundle(S3Request, BundleUploadingMixin,
         part_gen.join()
 
         # (conditionally) upload the manifest
-        if not self.args.get('skip_manifest'):
+        if not self.args.get('skipmanifest'):
             manifest_dest = (key_prefix +
                              os.path.basename(self.args['manifest']))
             req = PutObject.from_other(
